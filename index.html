@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=1">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -31,175 +31,98 @@
 <main id="home">
 
   <section class="hero">
-    <p class="label" data-i18n="hero.label">Web design for small businesses</p>
+    <p class="label" data-i18n="hero.label">Kastav, Croatia · Marcellus, Michigan</p>
     <h1 data-i18n="hero.title">I design and build websites for <em>small businesses</em> that want to look as good online as they do in person.</h1>
     <a class="btn" href="#contact" data-i18n="hero.cta">Get in touch</a>
-    <dl class="places">
-      <div>
-        <dt data-i18n="hero.place1">Kastav, Croatia</dt>
-        <dd>45.37° N, 14.35° E</dd>
-      </div>
-      <div>
-        <dt data-i18n="hero.place2">Marcellus, Michigan, USA</dt>
-        <dd>42.03° N, 85.82° W</dd>
-      </div>
-      <div class="places-note">
-        <dd data-i18n="hero.note">I live and work between the two, and I take on clients in both.</dd>
-      </div>
-    </dl>
   </section>
 
   <section class="work" id="work">
-    <div class="section-head">
-      <p class="label" data-i18n="work.label">Selected work</p>
-      <h2 data-i18n="work.title">Three websites, each one designed and built from the first sketch to the last detail.</h2>
+    <h2 class="sr-only" data-i18n="work.label">Selected work</h2>
+    <div class="tiles">
+      <a class="tile" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener">
+        <img src="img/tile-orbita.jpg" width="1000" height="1250" alt="">
+        <span class="tile-text">
+          <span class="tile-name">Orbita prijevodi</span>
+          <span class="tile-type" data-i18n="p1.type">Translation agency</span>
+        </span>
+      </a>
+      <a class="tile" href="https://anjagregoran.github.io/cafe-brunch/" target="_blank" rel="noopener">
+        <img src="img/tile-cafe.jpg" width="1000" height="1250" alt="">
+        <span class="tile-text">
+          <span class="tile-name">More Café &amp; Brunch</span>
+          <span class="tile-type" data-i18n="p2.type">Café concept</span>
+        </span>
+      </a>
+      <a class="tile" href="https://anjagregoran.github.io/abroadwithanja/" target="_blank" rel="noopener">
+        <img src="img/tile-abroad.jpg" width="1000" height="1250" alt="">
+        <span class="tile-text">
+          <span class="tile-name">Abroad Life with Anja</span>
+          <span class="tile-type" data-i18n="p3.type">Guides and store</span>
+        </span>
+      </a>
     </div>
+    <div class="captions">
+      <p data-i18n="p1.line">A translation agency wanted a site as professional as its work, so I rebuilt it around an interactive globe and an easy quote form.</p>
+      <p data-i18n="p2.line">A café concept for two homes needed to feel warm and unhurried before opening, so I designed a calm site with the whole menu in one place.</p>
+      <p data-i18n="p3.line">This is my own site for future exchange students, built in English and Croatian with step by step guides and a store.</p>
+    </div>
+  </section>
 
-    <article class="project">
-      <div class="visual tint-blue">
-        <div class="compare" style="--pos:50%">
-          <img src="img/orbita-desktop.jpg" width="2000" height="1250" alt="The new Orbita prijevodi website" data-i18n-alt="p1.altNew">
-          <div class="compare-old">
-            <img src="img/orbita-old.jpg" width="2000" height="1250" alt="The old Orbita prijevodi website" data-i18n-alt="p1.altOld">
-          </div>
-          <span class="tag tag-before" data-i18n="p1.before">Before</span>
-          <span class="tag tag-after" data-i18n="p1.after">After</span>
-          <span class="compare-line" aria-hidden="true"><i></i></span>
-          <input type="range" min="0" max="100" value="50" aria-label="Compare the old and the new website" data-i18n-aria="p1.hint">
-        </div>
-        <p class="visual-note" data-i18n="p1.hint">Drag the line to compare the old site with the new one.</p>
+  <section class="before-after">
+    <h2 data-i18n="ba.title">Before and After</h2>
+    <p class="label">Orbita prijevodi</p>
+    <div class="compare" style="--pos:50%">
+      <img src="img/orbita-new.jpg" width="2000" height="1250" loading="lazy" alt="The new Orbita prijevodi website" data-i18n-alt="p1.altNew">
+      <div class="compare-old">
+        <img src="img/orbita-old.jpg" width="2000" height="1250" loading="lazy" alt="The old Orbita prijevodi website" data-i18n-alt="p1.altOld">
       </div>
-      <div class="project-text">
-        <p class="num">01</p>
-        <div class="project-name">
-          <h3>Orbita prijevodi</h3>
-          <p class="label" data-i18n="p1.type">Translation agency · Redesign</p>
-        </div>
-        <div class="pair">
-          <div>
-            <h4 class="label" data-i18n="work.need">What the client needed</h4>
-            <p data-i18n="p1.need">Orbita is a translation agency with offices in Kastav and Zagreb. They wanted a site that looks as professional as the work they deliver and makes it easy for a client to ask for a quote.</p>
-          </div>
-          <div>
-            <h4 class="label" data-i18n="work.built">What I built</h4>
-            <p data-i18n="p1.built">I designed a new site around an interactive globe that travels from language to language. All eight services and more than thirty languages are now easy to browse, and the quote form prepares the enquiry for the client.</p>
-          </div>
-        </div>
-        <a class="link" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="work.visit">Visit the site</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="visual tint-sage">
-        <div class="shots">
-          <img class="shot" src="img/cafe-photo-desktop.jpg" width="2000" height="1250" loading="lazy" alt="More Café &amp; Brunch website on a laptop screen" data-i18n-alt="p2.alt">
-          <img class="shot-phone" src="img/cafe-photo-phone.jpg" width="780" height="1688" loading="lazy" alt="" aria-hidden="true">
-        </div>
-      </div>
-      <div class="project-text">
-        <p class="num">02</p>
-        <div class="project-name">
-          <h3>More Café &amp; Brunch</h3>
-          <p class="label" data-i18n="p2.type">Café and brunch · Concept site</p>
-        </div>
-        <div class="pair">
-          <div>
-            <h4 class="label" data-i18n="work.need">What the client needed</h4>
-            <p data-i18n="p2.need">More is a café and brunch concept planned for two homes, Marcellus in Michigan and Kastav in Croatia. It needed a website that already feels like the place itself, unhurried, warm and welcoming, before the doors open.</p>
-          </div>
-          <div>
-            <h4 class="label" data-i18n="work.built">What I built</h4>
-            <p data-i18n="p2.built">I designed a calm site in cream and sage green, with the whole menu in one place and a separate page that tells the story of the two homes, so a guest knows what to expect before walking in.</p>
-          </div>
-        </div>
-        <a class="link" href="https://anjagregoran.github.io/cafe-brunch/" target="_blank" rel="noopener" data-i18n="work.visit">Visit the site</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="visual tint-rose">
-        <div class="shots">
-          <img class="shot" src="img/abroad-desktop.jpg" width="2000" height="1250" loading="lazy" alt="Abroad Life with Anja website on a laptop screen" data-i18n-alt="p3.alt">
-          <img class="shot-phone" src="img/abroad-phone.jpg" width="780" height="1688" loading="lazy" alt="" aria-hidden="true">
-        </div>
-      </div>
-      <div class="project-text">
-        <p class="num">03</p>
-        <div class="project-name">
-          <h3>Abroad Life with Anja</h3>
-          <p class="label" data-i18n="p3.type">Personal brand · Guides and store</p>
-        </div>
-        <div class="pair">
-          <div>
-            <h4 class="label" data-i18n="work.needOwn">What the site needed</h4>
-            <p data-i18n="p3.need">This is my own site for students who dream of a high school exchange year in the USA. It had to bring my guides, my story and my community together in one place, in English and in Croatian.</p>
-          </div>
-          <div>
-            <h4 class="label" data-i18n="work.built">What I built</h4>
-            <p data-i18n="p3.built">I built a bilingual site that leads a student step by step from the first idea to the year itself. The guides arrive by email, and alongside them there is a bundle page, a store page and a page for future host families.</p>
-          </div>
-        </div>
-        <a class="link" href="https://anjagregoran.github.io/abroadwithanja/" target="_blank" rel="noopener" data-i18n="work.visit">Visit the site</a>
-      </div>
-    </article>
+      <span class="tag tag-before" data-i18n="p1.before">Before</span>
+      <span class="tag tag-after" data-i18n="p1.after">After</span>
+      <span class="compare-line" aria-hidden="true"><i></i></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the old site with the new one" data-i18n-aria="p1.hint">
+    </div>
   </section>
 
   <section class="included" id="included">
-    <div class="section-head">
-      <p class="label" data-i18n="inc.label">What is included</p>
-      <h2 data-i18n="inc.title">Everything a small business needs to be online, looked after by one person.</h2>
-    </div>
+    <h2 data-i18n="inc.label">What Is Included</h2>
     <ol class="steps">
       <li>
-        <span class="num">01</span>
         <h3 data-i18n="inc.1t">Design</h3>
-        <p data-i18n="inc.1d">I design the site around your business, your colours and the way you speak to your customers, so it never looks like a template.</p>
+        <p data-i18n="inc.1d">I design it around your business and never from a template.</p>
       </li>
       <li>
-        <span class="num">02</span>
         <h3 data-i18n="inc.2t">Build</h3>
-        <p data-i18n="inc.2d">I build every page myself and make sure it reads just as well on a phone as it does on a laptop.</p>
+        <p data-i18n="inc.2d">I build every page to read well on a phone and on a laptop.</p>
       </li>
       <li>
-        <span class="num">03</span>
         <h3 data-i18n="inc.3t">Your Domain</h3>
-        <p data-i18n="inc.3d">I connect the site to your own address, whether you already have a domain or would like help choosing one.</p>
+        <p data-i18n="inc.3d">I connect the site to your own web address.</p>
       </li>
       <li>
-        <span class="num">04</span>
         <h3 data-i18n="inc.4t">Contact Form</h3>
-        <p data-i18n="inc.4d">Your customers can write to you straight from the site, and their message arrives in your inbox.</p>
+        <p data-i18n="inc.4d">Messages from your customers arrive straight in your inbox.</p>
       </li>
       <li>
-        <span class="num">05</span>
-        <h3 data-i18n="inc.5t">Upkeep After Launch</h3>
-        <p data-i18n="inc.5d">Once the site is live I stay with you and take care of changes, new photos, new prices and anything else that needs refreshing.</p>
+        <h3 data-i18n="inc.5t">Upkeep</h3>
+        <p data-i18n="inc.5d">I look after changes and updates once the site is live.</p>
       </li>
     </ol>
   </section>
 
   <section class="prices" id="prices">
-    <div class="section-head">
-      <p class="label" data-i18n="price.label">Price guide</p>
-      <h2 data-i18n="price.title">Every site is priced after a short conversation.</h2>
-    </div>
+    <h2 data-i18n="price.label">Prices</h2>
     <div class="price-rows">
       <div class="price-row">
-        <div>
-          <h3 data-i18n="price.1t">A new website</h3>
-          <p data-i18n="price.1d">Design, build, connecting your domain and a contact form.</p>
-        </div>
-        <p class="price"><span data-i18n="price.request">On request</span> <span class="ph" data-i18n="ph.price">Placeholder: starting price</span></p>
+        <h3 data-i18n="price.1t">A new website</h3>
+        <p class="price" data-i18n="price.request">On request</p>
+        <span class="ph" data-i18n="ph.price">Placeholder: starting price</span>
       </div>
       <div class="price-row">
-        <div>
-          <h3 data-i18n="price.2t">Monthly upkeep</h3>
-          <p data-i18n="price.2d">Changes and fresh content after launch.</p>
-        </div>
-        <p class="price"><span data-i18n="price.request">On request</span> <span class="ph" data-i18n="ph.fee">Placeholder: monthly fee</span></p>
+        <h3 data-i18n="price.2t">Monthly upkeep</h3>
+        <p class="price" data-i18n="price.request">On request</p>
+        <span class="ph" data-i18n="ph.fee">Placeholder: monthly fee</span>
       </div>
     </div>
-    <p class="price-note" data-i18n="price.note">Write to me with a few words about your business and I will reply with a clear price.</p>
   </section>
 
   <section class="about" id="about">
@@ -207,20 +130,14 @@
       <span class="ph" data-i18n="ph.photo">Placeholder: a photo of Anja</span>
     </div>
     <div class="about-text">
-      <p class="label" data-i18n="about.label">About me</p>
-      <h2 data-i18n="about.title">Hello, I am Anja.</h2>
-      <p data-i18n="about.p1">I come from Croatia, I spent a high school exchange year in the USA, and today my year is divided between Kastav and Marcellus, Michigan. That is why I work just as comfortably in Croatian as I do in English, with clients on both sides of the ocean.</p>
-      <p data-i18n="about.p2">I like websites that feel calm, look considered and make it easy for a customer to find you and get in touch.</p>
+      <h2 data-i18n="about.label">About</h2>
+      <p data-i18n="about.p1">I am Anja. I come from Croatia, spent a high school exchange year in the USA, and now divide my year between Kastav and Marcellus, Michigan, which is why I work in both Croatian and English.</p>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <div class="contact-intro">
-      <p class="label" data-i18n="contact.label">Contact</p>
-      <h2 data-i18n="contact.title">Tell me about your business.</h2>
-      <p data-i18n="contact.lead">A few sentences are enough to begin, and I will write back to you personally.</p>
-      <p class="social"><span class="label" data-i18n="contact.social">Social</span> <span class="ph" data-i18n="ph.social">Placeholder: Instagram or TikTok handle</span></p>
-    </div>
+    <h2 data-i18n="contact.label">Contact</h2>
+    <p class="lead" data-i18n="contact.lead">Tell me a little about your business and I will write back to you personally.</p>
     <form class="form" id="contact-form" novalidate>
       <label>
         <span class="label" data-i18n="form.name">Name</span>
@@ -230,29 +147,26 @@
         <span class="label" data-i18n="form.email">Email</span>
         <input type="email" name="email" autocomplete="email" required>
       </label>
-      <label>
-        <span class="label" data-i18n="form.business">Business name (optional)</span>
-        <input type="text" name="business" autocomplete="organization">
-      </label>
-      <label>
+      <label class="wide">
         <span class="label" data-i18n="form.message">Message</span>
-        <textarea name="message" rows="5" required></textarea>
+        <textarea name="message" rows="4" required></textarea>
       </label>
       <button class="btn" type="submit" data-i18n="form.send">Send message</button>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       <p class="ph ph-block" data-i18n="ph.form">Placeholder: this form is not connected to an email address yet, so messages are not sent.</p>
     </form>
+    <p class="social"><span class="ph" data-i18n="ph.social">Placeholder: Instagram or TikTok handle</span></p>
   </section>
 
 </main>
 
 <footer class="foot">
-  <span class="wordmark">Anja Gregoran Jenul</span>
-  <span data-i18n="foot.line">Web design for small businesses · Kastav and Marcellus</span>
+  <span>Anja Gregoran Jenul</span>
+  <span data-i18n="foot.line">Kastav · Marcellus</span>
   <span>© 2026</span>
 </footer>
 
-<script src="content.js?v=1"></script>
-<script src="app.js?v=1"></script>
+<script src="content.js?v=2"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

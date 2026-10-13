@@ -71,7 +71,7 @@
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
       });
     }, { rootMargin: "0px 0px -8% 0px" });
-    document.querySelectorAll(".project, .section-head, .steps li, .price-rows, .about, .contact").forEach((el) => {
+    document.querySelectorAll(".before-after, .included, .prices, .about, .contact").forEach((el) => {
       el.classList.add("reveal");
       io.observe(el);
     });
