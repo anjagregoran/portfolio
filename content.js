@@ -23,9 +23,7 @@ const HR = {
   "p1.line": "Prevoditeljska agencija željela je stranicu jednako profesionalnu kao i njezin rad, pa sam je iznova izgradila oko interaktivnog globusa i jednostavnog obrasca za ponudu.",
   "p1.before": "Prije",
   "p1.after": "Poslije",
-  "p1.hint": "Povucite crtu i usporedite staru stranicu s novom",
-  "p1.altNew": "Nova web stranica agencije Orbita prijevodi",
-  "p1.altOld": "Stara web stranica agencije Orbita prijevodi",
+  "p1.hint": "Povucite crtu i usporedite prije i poslije",
 
   "p2.type": "Koncept kafića",
   "p2.line": "Koncept kafića na dvije adrese trebao je i prije otvorenja djelovati toplo i opušteno, pa sam osmislila smirenu stranicu s cijelim jelovnikom na jednom mjestu.",
@@ -34,6 +32,9 @@ const HR = {
   "p3.line": "Ovo je moja vlastita stranica za buduće učenike na razmjeni, izrađena na hrvatskom i engleskom, s vodičima korak po korak i trgovinom.",
 
   "ba.title": "Prije i poslije",
+  "ba.altNew": "Dovršena web stranica",
+  "ba.altOld": "Web stranica prije",
+  "work.visit": "Posjetite stranicu",
 
   "inc.label": "Što je uključeno",
   "inc.1t": "Dizajn",

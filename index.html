@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -68,19 +68,24 @@
     </div>
   </section>
 
-  <section class="before-after">
+  <section class="before-after" id="before-after">
     <h2 data-i18n="ba.title">Before and After</h2>
-    <p class="label">Orbita prijevodi</p>
+    <div class="tabs" role="tablist" aria-label="Projects">
+      <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/">Orbita prijevodi</button>
+      <button type="button" role="tab" aria-selected="false" data-old="img/cafe-first.jpg" data-new="img/cafe-now.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/">More Café &amp; Brunch</button>
+      <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/">Abroad Life with Anja</button>
+    </div>
     <div class="compare" style="--pos:50%">
-      <img src="img/orbita-new.jpg" width="2000" height="1250" loading="lazy" alt="The new Orbita prijevodi website" data-i18n-alt="p1.altNew">
+      <img class="compare-new" src="img/orbita-new.jpg" width="2000" height="1250" loading="lazy" alt="The finished website" data-i18n-alt="ba.altNew">
       <div class="compare-old">
-        <img src="img/orbita-old.jpg" width="2000" height="1250" loading="lazy" alt="The old Orbita prijevodi website" data-i18n-alt="p1.altOld">
+        <img src="img/orbita-old.jpg" width="2000" height="1250" loading="lazy" alt="The website before" data-i18n-alt="ba.altOld">
       </div>
       <span class="tag tag-before" data-i18n="p1.before">Before</span>
       <span class="tag tag-after" data-i18n="p1.after">After</span>
       <span class="compare-line" aria-hidden="true"><i></i></span>
-      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the old site with the new one" data-i18n-aria="p1.hint">
+      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="p1.hint">
     </div>
+    <a class="link" id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="work.visit">Visit the site</a>
   </section>
 
   <section class="included" id="included">
@@ -166,7 +171,7 @@
   <span>© 2026</span>
 </footer>
 
-<script src="content.js?v=2"></script>
-<script src="app.js?v=2"></script>
+<script src="content.js?v=3"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

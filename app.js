@@ -42,6 +42,23 @@
     update();
   });
 
+  // Project tabs swap the two pictures in place.
+  const tabs = document.querySelectorAll(".tabs [role=tab]");
+  const compare = document.querySelector(".compare");
+  const visit = document.getElementById("ba-visit");
+  tabs.forEach((tab) => {
+    [tab.dataset.old, tab.dataset.new].forEach((src) => { new Image().src = src; });
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+      compare.querySelector(".compare-new").src = tab.dataset.new;
+      compare.querySelector(".compare-old img").src = tab.dataset.old;
+      visit.href = tab.dataset.href;
+      const range = compare.querySelector("input");
+      range.value = 50;
+      range.dispatchEvent(new Event("input"));
+    });
+  });
+
   // Contact form.
   const form = document.getElementById("contact-form");
   form.addEventListener("submit", async (e) => {
