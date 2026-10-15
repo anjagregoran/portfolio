@@ -8,56 +8,93 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
 <header class="top">
   <span class="wordmark">Anja Gregoran Jenul</span>
-  <div class="lang" role="group" aria-label="Language">
-    <button type="button" data-lang="en" aria-pressed="true">EN</button>
-    <span aria-hidden="true">/</span>
-    <button type="button" data-lang="hr" aria-pressed="false">HR</button>
+  <div class="top-right">
+    <nav class="nav" aria-label="Main">
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="hr" aria-pressed="false">HR</button>
+    </div>
+    <a class="btn btn-small" href="#contact" data-i18n="nav.start">Start a project</a>
   </div>
 </header>
 
-<main class="page">
+<main>
 
-  <section class="about">
-    <div class="portrait" role="img" aria-label="Portrait placeholder">
-      <span class="ph" data-i18n="ph.photo">Photo</span>
+  <section class="hero" id="work">
+    <div class="intro">
+      <p class="label" data-i18n="hero.label">Web design · Kastav and Marcellus</p>
+      <h1 data-i18n="hero.title">Websites that show small businesses in their <em>best light</em>.</h1>
+      <div class="hello">
+        <div class="portrait" role="img" aria-label="Portrait placeholder"><span data-i18n="ph.photo">Photo</span></div>
+        <p data-i18n="about.p1">Hi, I am Anja. I design and build websites for small businesses and split my time between Kastav, Croatia and Marcellus, Michigan.</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="#contact" data-i18n="nav.start">Start a project</a>
+        <a class="btn btn-line" href="#services" data-i18n="hero.services">What I offer</a>
+      </div>
     </div>
-    <h1 data-i18n="about.title">Hi, I am <em>Anja</em>.</h1>
-    <p data-i18n="about.p1">I design and build websites for small businesses, and I split my time between Kastav, Croatia and Marcellus, Michigan. Below you can see how a few of my sites looked before and how they look now.</p>
+
+    <div class="work" aria-label="My work">
+      <div class="tabs" role="tablist" aria-label="Projects">
+        <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/" data-type="p1.type">Orbita prijevodi</button>
+        <button type="button" role="tab" aria-selected="false" data-old="img/cafe-before.jpg" data-new="img/cafe-photo-desktop.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/" data-type="p2.type">More Café &amp; Brunch</button>
+        <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/" data-type="p3.type">Abroad Life with Anja</button>
+      </div>
+      <div class="compare" style="--pos:50%">
+        <img class="compare-new" src="img/orbita-new.jpg" width="2000" height="1250" alt="The website after" data-i18n-alt="ba.altNew">
+        <div class="compare-old">
+          <img src="img/orbita-old.jpg" width="2000" height="1250" alt="The website before" data-i18n-alt="ba.altOld">
+        </div>
+        <span class="tag tag-before" data-i18n="ba.before">Before</span>
+        <span class="tag tag-after" data-i18n="ba.after">After</span>
+        <span class="compare-line" aria-hidden="true"><i></i></span>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="ba.hint">
+      </div>
+      <p class="caption">
+        <span id="ba-type" data-i18n="p1.type">Translation agency</span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n="ba.drag">Drag to compare</span>
+        <span aria-hidden="true">·</span>
+        <a id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="ba.visit">Visit the site</a>
+      </p>
+    </div>
   </section>
 
-  <section class="work" aria-label="My work">
-    <div class="tabs" role="tablist" aria-label="Projects">
-      <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/" data-type="p1.type">Orbita prijevodi</button>
-      <button type="button" role="tab" aria-selected="false" data-old="img/cafe-before.jpg" data-new="img/cafe-photo-desktop.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/" data-type="p2.type">More Café &amp; Brunch</button>
-      <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/" data-type="p3.type">Abroad Life with Anja</button>
+  <section class="services" id="services">
+    <div>
+      <span class="num">01</span>
+      <h2 data-i18n="s1.t">Website Build</h2>
+      <p data-i18n="s1.d">I design and build the whole site so it looks just as good on a phone as on a laptop.</p>
     </div>
-    <div class="compare" style="--pos:50%">
-      <img class="compare-new" src="img/orbita-new.jpg" width="2000" height="1250" alt="The website after" data-i18n-alt="ba.altNew">
-      <div class="compare-old">
-        <img src="img/orbita-old.jpg" width="2000" height="1250" alt="The website before" data-i18n-alt="ba.altOld">
-      </div>
-      <span class="tag tag-before" data-i18n="ba.before">Before</span>
-      <span class="tag tag-after" data-i18n="ba.after">After</span>
-      <span class="compare-line" aria-hidden="true"><i></i></span>
-      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="ba.hint">
+    <div>
+      <span class="num">02</span>
+      <h2 data-i18n="s2.t">Monthly Upkeep</h2>
+      <p data-i18n="s2.d">For a monthly fee I keep your site running smoothly and up to date.</p>
     </div>
-    <p class="caption">
-      <span id="ba-type" data-i18n="p1.type">Translation agency</span>
-      <span aria-hidden="true">·</span>
-      <a id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="ba.visit">Visit the site</a>
-    </p>
+    <div>
+      <span class="num">03</span>
+      <h2 data-i18n="s3.t">Changes Anytime</h2>
+      <p data-i18n="s3.d">Whenever you need new photos, prices or pages, I take care of it for you.</p>
+    </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2 data-i18n="contact.title">Would you like a website like these?</h2>
-    <p data-i18n="contact.p1">I design and build the whole site, look after it for a monthly fee and make changes whenever you need them.</p>
-    <span class="ph" data-i18n="ph.time">Placeholder: how many weeks a new site takes</span>
+    <div class="contact-text">
+      <p class="label" data-i18n="contact.label">Start a project</p>
+      <h2 data-i18n="contact.title">Would you like a website like these?</h2>
+      <p data-i18n="contact.p1">Tell me what you need and I will write back to you with a plan and a price.</p>
+      <span class="ph" data-i18n="ph.time">Placeholder: how many weeks a new site takes</span>
+    </div>
     <form class="form" id="contact-form" novalidate>
       <fieldset class="needs">
         <legend data-i18n="form.need">What do you need?</legend>
@@ -78,17 +115,22 @@
         <span data-i18n="form.message">Tell me a little about your business</span>
         <textarea name="message" rows="3" required></textarea>
       </label>
-      <button class="btn" type="submit" data-i18n="form.send">Send</button>
+      <div class="send wide">
+        <button class="btn" type="submit" data-i18n="form.send">Send</button>
+        <span class="ph" data-i18n="ph.form">Placeholder: the email address this form sends to</span>
+      </div>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      <span class="ph" data-i18n="ph.form">Placeholder: the email address this form sends to</span>
     </form>
   </section>
 
 </main>
 
-<footer class="foot">© 2026 Anja Gregoran Jenul</footer>
+<footer class="foot">
+  <span class="wordmark">Anja Gregoran Jenul</span>
+  <span>© 2026</span>
+</footer>
 
-<script src="content.js?v=5"></script>
-<script src="app.js?v=5"></script>
+<script src="content.js?v=6"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

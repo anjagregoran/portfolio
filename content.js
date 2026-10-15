@@ -6,8 +6,14 @@ const FORM_ENDPOINT = "";
 const HR = {
   "meta.title": "Anja Gregoran Jenul | Web dizajn za male poduzetnike",
 
-  "about.title": "Bok, ja sam <em>Anja</em>.",
-  "about.p1": "Izrađujem web stranice za male poduzetnike, a vrijeme dijelim između Kastva i Marcellusa u Michiganu. Ispod pogledajte kako su neke od mojih stranica izgledale prije, a kako izgledaju sada.",
+  "nav.work": "Radovi",
+  "nav.services": "Usluge",
+  "nav.start": "Započnimo suradnju",
+
+  "hero.label": "Web dizajn · Kastav i Marcellus",
+  "hero.title": "Web stranice koje male poduzetnike predstavljaju u <em>najboljem svjetlu</em>.",
+  "hero.services": "Što nudim",
+  "about.p1": "Bok, ja sam Anja. Izrađujem web stranice za male poduzetnike, a vrijeme dijelim između Kastva i Marcellusa u Michiganu.",
 
   "p1.type": "Prevoditeljska agencija",
   "p2.type": "Kafić i brunch",
@@ -16,12 +22,21 @@ const HR = {
   "ba.before": "Prije",
   "ba.after": "Poslije",
   "ba.hint": "Povucite crtu i usporedite prije i poslije",
+  "ba.drag": "Povucite za usporedbu",
   "ba.altNew": "Web stranica poslije",
   "ba.altOld": "Web stranica prije",
   "ba.visit": "Posjetite stranicu",
 
+  "s1.t": "Izrada stranice",
+  "s1.d": "Osmišljavam i izrađujem cijelu stranicu tako da jednako dobro izgleda na mobitelu i na računalu.",
+  "s2.t": "Mjesečno održavanje",
+  "s2.d": "Uz mjesečnu naknadu brinem da vaša stranica besprijekorno radi i uvijek bude ažurna.",
+  "s3.t": "Izmjene kad god zatrebaju",
+  "s3.d": "Kad god vam zatrebaju nove fotografije, cijene ili stranice, pobrinut ću se za to.",
+
+  "contact.label": "Započnimo suradnju",
   "contact.title": "Želite li i vi ovakvu stranicu?",
-  "contact.p1": "Osmislit ću i izraditi cijelu stranicu, brinuti o njoj uz mjesečnu naknadu i mijenjati je kad god vam zatreba.",
+  "contact.p1": "Recite mi što vam treba, a ja ću vam odgovoriti s planom i cijenom.",
 
   "form.need": "Što vam treba?",
   "form.n1": "Nova web stranica",
@@ -33,7 +48,7 @@ const HR = {
   "form.message": "Napišite mi nešto o svom poslu",
   "form.send": "Pošaljite",
 
-  "ph.photo": "Fotografija",
+  "ph.photo": "Foto",
   "ph.time": "Privremeno: koliko tjedana traje izrada stranice",
   "ph.form": "Privremeno: adresa e-pošte na koju stižu upiti"
 };
