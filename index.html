@@ -8,19 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
 <header class="top">
-  <a class="wordmark" href="#home">Anja Gregoran Jenul</a>
-  <nav class="nav" aria-label="Main">
-    <a href="#work" data-i18n="nav.work">Work</a>
-    <a href="#included" data-i18n="nav.included">Included</a>
-    <a href="#prices" data-i18n="nav.prices">Prices</a>
-    <a href="#about" data-i18n="nav.about">About</a>
-    <a href="#contact" data-i18n="nav.contact">Contact</a>
-  </nav>
+  <span class="wordmark">Anja Gregoran Jenul</span>
   <div class="lang" role="group" aria-label="Language">
     <button type="button" data-lang="en" aria-pressed="true">EN</button>
     <span aria-hidden="true">/</span>
@@ -28,150 +21,74 @@
   </div>
 </header>
 
-<main id="home">
+<main class="page">
 
-  <section class="hero">
-    <p class="label" data-i18n="hero.label">Kastav, Croatia · Marcellus, Michigan</p>
-    <h1 data-i18n="hero.title">I design and build websites for <em>small businesses</em> that want to look as good online as they do in person.</h1>
-    <a class="btn" href="#contact" data-i18n="hero.cta">Get in touch</a>
+  <section class="about">
+    <div class="portrait" role="img" aria-label="Portrait placeholder">
+      <span class="ph" data-i18n="ph.photo">Photo</span>
+    </div>
+    <h1 data-i18n="about.title">Hi, I am <em>Anja</em>.</h1>
+    <p data-i18n="about.p1">I design and build websites for small businesses, and I split my time between Kastav, Croatia and Marcellus, Michigan. Below you can see how a few of my sites looked before and how they look now.</p>
   </section>
 
-  <section class="work" id="work">
-    <h2 class="sr-only" data-i18n="work.label">Selected work</h2>
-    <div class="tiles">
-      <a class="tile" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener">
-        <img src="img/tile-orbita.jpg" width="1000" height="1250" alt="">
-        <span class="tile-text">
-          <span class="tile-name">Orbita prijevodi</span>
-          <span class="tile-type" data-i18n="p1.type">Translation agency</span>
-        </span>
-      </a>
-      <a class="tile" href="https://anjagregoran.github.io/cafe-brunch/" target="_blank" rel="noopener">
-        <img src="img/tile-cafe.jpg" width="1000" height="1250" alt="">
-        <span class="tile-text">
-          <span class="tile-name">More Café &amp; Brunch</span>
-          <span class="tile-type" data-i18n="p2.type">Café concept</span>
-        </span>
-      </a>
-      <a class="tile" href="https://anjagregoran.github.io/abroadwithanja/" target="_blank" rel="noopener">
-        <img src="img/tile-abroad.jpg" width="1000" height="1250" alt="">
-        <span class="tile-text">
-          <span class="tile-name">Abroad Life with Anja</span>
-          <span class="tile-type" data-i18n="p3.type">Guides and store</span>
-        </span>
-      </a>
-    </div>
-    <div class="captions">
-      <p data-i18n="p1.line">A translation agency wanted a site as professional as its work, so I rebuilt it around an interactive globe and an easy quote form.</p>
-      <p data-i18n="p2.line">A café concept for two homes needed to feel warm and unhurried before opening, so I designed a calm site with the whole menu in one place.</p>
-      <p data-i18n="p3.line">This is my own site for future exchange students, built in English and Croatian with step by step guides and a store.</p>
-    </div>
-  </section>
-
-  <section class="before-after" id="before-after">
-    <h2 data-i18n="ba.title">Before and After</h2>
+  <section class="work" aria-label="My work">
     <div class="tabs" role="tablist" aria-label="Projects">
-      <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/">Orbita prijevodi</button>
-      <button type="button" role="tab" aria-selected="false" data-old="img/cafe-first.jpg" data-new="img/cafe-now.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/">More Café &amp; Brunch</button>
-      <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/">Abroad Life with Anja</button>
+      <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/" data-type="p1.type">Orbita prijevodi</button>
+      <button type="button" role="tab" aria-selected="false" data-old="img/cafe-before.jpg" data-new="img/cafe-photo-desktop.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/" data-type="p2.type">More Café &amp; Brunch</button>
+      <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/" data-type="p3.type">Abroad Life with Anja</button>
     </div>
     <div class="compare" style="--pos:50%">
-      <img class="compare-new" src="img/orbita-new.jpg" width="2000" height="1250" loading="lazy" alt="The finished website" data-i18n-alt="ba.altNew">
+      <img class="compare-new" src="img/orbita-new.jpg" width="2000" height="1250" alt="The website after" data-i18n-alt="ba.altNew">
       <div class="compare-old">
-        <img src="img/orbita-old.jpg" width="2000" height="1250" loading="lazy" alt="The website before" data-i18n-alt="ba.altOld">
+        <img src="img/orbita-old.jpg" width="2000" height="1250" alt="The website before" data-i18n-alt="ba.altOld">
       </div>
-      <span class="tag tag-before" data-i18n="p1.before">Before</span>
-      <span class="tag tag-after" data-i18n="p1.after">After</span>
+      <span class="tag tag-before" data-i18n="ba.before">Before</span>
+      <span class="tag tag-after" data-i18n="ba.after">After</span>
       <span class="compare-line" aria-hidden="true"><i></i></span>
-      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="p1.hint">
+      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="ba.hint">
     </div>
-    <a class="link" id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="work.visit">Visit the site</a>
-  </section>
-
-  <section class="included" id="included">
-    <h2 data-i18n="inc.label">What Is Included</h2>
-    <ol class="steps">
-      <li>
-        <h3 data-i18n="inc.1t">Design</h3>
-        <p data-i18n="inc.1d">I design it around your business and never from a template.</p>
-      </li>
-      <li>
-        <h3 data-i18n="inc.2t">Build</h3>
-        <p data-i18n="inc.2d">I build every page to read well on a phone and on a laptop.</p>
-      </li>
-      <li>
-        <h3 data-i18n="inc.3t">Your Domain</h3>
-        <p data-i18n="inc.3d">I connect the site to your own web address.</p>
-      </li>
-      <li>
-        <h3 data-i18n="inc.4t">Contact Form</h3>
-        <p data-i18n="inc.4d">Messages from your customers arrive straight in your inbox.</p>
-      </li>
-      <li>
-        <h3 data-i18n="inc.5t">Upkeep</h3>
-        <p data-i18n="inc.5d">I look after changes and updates once the site is live.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="prices" id="prices">
-    <h2 data-i18n="price.label">Prices</h2>
-    <div class="price-rows">
-      <div class="price-row">
-        <h3 data-i18n="price.1t">A new website</h3>
-        <p class="price" data-i18n="price.request">On request</p>
-        <span class="ph" data-i18n="ph.price">Placeholder: starting price</span>
-      </div>
-      <div class="price-row">
-        <h3 data-i18n="price.2t">Monthly upkeep</h3>
-        <p class="price" data-i18n="price.request">On request</p>
-        <span class="ph" data-i18n="ph.fee">Placeholder: monthly fee</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="portrait" role="img" aria-label="Portrait placeholder">
-      <span class="ph" data-i18n="ph.photo">Placeholder: a photo of Anja</span>
-    </div>
-    <div class="about-text">
-      <h2 data-i18n="about.label">About</h2>
-      <p data-i18n="about.p1">I am Anja. I come from Croatia, spent a high school exchange year in the USA, and now divide my year between Kastav and Marcellus, Michigan, which is why I work in both Croatian and English.</p>
-    </div>
+    <p class="caption">
+      <span id="ba-type" data-i18n="p1.type">Translation agency</span>
+      <span aria-hidden="true">·</span>
+      <a id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="ba.visit">Visit the site</a>
+    </p>
   </section>
 
   <section class="contact" id="contact">
-    <h2 data-i18n="contact.label">Contact</h2>
-    <p class="lead" data-i18n="contact.lead">Tell me a little about your business and I will write back to you personally.</p>
+    <h2 data-i18n="contact.title">Would you like a website like these?</h2>
+    <p data-i18n="contact.p1">I design and build the whole site, look after it for a monthly fee and make changes whenever you need them.</p>
+    <span class="ph" data-i18n="ph.time">Placeholder: how many weeks a new site takes</span>
     <form class="form" id="contact-form" novalidate>
-      <label>
-        <span class="label" data-i18n="form.name">Name</span>
+      <fieldset class="needs">
+        <legend data-i18n="form.need">What do you need?</legend>
+        <label><input type="radio" name="need" value="New website" checked><span data-i18n="form.n1">A new website</span></label>
+        <label><input type="radio" name="need" value="Changes to my site"><span data-i18n="form.n2">Changes to my site</span></label>
+        <label><input type="radio" name="need" value="Monthly upkeep"><span data-i18n="form.n3">Monthly upkeep</span></label>
+        <label><input type="radio" name="need" value="Something else"><span data-i18n="form.n4">Something else</span></label>
+      </fieldset>
+      <label class="field">
+        <span data-i18n="form.name">Name</span>
         <input type="text" name="name" autocomplete="name" required>
       </label>
-      <label>
-        <span class="label" data-i18n="form.email">Email</span>
+      <label class="field">
+        <span data-i18n="form.email">Email</span>
         <input type="email" name="email" autocomplete="email" required>
       </label>
-      <label class="wide">
-        <span class="label" data-i18n="form.message">Message</span>
-        <textarea name="message" rows="4" required></textarea>
+      <label class="field wide">
+        <span data-i18n="form.message">Tell me a little about your business</span>
+        <textarea name="message" rows="3" required></textarea>
       </label>
-      <button class="btn" type="submit" data-i18n="form.send">Send message</button>
+      <button class="btn" type="submit" data-i18n="form.send">Send</button>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      <p class="ph ph-block" data-i18n="ph.form">Placeholder: this form is not connected to an email address yet, so messages are not sent.</p>
+      <span class="ph" data-i18n="ph.form">Placeholder: the email address this form sends to</span>
     </form>
-    <p class="social"><span class="ph" data-i18n="ph.social">Placeholder: Instagram or TikTok handle</span></p>
   </section>
 
 </main>
 
-<footer class="foot">
-  <span>Anja Gregoran Jenul</span>
-  <span data-i18n="foot.line">Kastav · Marcellus</span>
-  <span>© 2026</span>
-</footer>
+<footer class="foot">© 2026 Anja Gregoran Jenul</footer>
 
-<script src="content.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="content.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
