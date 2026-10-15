@@ -13,7 +13,12 @@ const HR = {
   "hero.label": "Web dizajn · Kastav i Marcellus",
   "hero.title": "Web stranice koje male poduzetnike predstavljaju u <em>najboljem svjetlu</em>.",
   "hero.services": "Što nudim",
-  "about.p1": "Bok, ja sam Anja. Izrađujem web stranice za male poduzetnike, a vrijeme dijelim između Kastva i Marcellusa u Michiganu.",
+  "about.p1": "Bok, ja sam Anja. Izrađujem web stranice za male poduzetnike, a vrijeme dijelim između Kastva i Marcellusa u Michiganu. Pobrinut ću se da vaš posao na internetu izgleda jednako dobro kao i uživo.",
+
+  "why.label": "Zašto je to važno",
+  "why.num": "77 %",
+  "why.p1": "gostiju pogleda web stranicu restorana prije nego što ga posjeti, a gotovo 70 % njih odustalo je od nekog mjesta upravo zbog njegove web stranice. Kad neko mjesto i na internetu djeluje uredno i dobro vođeno, ljudi vjeruju da je jednako dobro i uživo.",
+  "why.source": "Izvor: istraživanje tvrtke MGH na uzorku od 1101 odrasle osobe u SAD-u, 2019.",
 
   "p1.type": "Prevoditeljska agencija",
   "p2.type": "Kafić i brunch",
