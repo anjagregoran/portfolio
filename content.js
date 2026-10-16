@@ -7,7 +7,7 @@ const HR = {
   "meta.title": "Anja Gregoran Jenul | Web dizajn za male poduzetnike",
 
   "nav.work": "Moji radovi",
-  "nav.services": "Usluge",
+  "nav.services": "Što dobivate",
   "nav.start": "Započnimo suradnju",
 
   "hero.label": "Web dizajn · Kastav i Marcellus",
