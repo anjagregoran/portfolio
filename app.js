@@ -29,6 +29,7 @@
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
     document.getElementById("form-status").textContent = "";
+    document.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
     try { localStorage.setItem("lang", lang); } catch (e) {}
   }
 
