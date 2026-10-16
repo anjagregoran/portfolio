@@ -102,8 +102,8 @@
       hr: { head: "Danas na pultu", items: [["cup", "Cappuccino", "2,50 €"], ["croissant", "Kroasan s maslacem", "1,80 €"], ["loaf", "Kruh s kiselim tijestom", "4,20 €"]], badge: "SVJEŽI KRUH SVAKO JUTRO · PEČEMO U KASTVU · " }
     },
     salon: {
-      en: { items: [["scissors", "Cut and style", "from $45"], ["drop", "Colour", "from $90"], ["wind", "Blow dry", "$35"]], b1: "Book now", b2: "Our services" },
-      hr: { items: [["scissors", "Šišanje i styling", "od 45 $"], ["drop", "Bojanje", "od 90 $"], ["wind", "Feniranje", "35 $"]], b1: "Rezervirajte", b2: "Naše usluge" }
+      en: { items: [["scissors", "Cut and style", "from $45"], ["drop", "Colour", "from $90"], ["wind", "Blow dry", "$35"]], b1: "Book now", b2: "Our services", offer: "New clients get 15% off their first visit" },
+      hr: { items: [["scissors", "Šišanje i styling", "od 45 $"], ["drop", "Bojanje", "od 90 $"], ["wind", "Feniranje", "35 $"]], b1: "Rezervirajte", b2: "Naše usluge", offer: "Novi klijenti imaju 15 % popusta na prvi posjet" }
     }
   };
 
@@ -139,6 +139,7 @@
       <div class="demo-frame">
         <div class="demo-bar"><i></i><i></i><i></i><span>${site.url}</span><b>${ui.demo}</b></div>
         <div class="demo-site" data-style="${state.type}">
+          ${state.type === "salon" ? `<p class="m-announce">${EXTRA.salon[lang].offer}</p>` : ""}
           <div class="m-hero">
             <img src="${photo(site, "hero")}" alt="" width="1400" height="875">
             <div class="m-nav">

@@ -576,3 +576,9 @@ html[lang="hr"] .demo-site[data-style="apartments"] .m-booking label i::after { 
   .demo-site[data-style="apartments"] .m-btn { grid-column: 1 / -1; padding: 10px; }
 }
 .demo-site[data-style="apartments"] .m-hero-text { bottom: 50px; }
+
+/* studio bloom, polished: offer bar, lighter shadow on a brighter photo */
+.m-announce { margin: 0; padding: 7px 12px; text-align: center; background: var(--m-ink); color: var(--m-bg); font: 700 0.56rem "Syne", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; }
+.demo-site[data-style="salon"] .m-hero img { object-position: 50% 35%; }
+.demo-site[data-style="salon"] .m-hero::after { background: linear-gradient(to top, rgba(20, 14, 12, 0.62), rgba(20, 14, 12, 0.08) 48%, transparent 62%), linear-gradient(to bottom, rgba(0,0,0,0.22), transparent 22%); }
+.demo-site[data-style="salon"] .m-hero { aspect-ratio: 16 / 9.4; }
