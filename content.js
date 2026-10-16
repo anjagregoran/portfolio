@@ -60,6 +60,10 @@ const HR = {
   "form.message": "Napišite mi nešto o svom poslu",
   "form.send": "Pošaljite",
 
+  "contact.timeLabel": "Rok izrade",
+  "contact.direct": "Ili mi se javite izravno",
+  "contact.hr": "Hrvatska",
+  "contact.us": "SAD",
   "contact.time": "Rok izrade dogovaramo zajedno, a ako vam se žuri, stranica može biti gotova i za tjedan dana."
 };
 
