@@ -32,6 +32,10 @@ const HR = {
   "ba.altOld": "Web stranica prije",
   "ba.visit": "Posjetite stranicu",
 
+  "s.more": "Raspitajte se",
+  "mq.aria": "Za koga izrađujem stranice",
+  "mq.list": "Kafići · Restorani · Saloni · Trgovine · Studiji · Agencije · Apartmani · ",
+  "ba.dragShort": "Povucite",
   "s1.t": "Izrada stranice",
   "s1.d": "Osmišljavam i izrađujem cijelu stranicu tako da jednako dobro izgleda na mobitelu i na računalu.",
   "s2.t": "Mjesečno održavanje",

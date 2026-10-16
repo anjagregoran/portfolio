@@ -8,11 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
 <header class="top">
+  <span class="progress" aria-hidden="true"></span>
   <span class="wordmark">Anja Gregoran Jenul</span>
   <div class="top-right">
     <nav class="nav" aria-label="Main">
@@ -58,6 +59,7 @@
         <span class="tag tag-before" data-i18n="ba.before">Before</span>
         <span class="tag tag-after" data-i18n="ba.after">After</span>
         <span class="compare-line" aria-hidden="true"><i></i></span>
+        <span class="drag-bubble" aria-hidden="true" data-i18n="ba.dragShort">Drag</span>
         <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="ba.hint">
       </div>
       <p class="caption">
@@ -70,6 +72,15 @@
     </div>
   </section>
 
+  <div class="marquee" aria-label="Who I build for" data-i18n-aria="mq.aria">
+    <div class="marquee-track">
+      <span data-i18n="mq.list">Cafés · Restaurants · Salons · Shops · Studios · Agencies · Guesthouses · </span>
+      <span data-i18n="mq.list" aria-hidden="true">Cafés · Restaurants · Salons · Shops · Studios · Agencies · Guesthouses · </span>
+      <span data-i18n="mq.list" aria-hidden="true">Cafés · Restaurants · Salons · Shops · Studios · Agencies · Guesthouses · </span>
+      <span data-i18n="mq.list" aria-hidden="true">Cafés · Restaurants · Salons · Shops · Studios · Agencies · Guesthouses · </span>
+    </div>
+  </div>
+
   <section class="why">
     <p class="label" data-i18n="why.label">Why it matters</p>
     <p class="why-num" data-i18n="why.num">77%</p>
@@ -80,21 +91,24 @@
   </section>
 
   <section class="services" id="services">
-    <div>
+    <a class="service" href="#contact" data-need="New website">
       <span class="num">01</span>
       <h2 data-i18n="s1.t">Website Build</h2>
       <p data-i18n="s1.d">I design and build the whole site so it looks just as good on a phone as on a laptop.</p>
-    </div>
-    <div>
+      <span class="more"><span data-i18n="s.more">Ask about this</span><i aria-hidden="true"></i></span>
+    </a>
+    <a class="service" href="#contact" data-need="Monthly upkeep">
       <span class="num">02</span>
       <h2 data-i18n="s2.t">Monthly Upkeep</h2>
       <p data-i18n="s2.d">For a monthly fee I keep your site running smoothly and up to date.</p>
-    </div>
-    <div>
+      <span class="more"><span data-i18n="s.more">Ask about this</span><i aria-hidden="true"></i></span>
+    </a>
+    <a class="service" href="#contact" data-need="Changes to my site">
       <span class="num">03</span>
       <h2 data-i18n="s3.t">Changes Anytime</h2>
       <p data-i18n="s3.d">Whenever you need new photos, prices or pages, I take care of it for you.</p>
-    </div>
+      <span class="more"><span data-i18n="s.more">Ask about this</span><i aria-hidden="true"></i></span>
+    </a>
   </section>
 
   <section class="contact" id="contact">
@@ -139,7 +153,7 @@
   <span>© 2026</span>
 </footer>
 
-<script src="content.js?v=7"></script>
-<script src="app.js?v=6"></script>
+<script src="content.js?v=8"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

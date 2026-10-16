@@ -1,4 +1,7 @@
 (function () {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+
   // Language switch. English is read from the page once, Croatian comes from content.js.
   const EN = {};
   const nodes = document.querySelectorAll("[data-i18n]");
@@ -36,30 +39,76 @@
   // Before and after slider.
   const compare = document.querySelector(".compare");
   const range = compare.querySelector("input[type=range]");
-  const update = () => compare.style.setProperty("--pos", range.value + "%");
-  range.addEventListener("input", update);
-  update();
+  const setPos = (v) => { range.value = v; compare.style.setProperty("--pos", v + "%"); };
+  range.addEventListener("input", () => { stopSweep(); setPos(range.value); });
 
-  // Project tabs swap the two pictures in place.
+  // A short sweep shows visitors that the picture can be dragged.
+  let sweepFrame = null;
+  function stopSweep() { if (sweepFrame) cancelAnimationFrame(sweepFrame); sweepFrame = null; }
+  function sweep() {
+    stopSweep();
+    if (reduce) { setPos(50); return; }
+    const keys = [50, 22, 78, 50];
+    const seg = 650;
+    const start = performance.now();
+    const ease = (x) => 0.5 - Math.cos(Math.PI * x) / 2;
+    const step = (now) => {
+      const el = now - start;
+      const i = Math.min(Math.floor(el / seg), keys.length - 2);
+      const f = Math.min((el - i * seg) / seg, 1);
+      setPos((keys[i] + (keys[i + 1] - keys[i]) * ease(f)).toFixed(1));
+      if (el < seg * (keys.length - 1)) sweepFrame = requestAnimationFrame(step);
+      else sweepFrame = null;
+    };
+    sweepFrame = requestAnimationFrame(step);
+  }
+  ["pointerdown", "keydown"].forEach((ev) => range.addEventListener(ev, stopSweep));
+
+  // Project tabs swap the two pictures in place with a soft fade.
   const tabs = document.querySelectorAll(".tabs [role=tab]");
   const type = document.getElementById("ba-type");
   const visit = document.getElementById("ba-visit");
+  const newImg = compare.querySelector(".compare-new");
+  const oldImg = compare.querySelector(".compare-old img");
   tabs.forEach((tab) => {
     [tab.dataset.old, tab.dataset.new].forEach((src) => { new Image().src = src; });
-    tab.addEventListener("click", () => {
+    tab.addEventListener("click", async () => {
+      if (tab.getAttribute("aria-selected") === "true") return;
       tabs.forEach((x) => x.setAttribute("aria-selected", String(x === tab)));
-      compare.querySelector(".compare-new").src = tab.dataset.new;
-      compare.querySelector(".compare-old img").src = tab.dataset.old;
       type.dataset.i18n = tab.dataset.type;
       type.innerHTML = t(tab.dataset.type);
       visit.href = tab.dataset.href;
-      range.value = 50;
-      update();
+      compare.classList.add("swapping");
+      await new Promise((r) => setTimeout(r, reduce ? 0 : 220));
+      newImg.src = tab.dataset.new;
+      oldImg.src = tab.dataset.old;
+      try { await Promise.all([newImg.decode(), oldImg.decode()]); } catch (e) {}
+      compare.classList.remove("swapping");
+      sweep();
+    });
+  });
+
+  // A small "Drag" label follows the pointer over the pictures.
+  const bubble = compare.querySelector(".drag-bubble");
+  if (finePointer) {
+    compare.addEventListener("pointermove", (e) => {
+      const r = compare.getBoundingClientRect();
+      bubble.style.transform = `translate(${e.clientX - r.left}px, ${e.clientY - r.top}px)`;
+      compare.classList.add("hovering");
+    });
+    compare.addEventListener("pointerleave", () => compare.classList.remove("hovering"));
+  }
+
+  // Services open the form with the matching choice already selected.
+  const form = document.getElementById("contact-form");
+  document.querySelectorAll(".service").forEach((card) => {
+    card.addEventListener("click", () => {
+      const radio = form.querySelector(`input[name=need][value="${card.dataset.need}"]`);
+      if (radio) radio.checked = true;
     });
   });
 
   // Sign-up form.
-  const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -77,7 +126,79 @@
     }
   });
 
+  // Buttons lean a little towards the pointer.
+  if (finePointer && !reduce) {
+    document.querySelectorAll(".btn").forEach((btn) => {
+      btn.addEventListener("pointermove", (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * 0.22;
+        const y = (e.clientY - r.top - r.height / 2) * 0.35;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
+    });
+  }
+
+  // A soft light follows the pointer across the panels.
+  if (finePointer) {
+    document.querySelectorAll(".work, .form, .service").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--mx", e.clientX - r.left + "px");
+        el.style.setProperty("--my", e.clientY - r.top + "px");
+      });
+    });
+  }
+
+  // Header: reading progress and a shadow once the page moves.
+  const top = document.querySelector(".top");
+  const bar = document.querySelector(".progress");
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    top.classList.toggle("scrolled", scrollY > 8);
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // The 77 counts up when it comes into view.
+  const num = document.querySelector(".why-num");
+  function countUp() {
+    const final = t("why.num");
+    const target = parseInt(final, 10);
+    const suffix = final.replace(String(target), "");
+    if (reduce || !target) { num.textContent = final; return; }
+    const start = performance.now();
+    const step = (now) => {
+      const f = Math.min((now - start) / 1400, 1);
+      num.textContent = Math.round(target * (1 - Math.pow(1 - f, 3))) + suffix;
+      if (f < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  // Sections rise in as they come into view.
+  const io = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("in");
+      if (en.target.classList.contains("why")) countUp();
+      if (en.target.classList.contains("work")) sweep();
+      io.unobserve(en.target);
+    });
+  }, { rootMargin: "0px 0px -12% 0px" }) : null;
+  if (io && !reduce) {
+    document.querySelectorAll(".why, .service, .contact-text, .form").forEach((el) => {
+      el.classList.add("reveal");
+      io.observe(el);
+    });
+    io.observe(document.querySelector(".work"));
+  }
+
   let saved = null;
   try { saved = localStorage.getItem("lang"); } catch (e) {}
   setLang(saved || ((navigator.language || "").toLowerCase().startsWith("hr") ? "hr" : "en"));
+
+  // Opening entrance.
+  requestAnimationFrame(() => document.body.classList.add("loaded"));
 })();
