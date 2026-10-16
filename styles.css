@@ -371,25 +371,29 @@ h1 em { font-style: italic; color: var(--green); }
 }
 .demo-site.fading { opacity: 0; }
 .demo-site * { transition: background-color 0.6s, color 0.6s, border-color 0.6s, fill 0.6s; }
-.m-nav { display: flex; align-items: center; gap: 14px; padding: 12px 18px; font-size: 0.72rem; }
-.m-nav strong { font-family: var(--serif); font-weight: 400; font-size: 1.1rem; letter-spacing: 0.02em; margin-right: auto; }
-.m-nav nav { display: flex; gap: 12px; opacity: 0.8; }
-.m-cta {
-  background: var(--m-accent); color: #fff; padding: 6px 12px; border-radius: 999px; font-weight: 600;
-  max-width: 0; padding-inline: 0; overflow: hidden; white-space: nowrap; opacity: 0;
-  transition: max-width 0.5s ease, padding 0.5s ease, opacity 0.4s ease, background-color 0.6s;
-}
-.m-cta.on { max-width: 160px; padding-inline: 12px; opacity: 1; }
-.m-hero { position: relative; margin: 0 14px; border-radius: 12px; overflow: hidden; aspect-ratio: 400 / 210; }
-.m-scene { display: block; width: 100%; height: 100%; }
-.m-scene * , .m-gallery svg * { transition: fill 0.6s; }
+/* Hero photo with the menu laid over it, like a real site */
+.m-hero { position: relative; aspect-ratio: 16 / 10.5; overflow: hidden; color: #fff; }
+.m-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 6s ease; }
+.demo:hover .m-hero img { transform: scale(1.07); }
 .m-hero::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(to top, color-mix(in srgb, var(--m-bg) 94%, transparent) 0%, color-mix(in srgb, var(--m-bg) 55%, transparent) 30%, transparent 58%);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.38), transparent 26%),
+    linear-gradient(to top, color-mix(in srgb, var(--m-ink) 82%, transparent) 0%, color-mix(in srgb, var(--m-ink) 30%, transparent) 38%, transparent 62%);
+  transition: background 0.6s;
 }
-.m-hero-text { position: absolute; z-index: 1; left: 18px; bottom: 14px; right: 30%; }
-.m-hero-text p { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.85; }
-.m-hero-text h3 { margin: 4px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.02; color: var(--m-ink); }
+.m-nav { position: absolute; z-index: 2; inset: 0 0 auto 0; display: flex; align-items: center; gap: 14px; padding: 14px 18px; font-size: 0.7rem; }
+.m-nav strong { font-family: var(--serif); font-weight: 400; font-size: 1.15rem; letter-spacing: 0.04em; margin-right: auto; }
+.m-nav nav { display: flex; gap: 14px; opacity: 0.92; }
+.m-cta {
+  background: #fff; color: var(--m-ink); padding: 6px 12px; border-radius: 999px; font-weight: 600;
+  max-width: 0; padding-inline: 0; overflow: hidden; white-space: nowrap; opacity: 0;
+  transition: max-width 0.5s ease, padding 0.5s ease, opacity 0.4s ease, color 0.6s;
+}
+.m-cta.on { max-width: 170px; padding-inline: 13px; opacity: 1; }
+.m-hero-text { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px; }
+.m-hero-text p { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9; }
+.m-hero-text h3 { margin: 4px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1; color: #fff; }
 
 /* Blocks that slide open when they are added */
 .m-block { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 0.55s cubic-bezier(.2,.7,.2,1), opacity 0.45s; }
@@ -398,16 +402,17 @@ h1 em { font-style: italic; color: var(--green); }
 .m-block.on > div { padding-top: 14px; }
 .m-block.flash > div > * { animation: flash 1.2s ease; }
 @keyframes flash { 0% { box-shadow: 0 0 0 0 transparent; transform: translateY(8px); } 35% { box-shadow: 0 0 0 2px color-mix(in srgb, var(--m-accent) 60%, transparent); transform: none; } 100% { box-shadow: 0 0 0 0 transparent; } }
-.m-booking { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 8px; align-items: end; background: #fff; border-radius: 12px; padding: 12px; }
+.m-booking { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 8px; align-items: end; background: #fff; border-radius: 14px; padding: 12px; box-shadow: 0 14px 30px -18px rgba(0,0,0,0.4); }
 .m-booking label { display: grid; gap: 4px; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
 .m-booking label i { height: 26px; border-radius: 8px; background: var(--m-soft); }
 .m-btn { background: var(--m-accent); color: #fff; font-size: 0.68rem; font-weight: 600; padding: 8px 12px; border-radius: 999px; white-space: nowrap; }
 .m-h { font-family: var(--serif); font-size: 1.1rem; margin-bottom: 8px; }
 .m-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; border-radius: 12px; }
-.m-gallery svg { display: block; width: 100%; aspect-ratio: 1; border-radius: 10px; }
-.m-review { background: var(--m-soft); border-radius: 12px; padding: 14px 16px; }
+.m-gallery img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; transition: transform 0.4s; }
+.m-gallery img:hover { transform: scale(1.03); }
+.m-review { background: var(--m-soft); border-radius: 14px; padding: 18px 20px; text-align: center; }
 .m-stars { color: var(--m-accent); letter-spacing: 2px; font-size: 0.8rem; }
-.m-review p { font-family: var(--serif); font-size: 1.05rem; line-height: 1.25; margin: 4px 0; }
+.m-review p { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; margin: 6px auto; max-width: 30ch; }
 .m-review small { font-size: 0.66rem; opacity: 0.75; }
 .m-map { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
 .m-map svg { display: block; width: 100%; height: 110px; }
@@ -438,6 +443,6 @@ h1 em { font-style: italic; color: var(--green); }
 @media (max-width: 600px) {
   .m-nav nav { display: none; }
   .m-booking { grid-template-columns: 1fr 1fr; }
-  .m-hero-text { right: 18px; }
+  .m-hero-text h3 { font-size: 1.5rem; }
   .demo-row { grid-template-columns: 1fr; gap: 6px; }
 }

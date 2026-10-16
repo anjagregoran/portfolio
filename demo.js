@@ -28,7 +28,7 @@
 
   const SITES = {
     apartments: {
-      url: "villa-lavanda.hr", name: "Villa Lavanda",
+      url: "villa-lavanda.hr", name: "Villa Lavanda", img: "apt",
       en: { tag: "Sea view apartments in Opatija", title: "Wake up to the sea.", links: ["Apartments", "Location", "Contact"], cta: "Book now",
         fields: ["Check in", "Check out", "Guests"], go: "Check availability",
         quote: "The view from the terrace was even better than the photos.", who: "Guest from Vienna", mapT: "Find us", mapD: "Five minutes from the beach" },
@@ -37,7 +37,7 @@
         quote: "Pogled s terase bio je još ljepši nego na fotografijama.", who: "Gost iz Beča", mapT: "Kako do nas", mapD: "Pet minuta od plaže" }
     },
     cafe: {
-      url: "kavaikruh.hr", name: "Kava & Kruh",
+      url: "kavaikruh.hr", name: "Kava & Kruh", img: "cafe",
       en: { tag: "Coffee and fresh bread in Kastav", title: "Slow mornings start here.", links: ["Menu", "About", "Visit"], cta: "Reserve a table",
         fields: ["Date", "Time", "People"], go: "Reserve",
         quote: "The best croissant I have had outside Paris.", who: "Guest from Rijeka", mapT: "Find us", mapD: "On the old town square" },
@@ -46,7 +46,7 @@
         quote: "Najbolji kroasan koji sam jela izvan Pariza.", who: "Gošća iz Rijeke", mapT: "Kako do nas", mapD: "Na glavnom trgu starog grada" }
     },
     salon: {
-      url: "studiobloom.com", name: "Studio Bloom",
+      url: "studiobloom.com", name: "Studio Bloom", img: "salon",
       en: { tag: "Hair and beauty in Marcellus", title: "Feel like yourself again.", links: ["Services", "Prices", "Contact"], cta: "Book a visit",
         fields: ["Service", "Date", "Time"], go: "Find a time",
         quote: "Friendly, calm and always on time.", who: "Regular client", mapT: "Visit us", mapD: "Free parking at the door" },
@@ -56,70 +56,27 @@
     }
   };
 
-  // Simple drawn scenes in the colours of the chosen palette.
-  const SCENES = {
-    apartments: (v) => `
-      <rect width="400" height="220" fill="url(#sky-${v})"/>
-      <circle cx="300" cy="78" r="30" fill="#fff" opacity=".85"/>
-      <rect y="150" width="400" height="70" fill="var(--m-accent)" opacity=".55"/>
-      <rect y="150" width="400" height="6" fill="#fff" opacity=".35"/>
-      <path d="M40 220V112l70-38 70 38v108z" fill="var(--m-bg)"/>
-      <path d="M30 116l80-46 80 46" fill="none" stroke="var(--m-ink)" stroke-width="5" stroke-linejoin="round"/>
-      <path d="M86 220v-46a24 24 0 0 1 48 0v46" fill="var(--m-soft)"/>
-      <rect x="58" y="122" width="22" height="28" rx="3" fill="var(--m-accent)" opacity=".8"/>
-      <rect x="140" y="122" width="22" height="28" rx="3" fill="var(--m-accent)" opacity=".8"/>
-      <path d="M352 220c-14-40-10-92 2-120 12 28 16 80 2 120z" fill="var(--m-ink)" opacity=".8"/>`,
-    cafe: (v) => `
-      <rect width="400" height="220" fill="url(#sky-${v})"/>
-      <path d="M0 0h400v34H0z" fill="var(--m-soft)"/>
-      ${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => `<path d="M${i * 40} 34h40v14a20 20 0 0 1-40 0z" fill="${i % 2 ? "var(--m-bg)" : "var(--m-accent)"}"/>`).join("")}
-      <rect x="40" y="168" width="320" height="10" rx="5" fill="var(--m-ink)" opacity=".85"/>
-      <path d="M150 112h64v34a22 22 0 0 1-22 22h-20a22 22 0 0 1-22-22z" fill="#fff"/>
-      <path d="M214 120h8a12 12 0 0 1 0 24h-8" fill="none" stroke="#fff" stroke-width="6"/>
-      <path d="M170 98c-6-10 6-14 0-24M186 98c-6-10 6-14 0-24M202 98c-6-10 6-14 0-24" fill="none" stroke="var(--m-ink)" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-      <path d="M254 166c4-26 60-26 64 0z" fill="var(--m-accent)" opacity=".75"/>
-      <path d="M262 160c8-14 40-14 48 0" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/>`,
-    salon: (v) => `
-      <rect width="400" height="220" fill="url(#sky-${v})"/>
-      <path d="M150 196V80a50 50 0 0 1 100 0v116z" fill="#fff" stroke="var(--m-ink)" stroke-width="5"/>
-      <path d="M166 186V84a34 34 0 0 1 68 0v102z" fill="var(--m-soft)"/>
-      <rect x="120" y="196" width="160" height="10" rx="5" fill="var(--m-ink)" opacity=".85"/>
-      <path d="M306 196h28l-4-40h-20z" fill="var(--m-accent)"/>
-      <circle cx="308" cy="138" r="11" fill="var(--m-accent)" opacity=".7"/>
-      <circle cx="330" cy="130" r="13" fill="#fff"/>
-      <circle cx="322" cy="112" r="10" fill="var(--m-accent)" opacity=".5"/>
-      <path d="M320 156c0-10 2-18 8-26" fill="none" stroke="var(--m-ink)" stroke-width="3" opacity=".6"/>
-      <path d="M60 196c0-30 14-44 34-44s34 14 34 44" fill="var(--m-accent)" opacity=".55"/>`
-  };
-
   let lang = document.documentElement.lang === "hr" ? "hr" : "en";
   const state = { type: "apartments", palette: "sage", addons: new Set() };
   let uid = 0;
 
-  function scene(type, cls) {
-    const v = ++uid;
-    return `<svg class="${cls}" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs><linearGradient id="sky-${v}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="var(--m-sky)"/><stop offset="1" stop-color="var(--m-soft)"/></linearGradient></defs>
-      ${SCENES[type](v)}</svg>`;
-  }
+  const photo = (site, n) => `img/demo/${site.img}-${n}.jpg`;
 
   function render() {
     const ui = UI[lang];
     const site = SITES[state.type];
     const c = site[lang];
-    const others = Object.keys(SITES).filter((k) => k !== state.type);
     root.innerHTML = `
       <div class="demo-frame">
         <div class="demo-bar"><i></i><i></i><i></i><span>${site.url}</span><b>${ui.demo}</b></div>
         <div class="demo-site" data-font="serif">
-          <div class="m-nav">
-            <strong>${site.name}</strong>
-            <nav>${c.links.map((l) => `<span>${l}</span>`).join("")}</nav>
-            <span class="m-cta m-addon-inline ${state.addons.has("booking") ? "on" : ""}">${c.cta}</span>
-          </div>
           <div class="m-hero">
-            ${scene(state.type, "m-scene")}
+            <img src="${photo(site, "hero")}" alt="" width="1400" height="875">
+            <div class="m-nav">
+              <strong>${site.name}</strong>
+              <nav>${c.links.map((l) => `<span>${l}</span>`).join("")}</nav>
+              <span class="m-cta ${state.addons.has("booking") ? "on" : ""}">${c.cta}</span>
+            </div>
             <div class="m-hero-text"><p>${c.tag}</p><h3>${c.title}</h3></div>
           </div>
           <div class="m-block ${state.addons.has("booking") ? "on" : ""}" data-addon="booking"><div>
@@ -127,7 +84,7 @@
           </div></div>
           <div class="m-block ${state.addons.has("gallery") ? "on" : ""}" data-addon="gallery"><div>
             <p class="m-h">${ui.gallery}</p>
-            <div class="m-gallery">${scene(state.type, "")}${scene(others[0], "")}${scene(others[1], "")}</div>
+            <div class="m-gallery">${[1, 2, 3].map((n) => `<img src="${photo(site, n)}" alt="" width="700" height="700" loading="lazy">`).join("")}</div>
           </div></div>
           <div class="m-block ${state.addons.has("reviews") ? "on" : ""}" data-addon="reviews"><div>
             <div class="m-review"><span class="m-stars">★★★★★</span><p>“${c.quote}”</p><small>${c.who}</small></div>
@@ -222,6 +179,7 @@
 
   document.addEventListener("langchange", (e) => { lang = e.detail; render(); });
 
+  Object.values(SITES).forEach((s) => ["hero", 1, 2, 3].forEach((n) => { new Image().src = photo(s, n); }));
   render();
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((en) => { if (en[0].isIntersecting) { playTour(); io.disconnect(); } });
