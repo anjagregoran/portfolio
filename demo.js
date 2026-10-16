@@ -54,10 +54,10 @@
     },
     cafe: {
       url: "kavaikruh.hr", name: "Kava & Kruh", img: "cafe",
-      en: { tag: "Coffee and fresh bread in Kastav", title: "Slow mornings start here.", links: ["Menu", "About", "Visit"], cta: "Reserve a table",
+      en: { tag: "Coffee and fresh bread", title: "Slow mornings start here.", links: ["Menu", "About", "Visit"], cta: "Reserve a table",
         fields: ["Date", "Time", "People"], go: "Reserve",
         quote: "The best croissant I have had outside Paris.", who: "Guest from Rijeka", mapT: "Find us", mapD: "On the old town square" },
-      hr: { tag: "Kava i svježi kruh u Kastvu", title: "Ovdje počinju opuštena jutra.", links: ["Jelovnik", "O nama", "Posjetite nas"], cta: "Rezervirajte stol",
+      hr: { tag: "Kava i svježi kruh", title: "Ovdje počinju opuštena jutra.", links: ["Jelovnik", "O nama", "Posjetite nas"], cta: "Rezervirajte stol",
         fields: ["Datum", "Vrijeme", "Osobe"], go: "Rezervirajte",
         quote: "Najbolji kroasan koji sam jela izvan Pariza.", who: "Gošća iz Rijeke", mapT: "Kako do nas", mapD: "Na glavnom trgu starog grada" }
     },
@@ -98,8 +98,8 @@
       hr: [["waves", "Privatni bazen"], ["sun", "Terasa s pogledom na more"], ["car", "Besplatno parkiralište"]]
     },
     cafe: {
-      en: { head: "Today at the counter", items: [["cup", "Cappuccino", "2.50 €"], ["croissant", "Butter croissant", "1.80 €"], ["loaf", "Sourdough loaf", "4.20 €"]], badge: "FRESH BREAD EVERY MORNING · BAKED IN KASTAV · " },
-      hr: { head: "Danas na pultu", items: [["cup", "Cappuccino", "2,50 €"], ["croissant", "Kroasan s maslacem", "1,80 €"], ["loaf", "Kruh s kiselim tijestom", "4,20 €"]], badge: "SVJEŽI KRUH SVAKO JUTRO · PEČEMO U KASTVU · " }
+      en: { head: "Today at the counter", items: [["cup", "Cappuccino", "2.50 €"], ["croissant", "Butter croissant", "1.80 €"], ["loaf", "Sourdough loaf", "4.20 €"]], badge: "FRESH BREAD EVERY MORNING · COFFEE ALL DAY · " },
+      hr: { head: "Danas na pultu", items: [["cup", "Cappuccino", "2,50 €"], ["croissant", "Kroasan s maslacem", "1,80 €"], ["loaf", "Kruh s kiselim tijestom", "4,20 €"]], badge: "SVJEŽI KRUH SVAKO JUTRO · KAVA CIJELI DAN · " }
     },
     salon: {
       en: { items: [["scissors", "Cut and style", "from $45"], ["drop", "Colour", "from $90"], ["wind", "Blow dry", "$35"]], b1: "Book now", b2: "Our services", offer: "New clients get 15% off their first visit" },
