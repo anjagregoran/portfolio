@@ -402,7 +402,7 @@ h1 em { font-style: italic; color: var(--green); }
 .m-block.on > div { padding-top: 14px; }
 .m-block.flash > div > * { animation: flash 1.2s ease; }
 @keyframes flash { 0% { box-shadow: 0 0 0 0 transparent; transform: translateY(8px); } 35% { box-shadow: 0 0 0 2px color-mix(in srgb, var(--m-accent) 60%, transparent); transform: none; } 100% { box-shadow: 0 0 0 0 transparent; } }
-.m-booking { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 8px; align-items: end; background: #fff; border-radius: 14px; padding: 12px; box-shadow: 0 14px 30px -18px rgba(0,0,0,0.4); }
+.m-booking { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 8px; align-items: end; background: var(--m-card); border-radius: 14px; padding: 12px; box-shadow: 0 14px 30px -18px rgba(0,0,0,0.4); }
 .m-booking label { display: grid; gap: 4px; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
 .m-booking label i { height: 26px; border-radius: 8px; background: var(--m-soft); }
 .m-btn { background: var(--m-accent); color: #fff; font-size: 0.68rem; font-weight: 600; padding: 8px 12px; border-radius: 999px; white-space: nowrap; }
@@ -416,7 +416,7 @@ h1 em { font-style: italic; color: var(--green); }
 .m-review small { font-size: 0.66rem; opacity: 0.75; }
 .m-map { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
 .m-map svg { display: block; width: 100%; height: 110px; }
-.m-map div { position: absolute; left: 12px; top: 12px; background: #fff; border-radius: 10px; padding: 8px 12px; display: grid; font-size: 0.66rem; }
+.m-map div { position: absolute; left: 12px; top: 12px; background: var(--m-card); border-radius: 10px; padding: 8px 12px; display: grid; font-size: 0.66rem; }
 .m-map strong { font-family: var(--serif); font-weight: 400; font-size: 0.95rem; }
 .demo-site > .m-block:last-child.on > div { padding-bottom: 14px; }
 
@@ -436,8 +436,8 @@ h1 em { font-style: italic; color: var(--green); }
 .demo-row button[aria-pressed="true"] { background: var(--green); color: var(--cream); border-color: var(--green); }
 .demo-row .addon::before { content: "+ "; }
 .demo-row .addon[aria-pressed="true"]::before { content: "✓ "; }
-.demo-row .swatch { width: 28px; height: 28px; padding: 0; background: var(--sw); border: 2px solid var(--cream); box-shadow: 0 0 0 1px var(--line); }
-.demo-row .swatch[aria-pressed="true"] { background: var(--sw); box-shadow: 0 0 0 2px var(--ink); }
+.demo-row .swatch { width: 28px; height: 28px; padding: 0; background: linear-gradient(135deg, var(--sw) 50%, var(--sw2) 50%); border: 2px solid var(--cream); box-shadow: 0 0 0 1px var(--line); }
+.demo-row .swatch[aria-pressed="true"] { background: linear-gradient(135deg, var(--sw) 50%, var(--sw2) 50%); box-shadow: 0 0 0 2px var(--ink); }
 .demo-note { font-size: 0.78rem; color: var(--ink-soft); }
 
 @media (max-width: 600px) {
@@ -445,4 +445,66 @@ h1 em { font-style: italic; color: var(--green); }
   .m-booking { grid-template-columns: 1fr 1fr; }
   .m-hero-text h3 { font-size: 1.5rem; }
   .demo-row { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* ---------- Three different looks for the demo businesses ---------- */
+
+/* Villa Lavanda: quiet Mediterranean luxury. Thin elegant serif, centred, square buttons with fine lines. */
+.demo-site[data-style="apartments"] { font-family: var(--sans); }
+.demo-site[data-style="apartments"] .m-nav { flex-direction: column; gap: 4px; padding-top: 16px; }
+.demo-site[data-style="apartments"] .m-nav strong { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 1.35rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500; }
+.demo-site[data-style="apartments"] .m-nav nav { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; }
+.demo-site[data-style="apartments"] .m-cta { position: absolute; right: 16px; top: 16px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.8); border-radius: 0; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.56rem; }
+.demo-site[data-style="apartments"] .m-hero-text { text-align: center; }
+.demo-site[data-style="apartments"] .m-hero-text p { letter-spacing: 0.3em; }
+.demo-site[data-style="apartments"] .m-hero-text h3 { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; font-size: clamp(2rem, 3.4vw, 2.9rem); }
+.demo-site[data-style="apartments"] .m-booking { border-radius: 0; border: 1px solid var(--m-soft); box-shadow: none; }
+.demo-site[data-style="apartments"] .m-booking label i { border-radius: 0; background: transparent; border-bottom: 1px solid var(--m-ink); height: 22px; }
+.demo-site[data-style="apartments"] .m-btn { border-radius: 0; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.56rem; padding: 10px 14px; }
+.demo-site[data-style="apartments"] .m-h, .demo-site[data-style="apartments"] .m-review p { font-family: "Cormorant Garamond", serif; font-style: italic; }
+.demo-site[data-style="apartments"] .m-gallery img, .demo-site[data-style="apartments"] .m-review, .demo-site[data-style="apartments"] .m-map { border-radius: 0; }
+.demo-site[data-style="apartments"] .m-review { background: transparent; border-block: 1px solid var(--m-soft); }
+
+/* Kava & Kruh: warm and cheerful. Chunky soft serif, a coloured panel beside the photo, round everything. */
+.demo-site[data-style="cafe"] .m-hero {
+  display: grid; grid-template-columns: 1fr 1.1fr; grid-template-rows: auto 1fr; grid-template-areas: "nav nav" "text img";
+  aspect-ratio: auto; height: clamp(250px, 24vw, 330px); color: var(--m-ink); background: var(--m-soft); overflow: hidden;
+}
+.demo-site[data-style="cafe"] .m-hero::after { display: none; }
+.demo-site[data-style="cafe"] .m-hero img { position: static; grid-area: img; width: calc(100% - 14px); height: calc(100% - 14px); border-radius: 22px 22px 0 22px; transform: none; }
+.demo:hover .demo-site[data-style="cafe"] .m-hero img { transform: none; }
+.demo-site[data-style="cafe"] .m-nav { position: static; grid-area: nav; padding: 12px 16px; }
+.demo-site[data-style="cafe"] .m-nav strong { font-family: "Fraunces", serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; color: var(--m-accent); }
+.demo-site[data-style="cafe"] .m-nav nav { font-weight: 600; }
+.demo-site[data-style="cafe"] .m-cta { background: var(--m-accent); color: #fff; font-weight: 700; }
+.demo-site[data-style="cafe"] .m-hero-text { position: static; grid-area: text; align-self: center; padding: 0 16px 18px 18px; }
+.demo-site[data-style="cafe"] .m-hero-text p { color: var(--m-accent); letter-spacing: 0.08em; }
+.demo-site[data-style="cafe"] .m-hero-text h3 { font-family: "Fraunces", serif; font-weight: 800; color: var(--m-ink); font-size: clamp(1.6rem, 2.7vw, 2.3rem); line-height: 1.02; letter-spacing: -0.02em; }
+.demo-site[data-style="cafe"] .m-booking, .demo-site[data-style="cafe"] .m-review { border-radius: 22px; }
+.demo-site[data-style="cafe"] .m-btn { font-weight: 800; padding: 9px 16px; }
+.demo-site[data-style="cafe"] .m-h, .demo-site[data-style="cafe"] .m-review p { font-family: "Fraunces", serif; font-weight: 600; }
+.demo-site[data-style="cafe"] .m-gallery img { border-radius: 22px; }
+.demo-site[data-style="cafe"] .m-gallery img:nth-child(2) { border-radius: 50%; }
+.demo-site[data-style="cafe"] .m-map { border-radius: 22px; }
+
+/* studio bloom: bold, minimal and modern. Wide grotesque in capitals, square edges, strong contrast. */
+.demo-site[data-style="salon"] { font-family: var(--sans); }
+.demo-site[data-style="salon"] .m-hero::after { background: linear-gradient(to top, rgba(10, 8, 8, 0.72), rgba(10, 8, 8, 0.1) 55%), linear-gradient(to bottom, rgba(0,0,0,0.3), transparent 24%); }
+.demo-site[data-style="salon"] .m-nav strong { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; text-transform: lowercase; }
+.demo-site[data-style="salon"] .m-nav nav { font-family: "Syne", sans-serif; font-weight: 600; text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.08em; }
+.demo-site[data-style="salon"] .m-cta { border-radius: 0; background: var(--m-accent); color: var(--m-bg); font-family: "Syne", sans-serif; text-transform: uppercase; font-size: 0.58rem; letter-spacing: 0.06em; }
+.demo-site[data-style="salon"] .m-hero-text p { font-family: "Syne", sans-serif; letter-spacing: 0.06em; }
+.demo-site[data-style="salon"] .m-hero-text h3 { font-family: "Syne", sans-serif; font-weight: 800; text-transform: uppercase; font-size: clamp(1.5rem, 2.8vw, 2.3rem); letter-spacing: -0.03em; line-height: 0.95; max-width: 12ch; }
+.demo-site[data-style="salon"] .m-booking, .demo-site[data-style="salon"] .m-review, .demo-site[data-style="salon"] .m-map, .demo-site[data-style="salon"] .m-gallery img { border-radius: 0; }
+.demo-site[data-style="salon"] .m-booking label i { border-radius: 0; }
+.demo-site[data-style="salon"] .m-btn { border-radius: 0; background: var(--m-accent); color: var(--m-bg); font-family: "Syne", sans-serif; text-transform: uppercase; }
+.demo-site[data-style="salon"] .m-h, .demo-site[data-style="salon"] .m-review p { font-family: "Syne", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; }
+.demo-site[data-style="salon"] .m-review p { font-size: 1rem; }
+.demo-site[data-style="salon"] .m-gallery { gap: 2px; }
+.demo-site[data-style="salon"] .m-stars { color: var(--m-ink); }
+
+@media (max-width: 600px) {
+  .demo-site[data-style="cafe"] .m-hero { grid-template-columns: 1fr; grid-template-areas: "nav" "img" "text"; height: auto; }
+  .demo-site[data-style="cafe"] .m-hero img { width: auto; height: 150px; margin: 0 12px; border-radius: 18px; }
+  .demo-site[data-style="cafe"] .m-hero-text { padding: 12px 16px 16px; }
 }

@@ -1,14 +1,30 @@
 // "Change it live": a small pretend website next to the headline that visitors can restyle and extend.
+// Each business has its own look: fonts, colours and layout.
 (function () {
   const root = document.getElementById("demo");
   if (!root) return;
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Colour sets per business. card is the colour of boxes like the booking form.
   const PALETTES = {
-    sage: { bg: "#f6f4ee", ink: "#23402f", accent: "#2f5a43", soft: "#dbe6d3", sky: "#eef3e8" },
-    sea: { bg: "#f3f6f8", ink: "#1d3b53", accent: "#2f6f8f", soft: "#d4e5ee", sky: "#e8f1f6" },
-    terracotta: { bg: "#faf3ee", ink: "#4a2a1e", accent: "#c0643f", soft: "#f1d9cb", sky: "#f8e9df" },
-    lavender: { bg: "#f6f3f8", ink: "#3a2d4a", accent: "#7a5c9a", soft: "#e4dbef", sky: "#efe9f6" }
+    apartments: {
+      sea: { bg: "#f4f7f9", ink: "#14324a", accent: "#1f6f9a", soft: "#dde9f1", card: "#ffffff" },
+      sand: { bg: "#f8f4ec", ink: "#3a3226", accent: "#a9824a", soft: "#ece2cf", card: "#ffffff" },
+      olive: { bg: "#f4f4ec", ink: "#2f3a24", accent: "#6b7b3a", soft: "#e1e5cf", card: "#ffffff" },
+      night: { bg: "#e9ecf2", ink: "#0f1d33", accent: "#0f1d33", soft: "#d3d9e5", card: "#ffffff" }
+    },
+    cafe: {
+      terracotta: { bg: "#fbf1e6", ink: "#3d1f12", accent: "#c4562c", soft: "#f3dcc7", card: "#fffaf4" },
+      mint: { bg: "#eef6f0", ink: "#1d3a2a", accent: "#2f8a5b", soft: "#d3eadb", card: "#ffffff" },
+      butter: { bg: "#fdf6dc", ink: "#3b2f10", accent: "#d99a17", soft: "#f6e7b0", card: "#fffdf3" },
+      berry: { bg: "#fbeff2", ink: "#3e1424", accent: "#b23a62", soft: "#f2d3dd", card: "#ffffff" }
+    },
+    salon: {
+      blush: { bg: "#fbf3f1", ink: "#1a1414", accent: "#1a1414", soft: "#f1dcd7", card: "#ffffff" },
+      sage: { bg: "#f2f4ef", ink: "#1b211b", accent: "#4f6b55", soft: "#dfe6db", card: "#ffffff" },
+      stone: { bg: "#f3f1ee", ink: "#222222", accent: "#8a7a68", soft: "#e3ded6", card: "#ffffff" },
+      noir: { bg: "#161414", ink: "#f4efe9", accent: "#e8c9bf", soft: "#2a2524", card: "#221e1d" }
+    }
   };
 
   const UI = {
@@ -46,7 +62,7 @@
         quote: "Najbolji kroasan koji sam jela izvan Pariza.", who: "Gošća iz Rijeke", mapT: "Kako do nas", mapD: "Na glavnom trgu starog grada" }
     },
     salon: {
-      url: "studiobloom.com", name: "Studio Bloom", img: "salon",
+      url: "studiobloom.com", name: "studio bloom", img: "salon",
       en: { tag: "Hair and beauty in Marcellus", title: "Feel like yourself again.", links: ["Services", "Prices", "Contact"], cta: "Book a visit",
         fields: ["Service", "Date", "Time"], go: "Find a time",
         quote: "Friendly, calm and always on time.", who: "Regular client", mapT: "Visit us", mapD: "Free parking at the door" },
@@ -56,20 +72,20 @@
     }
   };
 
-  let lang = document.documentElement.lang === "hr" ? "hr" : "en";
-  const state = { type: "apartments", palette: "sage", addons: new Set() };
-  let uid = 0;
-
   const photo = (site, n) => `img/demo/${site.img}-${n}.jpg`;
+  let lang = document.documentElement.lang === "hr" ? "hr" : "en";
+  const state = { type: "apartments", palette: {}, addons: new Set() };
+  Object.keys(PALETTES).forEach((t) => { state.palette[t] = Object.keys(PALETTES[t])[0]; });
 
   function render() {
     const ui = UI[lang];
     const site = SITES[state.type];
     const c = site[lang];
+    const pals = PALETTES[state.type];
     root.innerHTML = `
       <div class="demo-frame">
         <div class="demo-bar"><i></i><i></i><i></i><span>${site.url}</span><b>${ui.demo}</b></div>
-        <div class="demo-site" data-font="serif">
+        <div class="demo-site" data-style="${state.type}">
           <div class="m-hero">
             <img src="${photo(site, "hero")}" alt="" width="1400" height="875">
             <div class="m-nav">
@@ -93,10 +109,10 @@
             <div class="m-map">
               <svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <rect width="400" height="120" fill="var(--m-soft)"/>
-                <path d="M0 86c60-20 120 10 180-6s110-40 220-20v60H0z" fill="var(--m-accent)" opacity=".35"/>
-                <path d="M40 0l60 120M0 40l400 30M220 0l-30 120" stroke="#fff" stroke-width="6" opacity=".8"/>
-                <path d="M196 40a14 14 0 0 1 28 0c0 12-14 26-14 26s-14-14-14-26z" fill="var(--m-ink)"/>
-                <circle cx="210" cy="40" r="5" fill="#fff"/>
+                <path d="M0 86c60-20 120 10 180-6s110-40 220-20v60H0z" fill="var(--m-accent)" opacity=".3"/>
+                <path d="M40 0l60 120M0 40l400 30M220 0l-30 120" stroke="var(--m-card)" stroke-width="6" opacity=".9"/>
+                <path d="M196 40a14 14 0 0 1 28 0c0 12-14 26-14 26s-14-14-14-26z" fill="var(--m-accent)"/>
+                <circle cx="210" cy="40" r="5" fill="var(--m-card)"/>
               </svg>
               <div><strong>${c.mapT}</strong><span>${c.mapD}</span></div>
             </div>
@@ -107,8 +123,8 @@
         <p class="demo-title">${ui.title}</p>
         <div class="demo-row"><span>${ui.type}</span><div>${Object.keys(SITES).map((k) =>
           `<button type="button" data-type="${k}" aria-pressed="${k === state.type}">${ui.types[k]}</button>`).join("")}</div></div>
-        <div class="demo-row"><span>${ui.colour}</span><div>${Object.keys(PALETTES).map((k) =>
-          `<button type="button" class="swatch" data-palette="${k}" aria-pressed="${k === state.palette}" aria-label="${k}" style="--sw:${PALETTES[k].accent}"></button>`).join("")}</div></div>
+        <div class="demo-row"><span>${ui.colour}</span><div>${Object.keys(pals).map((k) =>
+          `<button type="button" class="swatch" data-palette="${k}" aria-pressed="${k === state.palette[state.type]}" aria-label="${k}" style="--sw:${pals[k].accent};--sw2:${pals[k].bg}"></button>`).join("")}</div></div>
         <div class="demo-row"><span>${ui.add}</span><div>${Object.keys(ui.addons).map((k) =>
           `<button type="button" class="addon" data-addon="${k}" aria-pressed="${state.addons.has(k)}">${ui.addons[k]}</button>`).join("")}</div></div>
         <p class="demo-note">${ui.note}</p>
@@ -117,14 +133,9 @@
   }
 
   function applyPalette() {
-    const p = PALETTES[state.palette];
+    const p = PALETTES[state.type][state.palette[state.type]];
     const s = root.style;
-    s.setProperty("--m-bg", p.bg); s.setProperty("--m-ink", p.ink); s.setProperty("--m-accent", p.accent);
-    s.setProperty("--m-soft", p.soft); s.setProperty("--m-sky", p.sky);
-  }
-
-  function setPressed(sel, attr, val) {
-    root.querySelectorAll(sel).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset[attr] === val)));
+    ["bg", "ink", "accent", "soft", "card"].forEach((k) => s.setProperty(`--m-${k}`, p[k]));
   }
 
   function toggleAddon(k, force) {
@@ -144,25 +155,36 @@
   function setType(k) {
     if (k === state.type) return;
     state.type = k;
-    const siteEl = root.querySelector(".demo-site");
-    siteEl.classList.add("fading");
-    setTimeout(() => { render(); const s = root.querySelector(".demo-site"); s.classList.add("fading"); requestAnimationFrame(() => s.classList.remove("fading")); }, reduce ? 0 : 200);
+    root.querySelector(".demo-site").classList.add("fading");
+    setTimeout(() => {
+      render();
+      const s = root.querySelector(".demo-site");
+      s.classList.add("fading");
+      requestAnimationFrame(() => requestAnimationFrame(() => s.classList.remove("fading")));
+    }, reduce ? 0 : 220);
   }
 
-  function setPalette(k) { state.palette = k; applyPalette(); setPressed(".swatch", "palette", k); }
+  function setPalette(k) {
+    state.palette[state.type] = k;
+    applyPalette();
+    root.querySelectorAll(".swatch").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.palette === k)));
+  }
+  const paletteAt = (i) => Object.keys(PALETTES[state.type])[i];
 
   // A short tour shows what the buttons do, and stops as soon as the visitor clicks anything.
   let tour = [];
-  function stopTour() { tour.forEach(clearTimeout); tour = []; }
+  let touched = false;
+  function stopTour() { touched = true; tour.forEach(clearTimeout); tour = []; }
   function playTour() {
-    if (reduce) return;
+    if (reduce || touched) return;
     const steps = [
       [1200, () => toggleAddon("booking", true)],
-      [2600, () => setPalette("sea")],
-      [4000, () => toggleAddon("gallery", true)],
-      [5600, () => setPalette("terracotta")],
-      [7000, () => toggleAddon("reviews", true)],
-      [8800, () => { root.querySelector(".demo-site").scrollTo({ top: 0, behavior: "smooth" }); setPalette("sage"); }]
+      [2600, () => setPalette(paletteAt(1))],
+      [4000, () => setType("cafe")],
+      [5400, () => toggleAddon("gallery", true)],
+      [7000, () => setType("salon")],
+      [8400, () => setPalette(paletteAt(3))],
+      [10000, () => { setPalette(paletteAt(0)); setType("apartments"); }]
     ];
     tour = steps.map(([ms, fn]) => setTimeout(fn, ms));
   }

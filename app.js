@@ -1,4 +1,9 @@
 (function () {
+  // A refresh always opens the page at the top, even after jumping to a section.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  scrollTo(0, 0);
+  addEventListener("pageshow", () => scrollTo(0, 0));
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
 
