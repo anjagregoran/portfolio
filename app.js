@@ -136,7 +136,12 @@
       form.reset();
       status.textContent = s.sent;
     } catch (err) {
-      status.textContent = s.error;
+      // If the form service fails, nothing is lost: offer the same message as a ready email.
+      const d = new FormData(form);
+      const subject = `Website building offer: ${d.get("need")} from ${d.get("name")}`;
+      const body = `${d.get("message")}\n\n${d.get("name")}\n${d.get("email")}`;
+      const href = `mailto:anja.gregoran1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.innerHTML = `${s.error} <a href="${href}">${s.mail}</a>`;
     }
   });
 

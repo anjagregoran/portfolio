@@ -61,7 +61,7 @@ const HR = {
   "form.send": "Pošaljite",
 
   "contact.timeLabel": "Rok izrade",
-  "contact.direct": "Ili mi se javite izravno",
+  "contact.direct": "Javite mi se izravno",
   "contact.hr": "Hrvatska",
   "contact.us": "SAD",
   "contact.time": "Rok izrade dogovaramo zajedno, a ako vam se žuri, stranica može biti gotova i za tjedan dana."
@@ -73,13 +73,15 @@ const STATUS = {
     offline: "The form is not connected yet, so your message was not sent.",
     sending: "Sending.",
     sent: "Thank you, I will write back to you soon.",
-    error: "Something went wrong, so please try again in a moment."
+    error: "The form could not send just now, but you can send the same message by email in one click.",
+    mail: "Send by email"
   },
   hr: {
     missing: "Molim vas da upišete ime, e-poštu i nekoliko riječi o svom poslu.",
     offline: "Obrazac još nije povezan, pa vaša poruka nije poslana.",
     sending: "Šaljem.",
     sent: "Hvala vam, javit ću vam se uskoro.",
-    error: "Nešto je pošlo po zlu, pa vas molim da pokušate ponovno za koji trenutak."
+    error: "Obrazac trenutačno ne može poslati poruku, ali istu poruku možete poslati e-poštom jednim klikom.",
+    mail: "Pošaljite e-poštom"
   }
 };

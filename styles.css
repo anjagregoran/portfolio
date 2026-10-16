@@ -648,3 +648,5 @@ img.portrait { width: 88px; height: 88px; border: 0; object-fit: cover; border-r
 /* Form panel in warm white instead of green */
 .form { background: #fffcf7; border: 1px solid var(--line); box-shadow: 0 30px 60px -45px rgba(43, 33, 27, 0.5); }
 .needs span { background: var(--cream); }
+
+.form-status a { color: var(--green); font-weight: 600; border-bottom: 1px solid currentColor; text-decoration: none; margin-left: 4px; }
