@@ -471,8 +471,8 @@ h1 em { font-style: italic; color: var(--green); }
   aspect-ratio: auto; height: clamp(250px, 24vw, 330px); color: var(--m-ink); background: var(--m-soft); overflow: hidden;
 }
 .demo-site[data-style="cafe"] .m-hero::after { display: none; }
-.demo-site[data-style="cafe"] .m-hero img { position: static; grid-area: img; width: calc(100% - 14px); height: calc(100% - 14px); border-radius: 22px 22px 0 22px; transform: none; }
-.demo:hover .demo-site[data-style="cafe"] .m-hero img { transform: none; }
+.demo-site[data-style="cafe"] .m-hero img:first-child { position: static; grid-area: img; width: calc(100% - 14px); height: calc(100% - 14px); border-radius: 22px 22px 0 22px; transform: none; }
+.demo:hover .demo-site[data-style="cafe"] .m-hero img:first-child { transform: none; }
 .demo-site[data-style="cafe"] .m-nav { position: static; grid-area: nav; padding: 12px 16px; }
 .demo-site[data-style="cafe"] .m-nav strong { font-family: "Fraunces", serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; color: var(--m-accent); }
 .demo-site[data-style="cafe"] .m-nav nav { font-weight: 600; }
@@ -505,7 +505,7 @@ h1 em { font-style: italic; color: var(--green); }
 
 @media (max-width: 600px) {
   .demo-site[data-style="cafe"] .m-hero { grid-template-columns: 1fr; grid-template-areas: "nav" "img" "text"; height: auto; }
-  .demo-site[data-style="cafe"] .m-hero img { width: auto; height: 150px; margin: 0 12px; border-radius: 18px; }
+  .demo-site[data-style="cafe"] .m-hero img:first-child { width: auto; height: 150px; margin: 0 12px; border-radius: 18px; }
   .demo-site[data-style="cafe"] .m-hero-text { padding: 12px 16px 16px; }
 }
 
@@ -586,3 +586,20 @@ html[lang="hr"] .demo-site[data-style="apartments"] .m-booking label i::after { 
 /* Anja's photo */
 img.portrait { width: 88px; height: 88px; border: 0; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 4px var(--cream), 0 0 0 5px var(--line), 0 14px 28px -16px rgba(43, 33, 27, 0.55); }
 @media (max-width: 600px) { img.portrait { width: 72px; height: 72px; } }
+
+/* Kava & Kruh: a round latte photo overlapping the bakery shelves, badge moves to the top corner */
+.m-inset { display: none; }
+.demo-site[data-style="cafe"] .m-inset {
+  display: block; position: absolute; z-index: 3; width: 108px; height: 108px; object-fit: cover; border-radius: 50%;
+  top: auto; right: auto; left: 47.6%; bottom: 14px; transform: translateX(-38%); border: 5px solid var(--m-soft);
+  box-shadow: 0 14px 26px -14px rgba(0,0,0,0.55);
+}
+.demo-site[data-style="cafe"] .m-badge { top: 52px; bottom: auto; right: 22px; width: 84px; height: 84px; }
+.demo-site[data-style="cafe"] .m-hero img:first-child { object-position: 50% 45%; }
+@media (max-width: 600px) {
+  .demo-site[data-style="cafe"] .m-inset { width: 74px; height: 74px; left: 22px; right: auto; bottom: auto; top: 150px; transform: none; border-width: 4px; }
+}
+@media (max-width: 600px) {
+  .demo-site[data-style="cafe"] .m-hero img:first-child { width: calc(100% - 24px); }
+  .demo-site[data-style="cafe"] .m-inset { display: none; }
+}

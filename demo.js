@@ -118,6 +118,7 @@
   function extraInHero(type) {
     const x = EXTRA[type][lang];
     if (type === "cafe") return `
+      <img class="m-inset" src="${photo(SITES.cafe, 1)}" alt="" width="700" height="700">
       <div class="m-badge" aria-hidden="true">
         <svg viewBox="0 0 120 120"><defs><path id="m-circle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
           <text><textPath href="#m-circle">${x.badge}</textPath></text></svg>
