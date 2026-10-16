@@ -60,7 +60,7 @@ const HR = {
   "form.message": "Napišite mi nešto o svom poslu",
   "form.send": "Pošaljite",
 
-  "ph.time": "Privremeno: koliko tjedana traje izrada stranice"
+  "contact.time": "Rok izrade dogovaramo zajedno, a ako vam se žuri, stranica može biti gotova i za tjedan dana."
 };
 
 const STATUS = {
