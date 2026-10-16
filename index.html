@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
   <span class="wordmark">Anja Gregoran Jenul</span>
   <div class="top-right">
     <nav class="nav" aria-label="Main">
-      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#work" data-i18n="nav.work">My work</a>
       <a href="#services" data-i18n="nav.services">Services</a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
@@ -31,44 +31,20 @@
 
 <main>
 
-  <section class="hero" id="work">
+  <section class="hero">
     <div class="intro">
       <p class="label" data-i18n="hero.label">Web design · Kastav and Marcellus</p>
       <h1 data-i18n="hero.title">Websites that show small businesses in their <em>best light</em>.</h1>
+    </div>
+    <div class="hero-side">
       <div class="hello">
         <div class="portrait" role="img" aria-label="Portrait placeholder"><span data-i18n="ph.photo">Photo</span></div>
         <p data-i18n="about.p1">Hi, I am Anja. I design and build websites for small businesses and split my time between Kastav, Croatia and Marcellus, Michigan. I make sure your business looks just as good online as it does in person.</p>
       </div>
       <div class="actions">
         <a class="btn" href="#contact" data-i18n="nav.start">Start a project</a>
-        <a class="btn btn-line" href="#services" data-i18n="hero.services">What I offer</a>
+        <a class="btn btn-line" href="#work" data-i18n="hero.work">See my work</a>
       </div>
-    </div>
-
-    <div class="work" aria-label="My work">
-      <div class="tabs" role="tablist" aria-label="Projects">
-        <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/" data-type="p1.type">Orbita prijevodi</button>
-        <button type="button" role="tab" aria-selected="false" data-old="img/cafe-before.jpg" data-new="img/cafe-photo-desktop.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/" data-type="p2.type">More Café &amp; Brunch</button>
-        <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/" data-type="p3.type">Abroad Life with Anja</button>
-      </div>
-      <div class="compare" style="--pos:50%">
-        <img class="compare-new" src="img/orbita-new.jpg" width="2000" height="1250" alt="The website after" data-i18n-alt="ba.altNew">
-        <div class="compare-old">
-          <img src="img/orbita-old.jpg" width="2000" height="1250" alt="The website before" data-i18n-alt="ba.altOld">
-        </div>
-        <span class="tag tag-before" data-i18n="ba.before">Before</span>
-        <span class="tag tag-after" data-i18n="ba.after">After</span>
-        <span class="compare-line" aria-hidden="true"><i></i></span>
-        <span class="drag-bubble" aria-hidden="true" data-i18n="ba.dragShort">Drag</span>
-        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="ba.hint">
-      </div>
-      <p class="caption">
-        <span id="ba-type" data-i18n="p1.type">Translation agency</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n="ba.drag">Drag to compare</span>
-        <span aria-hidden="true">·</span>
-        <a id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="ba.visit">Visit the site</a>
-      </p>
     </div>
   </section>
 
@@ -111,10 +87,44 @@
     </a>
   </section>
 
+  <section class="work-section" id="work">
+    <div class="work-text">
+      <p class="label" data-i18n="work.label">My work</p>
+      <h2 data-i18n="work.title">Before and after</h2>
+      <p data-i18n="work.p">Pick a project and drag the line to see how it started and how it looks now.</p>
+      <div class="tabs" role="tablist" aria-label="Projects">
+        <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/" data-type="p1.type">Orbita prijevodi</button>
+        <button type="button" role="tab" aria-selected="false" data-old="img/cafe-before.jpg" data-new="img/cafe-photo-desktop.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/" data-type="p2.type">More Café &amp; Brunch</button>
+        <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/" data-type="p3.type">Abroad Life with Anja</button>
+      </div>
+    </div>
+    <div class="work" aria-label="My work">
+
+      <div class="compare" style="--pos:50%">
+        <img class="compare-new" src="img/orbita-new.jpg" width="2000" height="1250" alt="The website after" data-i18n-alt="ba.altNew">
+        <div class="compare-old">
+          <img src="img/orbita-old.jpg" width="2000" height="1250" alt="The website before" data-i18n-alt="ba.altOld">
+        </div>
+        <span class="tag tag-before" data-i18n="ba.before">Before</span>
+        <span class="tag tag-after" data-i18n="ba.after">After</span>
+        <span class="compare-line" aria-hidden="true"><i></i></span>
+        <span class="drag-bubble" aria-hidden="true" data-i18n="ba.dragShort">Drag</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-i18n-aria="ba.hint">
+      </div>
+      <p class="caption">
+        <span id="ba-type" data-i18n="p1.type">Translation agency</span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n="ba.drag">Drag to compare</span>
+        <span aria-hidden="true">·</span>
+        <a id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="ba.visit">Visit the site</a>
+      </p>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="contact-text">
       <p class="label" data-i18n="contact.label">Start a project</p>
-      <h2 data-i18n="contact.title">Would you like a website like these?</h2>
+      <h2 data-i18n="contact.title">Would you like a professional website?</h2>
       <p data-i18n="contact.p1">Tell me what you need and I will write back to you with a plan and a price.</p>
       <span class="ph" data-i18n="ph.time">Placeholder: how many weeks a new site takes</span>
     </div>
@@ -153,7 +163,7 @@
   <span>© 2026</span>
 </footer>
 
-<script src="content.js?v=10"></script>
-<script src="app.js?v=8"></script>
+<script src="content.js?v=11"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>

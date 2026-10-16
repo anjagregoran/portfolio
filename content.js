@@ -6,13 +6,16 @@ const FORM_ENDPOINT = "https://formsubmit.co/ajax/anja.gregoran1@gmail.com";
 const HR = {
   "meta.title": "Anja Gregoran Jenul | Web dizajn za male poduzetnike",
 
-  "nav.work": "Radovi",
+  "nav.work": "Moji radovi",
   "nav.services": "Usluge",
   "nav.start": "Započnimo suradnju",
 
   "hero.label": "Web dizajn · Kastav i Marcellus",
   "hero.title": "Web stranice koje male poduzetnike predstavljaju u <em>najboljem svjetlu</em>.",
-  "hero.services": "Što nudim",
+  "hero.work": "Pogledajte moje radove",
+  "work.label": "Moji radovi",
+  "work.title": "Prije i poslije",
+  "work.p": "Odaberite projekt i povucite crtu da vidite kako je stranica izgledala na početku, a kako izgleda sada.",
   "about.p1": "Bok, ja sam Anja. Izrađujem web stranice za male poduzetnike, a vrijeme dijelim između Kastva i Marcellusa u Michiganu. Pobrinut ću se da vaš posao na internetu izgleda jednako dobro kao i uživo.",
 
   "why.label": "Zašto je to važno",
@@ -44,7 +47,7 @@ const HR = {
   "s3.d": "Kad god vam zatrebaju nove fotografije, cijene ili stranice, pobrinut ću se za to.",
 
   "contact.label": "Započnimo suradnju",
-  "contact.title": "Želite li i vi ovakvu stranicu?",
+  "contact.title": "Želite li profesionalnu web stranicu?",
   "contact.p1": "Recite mi što vam treba, a ja ću vam odgovoriti s planom i cijenom.",
 
   "form.need": "Što vam treba?",

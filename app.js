@@ -196,11 +196,10 @@
     });
   }, { rootMargin: "0px 0px -12% 0px" }) : null;
   if (io && !reduce) {
-    document.querySelectorAll(".why, .service, .contact-text, .form").forEach((el) => {
+    document.querySelectorAll(".why, .service, .work-text, .work, .contact-text, .form").forEach((el) => {
       el.classList.add("reveal");
       io.observe(el);
     });
-    io.observe(document.querySelector(".work"));
   }
 
   let saved = null;
