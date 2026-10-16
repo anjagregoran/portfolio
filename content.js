@@ -10,7 +10,7 @@ const HR = {
   "nav.services": "Što dobivate",
   "nav.start": "Započnimo suradnju",
 
-  "hero.label": "Web dizajn · Kastav i Marcellus",
+  "hero.label": "Web dizajn za male poduzetnike",
   "hero.title": "Web stranice koje male poduzetnike predstavljaju u <em>najboljem svjetlu</em>.",
   "hero.work": "Pogledajte moje radove",
   "work.label": "Moji radovi",
