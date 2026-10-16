@@ -1,6 +1,6 @@
 // FORM_ENDPOINT: where the sign-up form sends, for example "https://formsubmit.co/ajax/YOUR@EMAIL"
 // or a Formspree address. While it is empty, the form does not send.
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/anja.gregoran1@gmail.com";
 
 // English lives in index.html. Croatian lives here, one line per piece of text.
 const HR = {
@@ -16,9 +16,9 @@ const HR = {
   "about.p1": "Bok, ja sam Anja. Izrađujem web stranice za male poduzetnike, a vrijeme dijelim između Kastva i Marcellusa u Michiganu. Pobrinut ću se da vaš posao na internetu izgleda jednako dobro kao i uživo.",
 
   "why.label": "Zašto je to važno",
-  "why.num": "77 %",
-  "why.p1": "gostiju pogleda web stranicu restorana prije nego što ga posjeti, a gotovo 70 % njih odustalo je od nekog mjesta upravo zbog njegove web stranice. Kad neko mjesto i na internetu djeluje uredno i dobro vođeno, ljudi vjeruju da je jednako dobro i uživo.",
-  "why.source": "Izvor: istraživanje tvrtke MGH na uzorku od 1101 odrasle osobe u SAD-u, 2019.",
+  "why.num": "96 %",
+  "why.p1": "kupaca smatra da je važno da lokalne tvrtke i obrti aktivno brinu o svojoj prisutnosti na internetu. Kad se neka tvrtka i na internetu predstavlja uredno i promišljeno, ljudi vjeruju da je jednako dobra i uživo.",
+  "why.source": "Izvor: BrightLocal, istraživanje o ponašanju potrošača pri pretraživanju, 2026.",
 
   "p1.type": "Prevoditeljska agencija",
   "p2.type": "Kafić i brunch",
@@ -37,7 +37,7 @@ const HR = {
   "mq.list": "Kafići · Restorani · Saloni · Trgovine · Studiji · Agencije · Apartmani · ",
   "ba.dragShort": "Povucite",
   "s1.t": "Izrada stranice",
-  "s1.d": "Osmišljavam i izrađujem cijelu stranicu tako da jednako dobro izgleda na mobitelu i na računalu.",
+  "s1.d": "Osmišljavam i izrađujem cijelu stranicu kako bi vaš posao na internetu izgledao jednako dobro kao i uživo.",
   "s2.t": "Mjesečno održavanje",
   "s2.d": "Uz mjesečnu naknadu brinem da vaša stranica besprijekorno radi i uvijek bude ažurna.",
   "s3.t": "Izmjene kad god zatrebaju",
@@ -58,8 +58,7 @@ const HR = {
   "form.send": "Pošaljite",
 
   "ph.photo": "Foto",
-  "ph.time": "Privremeno: koliko tjedana traje izrada stranice",
-  "ph.form": "Privremeno: adresa e-pošte na koju stižu upiti"
+  "ph.time": "Privremeno: koliko tjedana traje izrada stranice"
 };
 
 const STATUS = {

@@ -117,8 +117,16 @@
     if (!FORM_ENDPOINT) { status.textContent = s.offline; return; }
     status.textContent = s.sending;
     try {
-      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) });
-      if (!res.ok) throw new Error(res.status);
+      const data = new FormData(form);
+      // Every enquiry arrives with the same subject start, so Gmail can sort them.
+      data.append("_subject", `Website building offer: ${data.get("need")} from ${data.get("name")}`);
+      data.append("_replyto", data.get("email"));
+      data.append("_template", "table");
+      data.append("_captcha", "false");
+      data.append("language", lang === "hr" ? "Croatian" : "English");
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: data });
+      const reply = await res.json().catch(() => ({}));
+      if (!res.ok || String(reply.success) === "false") throw new Error(reply.message || res.status);
       form.reset();
       status.textContent = s.sent;
     } catch (err) {
