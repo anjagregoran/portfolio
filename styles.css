@@ -650,3 +650,26 @@ img.portrait { width: 88px; height: 88px; border: 0; object-fit: cover; border-r
 .needs span { background: var(--cream); }
 
 .form-status a { color: var(--green); font-weight: 600; border-bottom: 1px solid currentColor; text-decoration: none; margin-left: 4px; }
+
+/* Project switcher: an editorial row of numbered names above the pictures, not buttons */
+.work-text .tabs { display: none; }
+.project-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 0 0 18px; border-bottom: 1px solid color-mix(in srgb, var(--green) 22%, transparent); }
+.project-tabs button {
+  display: grid; justify-items: start; gap: 2px; text-align: left;
+  background: none; border: 0; border-radius: 0; padding: 4px 4px 14px 0; margin-bottom: -1px;
+  color: var(--ink); opacity: 0.5; cursor: pointer; position: relative;
+  transition: opacity 0.25s;
+}
+.project-tabs button::after {
+  content: ""; position: absolute; left: 0; right: 14px; bottom: 0; height: 2px; background: var(--green);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.45s cubic-bezier(.2,.7,.2,1);
+}
+.project-tabs button:hover { opacity: 0.8; border: 0; }
+.project-tabs button[aria-selected="true"] { opacity: 1; background: none; color: var(--ink); }
+.project-tabs button[aria-selected="true"]::after { transform: scaleX(1); }
+.tab-num { font: 500 0.66rem "DM Mono", ui-monospace, monospace; letter-spacing: 0.12em; color: var(--green); }
+.tab-name { font-family: var(--serif); font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.15; letter-spacing: 0; text-transform: none; }
+@media (max-width: 600px) {
+  .project-tabs button { padding-right: 8px; }
+  .tab-name { font-size: 0.95rem; }
+}
