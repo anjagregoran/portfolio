@@ -37,7 +37,7 @@ const HR = {
 
   "s.more": "Raspitajte se",
   "mq.aria": "Za koga izrađujem stranice",
-  "mq.list": "Kafići · Restorani · Saloni · Trgovine · Studiji · Agencije · Apartmani · ",
+  "mq.list": "Kafići · Restorani · Pekare · Apartmani · Kuće za odmor · Saloni · Brijačnice · Trgovine · Cvjećarnice · Vinarije · Teretane · Studiji · Fotografi · Agencije · ",
   "ba.dragShort": "Povucite",
   "s1.t": "Izrada stranice",
   "s1.d": "Osmišljavam i izrađujem cijelu stranicu kako bi vaš posao na internetu izgledao jednako dobro kao i uživo.",
