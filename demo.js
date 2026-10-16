@@ -73,6 +73,59 @@
   };
 
   const photo = (site, n) => `img/demo/${site.img}-${n}.jpg`;
+
+  // Small hand-drawn line symbols.
+  const ICON = {
+    cup: '<path d="M4 9h12v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M7.5 6c0-1 1-1.4 1-2.4M11.5 6c0-1 1-1.4 1-2.4"/><path d="M3 21h15"/>',
+    croissant: '<path d="M2.5 14.5C4 9 8 6 12 6s8 3 9.5 8.5c-1.8 1-3.6 1-5 0-1 2-2.8 3-4.5 3s-3.5-1-4.5-3c-1.4 1-3.2 1-5 0z"/><path d="M9 8.6l1.4 7.4M15 8.6l-1.4 7.4"/>',
+    wheat: '<path d="M12 21V7"/><path d="M12 7c-1.8-.8-2.8-2.6-2.8-4.6 1.8 0 2.8 1.8 2.8 4.6zM12 7c1.8-.8 2.8-2.6 2.8-4.6-1.8 0-2.8 1.8-2.8 4.6z"/><path d="M12 12c-2-.8-3.6-2.2-3.6-4.6 2 0 3.6 1.8 3.6 4.6zM12 12c2-.8 3.6-2.2 3.6-4.6-2 0-3.6 1.8-3.6 4.6z"/><path d="M12 17c-2-.8-3.6-2.2-3.6-4.6 2 0 3.6 1.8 3.6 4.6zM12 17c2-.8 3.6-2.2 3.6-4.6-2 0-3.6 1.8-3.6 4.6z"/>',
+    bean: '<path d="M12 3c4 0 7 4 7 9s-3 9-7 9-7-4-7-9 3-9 7-9z"/><path d="M12 3c-2 3 2 6 0 9s2 6 0 9"/>',
+    loaf: '<path d="M4 13a8 5.5 0 0 1 16 0v6H4z"/><path d="M8 9.5l1.2 3M12 8.5l1.2 3M16 9.5l1.2 3"/>',
+    spark: '<path d="M12 3l1.6 6.4L20 11l-6.4 1.6L12 19l-1.6-6.4L4 11l6.4-1.6z"/>',
+    waves: '<path d="M3 10c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0M3 15c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M8 4v6M16 4v6M8 6h8"/>',
+    sun: '<circle cx="12" cy="11" r="4"/><path d="M2 17h20M5 20.5h14M12 3V2M5.5 5.5l-.7-.7M18.5 5.5l.7-.7"/>',
+    car: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/>',
+    scissors: '<circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M8.2 15L18 3M15.8 15L6 3"/>',
+    drop: '<path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/>',
+    wind: '<path d="M3 9h11a3 3 0 1 0-3-3M3 15h15a3 3 0 1 1-3 3M3 12h8"/>'
+  };
+  const icon = (k) => `<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg>`;
+
+  // What each business shows right under its hero.
+  const EXTRA = {
+    apartments: {
+      en: [["waves", "Private pool"], ["sun", "Sea view terrace"], ["car", "Free parking"]],
+      hr: [["waves", "Privatni bazen"], ["sun", "Terasa s pogledom na more"], ["car", "Besplatno parkiralište"]]
+    },
+    cafe: {
+      en: { head: "Today at the counter", items: [["cup", "Cappuccino", "2.50 €"], ["croissant", "Butter croissant", "1.80 €"], ["loaf", "Sourdough loaf", "4.20 €"]], badge: "FRESH BREAD EVERY MORNING · BAKED IN KASTAV · " },
+      hr: { head: "Danas na pultu", items: [["cup", "Cappuccino", "2,50 €"], ["croissant", "Kroasan s maslacem", "1,80 €"], ["loaf", "Kruh s kiselim tijestom", "4,20 €"]], badge: "SVJEŽI KRUH SVAKO JUTRO · PEČEMO U KASTVU · " }
+    },
+    salon: {
+      en: { items: [["scissors", "Cut and style", "from $45"], ["drop", "Colour", "from $90"], ["wind", "Blow dry", "$35"]], b1: "Book now", b2: "Our services" },
+      hr: { items: [["scissors", "Šišanje i styling", "od 45 $"], ["drop", "Bojanje", "od 90 $"], ["wind", "Feniranje", "35 $"]], b1: "Rezervirajte", b2: "Naše usluge" }
+    }
+  };
+
+  function extraBelowHero(type) {
+    const x = EXTRA[type][lang];
+    if (type === "apartments") return `<div class="m-perks">${x.map(([i, t]) => `<span>${icon(i)}${t}</span>`).join("")}</div>`;
+    if (type === "cafe") return `<div class="m-menu"><p class="m-h">${icon("wheat")}${x.head}</p>${x.items.map(([i, t, pr]) =>
+      `<div class="m-item">${icon(i)}<span>${t}</span><i></i><b>${pr}</b></div>`).join("")}</div>`;
+    return `<div class="m-prices">${x.items.map(([i, t, pr]) => `<div>${icon(i)}<span>${t}</span><b>${pr}</b></div>`).join("")}</div>`;
+  }
+
+  function extraInHero(type) {
+    const x = EXTRA[type][lang];
+    if (type === "cafe") return `
+      <div class="m-badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="m-circle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+          <text><textPath href="#m-circle">${x.badge}</textPath></text></svg>
+        ${icon("croissant")}
+      </div>
+      <span class="m-doodle d1">${icon("bean")}</span><span class="m-doodle d2">${icon("spark")}</span><span class="m-doodle d3">${icon("wheat")}</span>`;
+    return "";
+  }
   let lang = document.documentElement.lang === "hr" ? "hr" : "en";
   const state = { type: "apartments", palette: {}, addons: new Set() };
   Object.keys(PALETTES).forEach((t) => { state.palette[t] = Object.keys(PALETTES[t])[0]; });
@@ -93,11 +146,13 @@
               <nav>${c.links.map((l) => `<span>${l}</span>`).join("")}</nav>
               <span class="m-cta ${state.addons.has("booking") ? "on" : ""}">${c.cta}</span>
             </div>
-            <div class="m-hero-text"><p>${c.tag}</p><h3>${c.title}</h3></div>
+            <div class="m-hero-text"><p>${c.tag}</p><h3>${c.title}</h3>${state.type === "salon" ? `<div class="m-hero-btns"><span>${EXTRA.salon[lang].b1}</span><span>${EXTRA.salon[lang].b2}</span></div>` : ""}</div>
+            ${extraInHero(state.type)}
           </div>
           <div class="m-block ${state.addons.has("booking") ? "on" : ""}" data-addon="booking"><div>
             <div class="m-booking">${c.fields.map((f) => `<label><span>${f}</span><i></i></label>`).join("")}<span class="m-btn">${c.go}</span></div>
           </div></div>
+          ${extraBelowHero(state.type)}
           <div class="m-block ${state.addons.has("gallery") ? "on" : ""}" data-addon="gallery"><div>
             <p class="m-h">${ui.gallery}</p>
             <div class="m-gallery">${[1, 2, 3].map((n) => `<img src="${photo(site, n)}" alt="" width="700" height="700" loading="lazy">`).join("")}</div>
