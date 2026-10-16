@@ -60,7 +60,6 @@ const HR = {
   "form.message": "Napišite mi nešto o svom poslu",
   "form.send": "Pošaljite",
 
-  "ph.photo": "Foto",
   "ph.time": "Privremeno: koliko tjedana traje izrada stranice"
 };
 
