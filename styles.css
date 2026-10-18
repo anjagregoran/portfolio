@@ -781,3 +781,12 @@ body.loaded h1 .mark::after { clip-path: inset(0 0 0 0); transition: clip-path 1
 .proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .proof li { display: grid; gap: 4px; align-content: start; font-size: 0.78rem; line-height: 1.35; }
 .proof b { font-size: 2rem; }
+
+/* "Best light": a clean, fine green line that slides in, instead of a brush stroke */
+h1 .mark::after {
+  background: var(--green); height: 2px; left: 0.04em; right: 0.02em; bottom: 0.06em; z-index: 0;
+  clip-path: none; transform: scaleX(0); transform-origin: left; opacity: 0.85;
+}
+body.loaded h1 .mark::after { transform: scaleX(1); clip-path: none; transition: transform 1s cubic-bezier(.6,.1,.2,1) 0.9s; }
+@media (prefers-reduced-motion: reduce) { h1 .mark::after { transform: none; } }
+h1 .mark::after { bottom: -0.12em; height: 1.5px; }
