@@ -77,6 +77,16 @@ const HR = {
   "faq.6q": "Koliko to košta?",
   "faq.6a": "Svakom poslu treba nešto drugo, pa vam nakon kratkog razgovora šaljem jasnu cijenu, bez iznenađenja.",
 
+  "proof.1": "izrađenih web stranica",
+  "proof.2": "jezika, hrvatski i engleski",
+  "proof.3": "osoba, od prve ideje do objave",
+  "svc.label": "Što dobivate",
+  "svc.title": "Sve što vašoj stranici treba, na jednom mjestu",
+  "foot.tag": "Web stranice koje male poduzetnike predstavljaju u najboljem svjetlu, na hrvatskom i engleskom.",
+  "foot.nav": "Istražite",
+  "foot.privacy": "Vaše podatke koristim isključivo kako bih vam odgovorila.",
+  "foot.top": "Natrag na vrh",
+
   "contact.label": "Započnimo suradnju",
   "contact.title": "Želite li profesionalnu web stranicu?",
   "contact.p1": "Recite mi što vam treba, a ja ću vam odgovoriti s planom i cijenom.",

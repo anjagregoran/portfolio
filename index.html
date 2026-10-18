@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=41">
+<link rel="stylesheet" href="styles.css?v=43">
 </head>
 <body>
 
@@ -55,6 +55,11 @@
         <a class="btn" href="#contact" data-i18n="nav.start">Start a project</a>
         <a class="btn btn-line" href="#work" data-i18n="hero.work">See my work</a>
       </div>
+      <ul class="proof">
+        <li><b>6</b> <span data-i18n="proof.1">websites built</span></li>
+        <li><b>2</b> <span data-i18n="proof.2">languages, Croatian and English</span></li>
+        <li><b>1</b> <span data-i18n="proof.3">person, from first idea to launch</span></li>
+      </ul>
     </div>
     <div class="demo" id="demo" aria-label="A demo website you can change"></div>
   </section>
@@ -77,7 +82,11 @@
     </div>
   </section>
 
-  <section class="services" id="services">
+  <div class="services-head" id="services">
+    <p class="label" data-i18n="svc.label">What you get</p>
+    <h2 data-i18n="svc.title">Everything your website needs, in one place</h2>
+  </div>
+  <section class="services">
     <a class="service" href="#contact" data-need="New website">
       <span class="num">01</span>
       <h2 data-i18n="s1.t">Website Build</h2>
@@ -223,12 +232,35 @@
 </main>
 
 <footer class="foot">
-  <span class="wordmark">Anja Gregoran Jenul</span>
-  <span>© 2026</span>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <span class="wordmark">Anja Gregoran Jenul</span>
+      <p data-i18n="foot.tag">Websites that show small businesses in their best light, in Croatian and English.</p>
+      <a class="btn foot-btn" href="#contact" data-i18n="nav.start">Start a project</a>
+    </div>
+    <nav class="foot-col" aria-label="Footer">
+      <p class="foot-h" data-i18n="foot.nav">Explore</p>
+      <a href="#work" data-i18n="nav.work">My work</a>
+      <a href="#services" data-i18n="nav.services">What you get</a>
+      <a href="#how" data-i18n="how.label">How it works</a>
+      <a href="#faq" data-i18n="faq.label">Questions</a>
+    </nav>
+    <div class="foot-col">
+      <p class="foot-h" data-i18n="contact.label">Start a project</p>
+      <a href="mailto:anja.gregoran1@gmail.com">anja.gregoran1@gmail.com</a>
+      <a href="tel:+385989782257">+385 98 978 2257</a>
+      <a href="tel:+12693031482">+1 269 303 1482</a>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 Anja Gregoran Jenul</span>
+    <span data-i18n="foot.privacy">Your details are only ever used to reply to you.</span>
+    <a href="#" class="to-top" data-i18n="foot.top">Back to top</a>
+  </div>
 </footer>
 
-<script src="content.js?v=21"></script>
-<script src="app.js?v=14"></script>
+<script src="content.js?v=22"></script>
+<script src="app.js?v=15"></script>
 <script src="demo.js?v=8"></script>
 </body>
 </html>

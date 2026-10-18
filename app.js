@@ -181,6 +181,9 @@
     });
   }
 
+  // "Back to top" in the footer.
+  document.querySelector(".to-top")?.addEventListener("click", (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
+
   // Header: reading progress and a shadow once the page moves.
   const top = document.querySelector(".top");
   const bar = document.querySelector(".progress");
