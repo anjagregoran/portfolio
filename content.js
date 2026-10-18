@@ -1,6 +1,6 @@
-// FORM_ENDPOINT: where the sign-up form sends, for example "https://formsubmit.co/ajax/YOUR@EMAIL"
-// or a Formspree address. While it is empty, the form does not send.
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/anja.gregoran1@gmail.com";
+// FORM_ENDPOINT: a form service address (for example Web3Forms). While it is empty,
+// pressing Send opens the visitor's email app with the whole enquiry already filled in.
+const FORM_ENDPOINT = "";
 
 // English lives in index.html. Croatian lives here, one line per piece of text.
 const HR = {
@@ -104,6 +104,7 @@ const STATUS = {
     offline: "The form is not connected yet, so your message was not sent.",
     sending: "Sending.",
     sent: "Thank you, I will write back to you soon.",
+    opened: "Your email app has opened with your message ready. Just press send and I will write back soon.",
     error: "The form could not send just now, but you can send the same message by email in one click.",
     mail: "Send by email"
   },
@@ -112,6 +113,7 @@ const STATUS = {
     offline: "Obrazac još nije povezan, pa vaša poruka nije poslana.",
     sending: "Šaljem.",
     sent: "Hvala vam, javit ću vam se uskoro.",
+    opened: "Otvorila se vaša aplikacija za e-poštu s već pripremljenom porukom. Samo je pošaljite, a ja ću vam se uskoro javiti.",
     error: "Obrazac trenutačno ne može poslati poruku, ali istu poruku možete poslati e-poštom jednim klikom.",
     mail: "Pošaljite e-poštom"
   }

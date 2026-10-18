@@ -125,7 +125,14 @@
     e.preventDefault();
     const s = STATUS[lang];
     if (!form.checkValidity()) { status.textContent = s.missing; return; }
-    if (!FORM_ENDPOINT) { status.textContent = s.offline; return; }
+    if (!FORM_ENDPOINT) {
+      const d = new FormData(form);
+      const subject = `Website building offer: ${d.get("need")} from ${d.get("name")}`;
+      const body = `${d.get("message")}\n\n${d.get("name")}\n${d.get("email")}`;
+      location.href = `mailto:anja.gregoran1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.textContent = s.opened;
+      return;
+    }
     status.textContent = s.sending;
     try {
       const data = new FormData(form);
@@ -212,7 +219,7 @@
     });
   }, { rootMargin: "0px 0px -12% 0px" }) : null;
   if (io && !reduce) {
-    document.querySelectorAll(".why, .service, .work-text, .work, .quote, .how li, .faq-list, .contact-text, .form").forEach((el) => {
+    document.querySelectorAll(".why, .service, .work-text, .work, .how li, .faq-list, .contact-text, .form").forEach((el) => {
       el.classList.add("reveal");
       io.observe(el);
     });

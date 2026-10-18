@@ -724,3 +724,12 @@ img.portrait { width: 88px; height: 88px; border: 0; object-fit: cover; border-r
 @media (max-width: 700px) {
   .how { grid-template-columns: 1fr; }
 }
+
+/* Client quote as a small card beside the work */
+.mini-quote { margin: 14px 0 0; max-width: 36ch; padding: 20px 22px 18px; background: #fffcf7; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 24px 50px -40px rgba(43, 33, 27, 0.5); }
+.mini-quote svg { width: 24px; height: 18px; fill: var(--sage); display: block; margin-bottom: 10px; }
+.mini-quote blockquote { margin: 0; }
+.mini-quote blockquote p { font-family: var(--serif); font-size: 1.08rem; line-height: 1.35; color: var(--ink); }
+.mini-quote figcaption { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.mini-quote .quote-who { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--green); }
+.mini-quote .quote-role { font: 600 0.58rem var(--sans); letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft); }
