@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=36">
+<link rel="stylesheet" href="styles.css?v=38">
 </head>
 <body>
 
@@ -109,6 +109,9 @@
         <button type="button" role="tab" aria-selected="true" data-old="img/orbita-old.jpg" data-new="img/orbita-new.jpg" data-href="https://anjagregoran.github.io/orbita-prijevodi/" data-type="p1.type"><span class="tab-num">01</span><span class="tab-name">Orbita prijevodi</span></button>
         <button type="button" role="tab" aria-selected="false" data-old="img/cafe-before.jpg" data-new="img/cafe-photo-desktop.jpg" data-href="https://anjagregoran.github.io/cafe-brunch/" data-type="p2.type"><span class="tab-num">02</span><span class="tab-name">More Café &amp; Brunch</span></button>
         <button type="button" role="tab" aria-selected="false" data-old="img/abroad-first.jpg" data-new="img/abroad-now.jpg" data-href="https://anjagregoran.github.io/abroadwithanja/" data-type="p3.type"><span class="tab-num">03</span><span class="tab-name">Abroad Life with Anja</span></button>
+        <button type="button" role="tab" aria-selected="false" data-old="img/natural-before.jpg" data-new="img/natural-after.jpg" data-href="https://naturallywithanja.com/" data-type="p4.type"><span class="tab-num">04</span><span class="tab-name">Prirodno s Anjom</span></button>
+        <button type="button" role="tab" aria-selected="false" data-old="img/taste-before.jpg" data-new="img/taste-after.jpg" data-href="https://anjagregoran.github.io/nas-dvije-po-svijetu/" data-type="p5.type"><span class="tab-num">05</span><span class="tab-name">Taste the Map</span></button>
+        <button type="button" role="tab" aria-selected="false" data-old="img/calendar-before.jpg" data-new="img/calendar-after.jpg" data-href="" data-type="p6.type"><span class="tab-num">06</span><span class="tab-name" data-i18n="p6.name">Shared Calendar</span></button>
       </div>
 
       <div class="compare" style="--pos:50%">
@@ -126,9 +129,44 @@
         <span id="ba-type" data-i18n="p1.type">Translation agency</span>
         <span aria-hidden="true">·</span>
         <span data-i18n="ba.drag">Drag to compare</span>
-        <span aria-hidden="true">·</span>
+        <span id="ba-visit-dot" aria-hidden="true">·</span>
         <a id="ba-visit" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener" data-i18n="ba.visit">Visit the site</a>
       </p>
+    </div>
+  </section>
+
+  <section class="quote">
+    <svg class="quote-mark" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V28C0 12 8 3 24 0l3 6C17 9 13 15 13 22h11v26zM37 48V28C37 12 45 3 61 0l3 6c-10 3-14 9-14 16h11v26z"/></svg>
+    <blockquote>
+      <p data-i18n="q.text">I was amazed at how quickly it was done and how professional and beautiful it looks. Our old website looked outdated, and now everything looks wonderful. The wording is excellent too.</p>
+      <footer><span class="quote-who">Orbita prijevodi</span><span class="quote-role" data-i18n="q.role">Owner, translation agency</span></footer>
+    </blockquote>
+  </section>
+
+  <section class="steps-section" id="how">
+    <div class="steps-head">
+      <p class="label" data-i18n="how.label">How it works</p>
+      <h2 data-i18n="how.title">Three simple steps</h2>
+    </div>
+    <ol class="how">
+      <li><span class="how-num">01</span><h3 data-i18n="how.1t">We Talk</h3><p data-i18n="how.1d">You tell me about your business and what you need, and I send you a plan and a price.</p></li>
+      <li><span class="how-num">02</span><h3 data-i18n="how.2t">I Design And Build</h3><p data-i18n="how.2d">I create your site and show it to you along the way, so you can ask for changes before it goes live.</p></li>
+      <li><span class="how-num">03</span><h3 data-i18n="how.3t">Your Site Goes Live</h3><p data-i18n="how.3d">I connect it to your domain, and after launch I look after it and change things whenever you need.</p></li>
+    </ol>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="steps-head">
+      <p class="label" data-i18n="faq.label">Questions</p>
+      <h2 data-i18n="faq.title">Good to know</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary data-i18n="faq.1q">How long does it take?</summary><p data-i18n="faq.1a">We agree on the timing together. A simple site can be ready within a week, as long as I have your texts and photos.</p></details>
+      <details><summary data-i18n="faq.2q">What do I need to send you?</summary><p data-i18n="faq.2a">Your logo if you have one, a few photos and a little about your business. If you do not have texts yet, I will help you write them.</p></details>
+      <details><summary data-i18n="faq.3q">What about my domain?</summary><p data-i18n="faq.3a">If you already have one, I connect your new site to it and your email stays exactly as it is. If you do not, I help you choose and register one.</p></details>
+      <details><summary data-i18n="faq.4q">Can my site be in English and Croatian?</summary><p data-i18n="faq.4a">Yes. I build sites in one or both languages, which makes a big difference if you have guests or clients from abroad.</p></details>
+      <details><summary data-i18n="faq.5q">What if I want to change something later?</summary><p data-i18n="faq.5a">Just send me a message with what you would like changed, and I take care of it as part of your monthly upkeep.</p></details>
+      <details><summary data-i18n="faq.6q">How much does it cost?</summary><p data-i18n="faq.6a">Every business needs something a little different, so after a short conversation I send you a clear price with no surprises.</p></details>
     </div>
   </section>
 
@@ -192,8 +230,8 @@
   <span>© 2026</span>
 </footer>
 
-<script src="content.js?v=18"></script>
-<script src="app.js?v=12"></script>
+<script src="content.js?v=19"></script>
+<script src="app.js?v=13"></script>
 <script src="demo.js?v=8"></script>
 </body>
 </html>

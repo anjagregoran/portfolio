@@ -19,6 +19,9 @@
   // Project types that are not on the page until their tab is chosen.
   EN["p2.type"] = "Café and brunch";
   EN["p3.type"] = "Exchange guides";
+  EN["p4.type"] = "Wellness and courses";
+  EN["p5.type"] = "Food travel guide";
+  EN["p6.type"] = "Private calendar app, shown without personal details";
 
   let lang = "en";
   const t = (key) => (lang === "hr" ? HR[key] : null) ?? EN[key];
@@ -83,7 +86,9 @@
       tabs.forEach((x) => x.setAttribute("aria-selected", String(x === tab)));
       type.dataset.i18n = tab.dataset.type;
       type.innerHTML = t(tab.dataset.type);
-      visit.href = tab.dataset.href;
+      visit.href = tab.dataset.href || "#";
+      visit.hidden = !tab.dataset.href;
+      document.getElementById("ba-visit-dot").hidden = !tab.dataset.href;
       compare.classList.add("swapping");
       await new Promise((r) => setTimeout(r, reduce ? 0 : 220));
       newImg.src = tab.dataset.new;
@@ -207,7 +212,7 @@
     });
   }, { rootMargin: "0px 0px -12% 0px" }) : null;
   if (io && !reduce) {
-    document.querySelectorAll(".why, .service, .work-text, .work, .contact-text, .form").forEach((el) => {
+    document.querySelectorAll(".why, .service, .work-text, .work, .quote, .how li, .faq-list, .contact-text, .form").forEach((el) => {
       el.classList.add("reveal");
       io.observe(el);
     });
