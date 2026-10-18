@@ -106,7 +106,7 @@ const HR = {
   "contact.direct": "Javite mi se izravno",
   "contact.hr": "Hrvatska",
   "contact.us": "SAD",
-  "contact.time": "Rok izrade dogovaramo zajedno, a ako vam se žuri, stranica može biti gotova i za tjedan dana."
+  "contact.time": "Rok izrade dogovaramo zajedno, a ako vam se žuri, stranica može biti gotova i <em>za tjedan dana</em>."
 };
 
 const STATUS = {
