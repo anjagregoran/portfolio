@@ -11,7 +11,7 @@ const HR = {
   "nav.start": "Započnimo suradnju",
 
   "hero.label": "Web dizajn za male poduzetnike",
-  "hero.title": "Web stranice koje male poduzetnike predstavljaju u <em>najboljem svjetlu</em>.",
+  "hero.title": "Web stranice koje <span class=\"alt\">male poduzetnike</span> predstavljaju u <em class=\"mark\">najboljem svjetlu</em>.",
   "hero.work": "Pogledajte moje radove",
   "work.label": "Moji radovi",
   "work.title": "Prije i poslije",
