@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=45">
+<link rel="stylesheet" href="styles.css?v=47">
 </head>
 <body>
 
@@ -29,8 +29,10 @@
   <span class="wordmark">Anja Gregoran Jenul</span>
   <div class="top-right">
     <nav class="nav" aria-label="Main">
-      <a href="#work" data-i18n="nav.work">My work</a>
       <a href="#services" data-i18n="nav.services">What you get</a>
+      <a href="#work" data-i18n="nav.work">My work</a>
+      <a href="#how" data-i18n="how.label">How it works</a>
+      <a href="#faq" data-i18n="faq.label">Questions</a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -38,7 +40,15 @@
       <button type="button" data-lang="hr" aria-pressed="false">HR</button>
     </div>
     <a class="btn btn-small" href="#contact" data-i18n="nav.start">Start a project</a>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu"><span data-i18n="nav.menu">Menu</span><i aria-hidden="true"></i></button>
   </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden>
+    <a href="#services" data-i18n="nav.services">What you get</a>
+    <a href="#work" data-i18n="nav.work">My work</a>
+    <a href="#how" data-i18n="how.label">How it works</a>
+    <a href="#faq" data-i18n="faq.label">Questions</a>
+    <a href="#contact" class="btn" data-i18n="nav.start">Start a project</a>
+  </nav>
 </header>
 
 <main>
@@ -254,8 +264,8 @@
   </div>
 </footer>
 
-<script src="content.js?v=22"></script>
-<script src="app.js?v=15"></script>
+<script src="content.js?v=23"></script>
+<script src="app.js?v=16"></script>
 <script src="demo.js?v=8"></script>
 </body>
 </html>

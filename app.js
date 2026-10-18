@@ -181,6 +181,13 @@
     });
   }
 
+  // Phone menu.
+  const menuBtn = document.querySelector(".menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const setMenu = (open) => { menu.hidden = !open; menuBtn.setAttribute("aria-expanded", String(open)); document.body.classList.toggle("menu-open", open); };
+  menuBtn.addEventListener("click", () => setMenu(menu.hidden));
+  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+
   // "Back to top" in the footer.
   document.querySelector(".to-top")?.addEventListener("click", (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
 

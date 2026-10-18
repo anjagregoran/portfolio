@@ -9,6 +9,7 @@ const HR = {
   "nav.work": "Moji radovi",
   "nav.services": "Što dobivate",
   "nav.start": "Započnimo suradnju",
+  "nav.menu": "Izbornik",
 
   "hero.label": "Web dizajn za male poduzetnike",
   "hero.title": "Web stranice koje <span class=\"alt\">male poduzetnike</span> predstavljaju u <em class=\"mark\">najboljem svjetlu</em>.",
