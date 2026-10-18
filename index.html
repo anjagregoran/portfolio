@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=48">
+<link rel="stylesheet" href="styles.css?v=49">
 </head>
 <body>
 
@@ -29,9 +29,8 @@
   <span class="wordmark">Anja Gregoran Jenul</span>
   <div class="top-right">
     <nav class="nav" aria-label="Main">
-      <a href="#services" data-i18n="nav.services">What you get</a>
+      <a href="#services" data-i18n="nav.services">Working together</a>
       <a href="#work" data-i18n="nav.work">My work</a>
-      <a href="#how" data-i18n="how.label">How it works</a>
       <a href="#faq" data-i18n="faq.label">Questions</a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
@@ -43,9 +42,8 @@
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu"><span data-i18n="nav.menu">Menu</span><i aria-hidden="true"></i></button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden>
-    <a href="#services" data-i18n="nav.services">What you get</a>
+    <a href="#services" data-i18n="nav.services">Working together</a>
     <a href="#work" data-i18n="nav.work">My work</a>
-    <a href="#how" data-i18n="how.label">How it works</a>
     <a href="#faq" data-i18n="faq.label">Questions</a>
     <a href="#contact" class="btn" data-i18n="nav.start">Start a project</a>
   </nav>
@@ -88,26 +86,30 @@
   </section>
 
   <div class="services-head" id="services">
-    <p class="label" data-i18n="svc.label">What you get</p>
-    <h2 data-i18n="svc.title">Everything your website needs, in one place</h2>
+    <p class="label" data-i18n="svc.label">Working together</p>
+    <h2 data-i18n="svc.title">From the first conversation to launch, and after</h2>
   </div>
-  <section class="services">
-    <a class="service" href="#contact" data-need="New website">
+  <section class="services services-4">
+    <div class="service">
       <span class="num">01</span>
-      <h2 data-i18n="s1.t">Website Build</h2>
-      <p data-i18n="s1.d">I design and build the whole site so your business looks just as good online as it does in person.</p>
-      <span class="more"><span data-i18n="s.more">Ask about this</span><i aria-hidden="true"></i></span>
-    </a>
-    <a class="service" href="#contact" data-need="Monthly upkeep">
+      <h2 data-i18n="s1.t">We Talk</h2>
+      <p data-i18n="s1.d">You tell me about your business and what you need, and I send you a plan and a price.</p>
+    </div>
+    <a class="service" href="#contact" data-need="New website">
       <span class="num">02</span>
-      <h2 data-i18n="s2.t">Monthly Upkeep</h2>
-      <p data-i18n="s2.d">For a monthly fee I keep your site running smoothly and up to date.</p>
+      <h2 data-i18n="s2.t">I Design And Build</h2>
+      <p data-i18n="s2.d">I design and build the whole site and show it to you along the way, so you can ask for changes before it goes live.</p>
       <span class="more"><span data-i18n="s.more">Ask about this</span><i aria-hidden="true"></i></span>
     </a>
-    <a class="service" href="#contact" data-need="Changes to my site">
+    <div class="service">
       <span class="num">03</span>
-      <h2 data-i18n="s3.t">Changes Anytime</h2>
-      <p data-i18n="s3.d">Whenever you need new photos, prices or pages, I take care of it for you.</p>
+      <h2 data-i18n="s3.t">Your Site Goes Live</h2>
+      <p data-i18n="s3.d">I connect it to your domain and make sure it works perfectly on phones and laptops.</p>
+    </div>
+    <a class="service" href="#contact" data-need="Monthly upkeep">
+      <span class="num">04</span>
+      <h2 data-i18n="s4.t">Upkeep And Changes</h2>
+      <p data-i18n="s4.d">For a monthly fee I keep your site up to date, and I add new photos, prices or pages whenever you need them.</p>
       <span class="more"><span data-i18n="s.more">Ask about this</span><i aria-hidden="true"></i></span>
     </a>
   </section>
@@ -154,18 +156,6 @@
     </div>
   </section>
 
-  <section class="steps-section" id="how">
-    <div class="steps-head">
-      <p class="label" data-i18n="how.label">How it works</p>
-      <h2 data-i18n="how.title">Three simple steps</h2>
-    </div>
-    <ol class="how">
-      <li><span class="how-num">01</span><h3 data-i18n="how.1t">We Talk</h3><p data-i18n="how.1d">You tell me about your business and what you need, and I send you a plan and a price.</p></li>
-      <li><span class="how-num">02</span><h3 data-i18n="how.2t">I Design And Build</h3><p data-i18n="how.2d">I create your site and show it to you along the way, so you can ask for changes before it goes live.</p></li>
-      <li><span class="how-num">03</span><h3 data-i18n="how.3t">Your Site Goes Live</h3><p data-i18n="how.3d">I connect it to your domain, and after launch I look after it and change things whenever you need.</p></li>
-    </ol>
-  </section>
-
   <section class="faq" id="faq">
     <div class="steps-head">
       <p class="label" data-i18n="faq.label">Questions</p>
@@ -173,7 +163,6 @@
     </div>
     <div class="faq-list">
       <details><summary data-i18n="faq.1q">How long does it take?</summary><p data-i18n="faq.1a">We agree on the timing together. A simple site can be ready within a week, as long as I have your texts and photos.</p></details>
-      <details><summary data-i18n="faq.2q">What do I need to send you?</summary><p data-i18n="faq.2a">Your logo if you have one, a few photos and a little about your business. If you do not have texts yet, I will help you write them.</p></details>
       <details><summary data-i18n="faq.3q">What about my domain?</summary><p data-i18n="faq.3a">If you already have one, I connect your new site to it and your email stays exactly as it is. If you do not, I help you choose and register one.</p></details>
       <details><summary data-i18n="faq.4q">Can my site be in English and Croatian?</summary><p data-i18n="faq.4a">Yes. I build sites in one or both languages, which makes a big difference if you have guests or clients from abroad.</p></details>
       <details><summary data-i18n="faq.5q">What if I want to change something later?</summary><p data-i18n="faq.5a">Just send me a message with what you would like changed, and I take care of it as part of your monthly upkeep.</p></details>
@@ -249,9 +238,8 @@
     </div>
     <nav class="foot-col" aria-label="Footer">
       <p class="foot-h" data-i18n="foot.nav">Explore</p>
+      <a href="#services" data-i18n="nav.services">Working together</a>
       <a href="#work" data-i18n="nav.work">My work</a>
-      <a href="#services" data-i18n="nav.services">What you get</a>
-      <a href="#how" data-i18n="how.label">How it works</a>
       <a href="#faq" data-i18n="faq.label">Questions</a>
     </nav>
     <div class="foot-col">
@@ -268,8 +256,8 @@
   </div>
 </footer>
 
-<script src="content.js?v=26"></script>
-<script src="app.js?v=16"></script>
+<script src="content.js?v=27"></script>
+<script src="app.js?v=17"></script>
 <script src="demo.js?v=8"></script>
 </body>
 </html>

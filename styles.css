@@ -832,3 +832,13 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 @keyframes sweep { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .w-sec { animation: none; transform: rotate(150deg); } }
 .timing-text em { font-style: italic; color: var(--green); }
+
+/* Working together: four steps in one row */
+.services-4 { grid-template-columns: repeat(4, 1fr); }
+.services-4 .service p { font-size: 0.95rem; }
+.service.reveal:nth-child(4) { transition-delay: 0.3s; }
+@media (max-width: 1180px) { .services-4 { grid-template-columns: repeat(2, 1fr); } .services-4 > .service:nth-child(3) { border-left: 0; } .services-4 > .service:nth-child(n+3) { border-top: 1px solid var(--line); } .services-4 > .service:nth-child(3) { padding-left: 0; } }
+@media (max-width: 980px) { .services-4 { grid-template-columns: 1fr; } }
+
+/* More air between the headline line and the hello text */
+.hero .hello { margin-top: 18px; }
