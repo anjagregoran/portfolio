@@ -870,3 +870,7 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 .hello-text { display: grid; gap: 10px; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; }
 .hello-text p:last-child { color: var(--ink); }
 .hello img.portrait { margin-top: 4px; }
+
+/* Hello text wider: the words column grows and the text uses its full width */
+@media (min-width: 981px) { .hero { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); } }
+.hello { max-width: none; }
