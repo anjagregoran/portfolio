@@ -20,7 +20,7 @@ const HR = {
   "work.label": "Moji radovi",
   "work.title": "Prije i poslije",
   "work.p": "Odaberite projekt i povucite crtu da vidite kako je stranica izgledala na početku, a kako izgleda sada.",
-  "about.p1": "Pozdrav, ja sam Anja i studiram poduzetništvo na Ekonomskom fakultetu u Rijeci. Spajam znanje iz poduzetništva s ljubavlju prema web dizajnu i izrađujem moderne, funkcionalne stranice koje ističu ono što vaš posao čini posebnim i privlače nove klijente, jer vaš posao zaslužuje izgledati jednako dobro na internetu kao i uživo.",
+  "about.p1": "<p>Pozdrav! Ja sam Anja, dolazim iz Kastva i obrazujem se u području poduzetništva na Ekonomskom fakultetu u Rijeci.</p><p>Spajam znanje iz poduzetništva s kreativnošću i ljubavlju prema web dizajnu kako bih malim poduzetnicima pomogla izgraditi kvalitetnu i prepoznatljivu prisutnost na internetu. Izrađujem moderne i funkcionalne web stranice koje ističu ono što vaš posao čini posebnim.</p><p>Moj cilj je jednostavan: stvoriti web stranice koje ne samo da izgledaju odlično, već i vjerno predstavljaju vaš posao, privlače nove klijente i ostavljaju snažan prvi dojam. Vaš posao zaslužuje izgledati jednako dobro na internetu kao i uživo.</p>",
 
   "why.label": "Zašto je to važno",
   "why.num": "96 %",

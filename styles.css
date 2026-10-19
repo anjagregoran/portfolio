@@ -864,3 +864,9 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 .call-list li::before { content: ""; position: absolute; left: 2px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: var(--green); }
 .call-btn { justify-self: start; margin-top: 6px; padding: 16px 34px; }
 .call-note { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* Longer hello text in three short paragraphs */
+.hello { align-items: flex-start; max-width: 54ch; }
+.hello-text { display: grid; gap: 10px; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; }
+.hello-text p:last-child { color: var(--ink); }
+.hello img.portrait { margin-top: 4px; }
