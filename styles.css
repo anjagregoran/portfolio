@@ -850,3 +850,17 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 .timing-text { font-family: var(--sans); font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
 .timing-text em { font-family: var(--serif); font-size: 1.12em; font-style: italic; color: var(--green); }
 .timing { margin-top: 6px; }
+
+/* Book a call card */
+.call-card { display: grid; gap: 16px; align-content: start; grid-template-columns: 1fr; }
+.call-top { display: flex; align-items: center; gap: 16px; }
+.call-icon { flex: none; width: 50px; height: 50px; padding: 12px; border-radius: 50%; background: var(--sage); fill: none; stroke: var(--green); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.call-card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 2.2vw, 1.9rem); line-height: 1.1; margin: 0; }
+.call-meta { margin-top: 4px; font: 600 0.66rem var(--sans); letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft); }
+.call-sub { margin-top: 6px; font: 600 0.66rem var(--sans); letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); }
+.call-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.call-list li { padding: 12px 0 12px 26px; border-top: 1px solid var(--line); position: relative; font-size: 1rem; }
+.call-list li:last-child { border-bottom: 1px solid var(--line); }
+.call-list li::before { content: ""; position: absolute; left: 2px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: var(--green); }
+.call-btn { justify-self: start; margin-top: 6px; padding: 16px 34px; }
+.call-note { font-size: 0.82rem; color: var(--ink-soft); }

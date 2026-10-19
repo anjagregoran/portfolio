@@ -36,7 +36,6 @@
     document.querySelectorAll("[data-lang]").forEach((b) => {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
-    document.getElementById("form-status").textContent = "";
     document.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
     try { localStorage.setItem("lang", lang); } catch (e) {}
   }
@@ -110,52 +109,21 @@
     compare.addEventListener("pointerleave", () => compare.classList.remove("hovering"));
   }
 
-  // Services open the form with the matching choice already selected.
-  const form = document.getElementById("contact-form");
-  document.querySelectorAll(".service").forEach((card) => {
-    card.addEventListener("click", () => {
-      const radio = form.querySelector(`input[name=need][value="${card.dataset.need}"]`);
-      if (radio) radio.checked = true;
-    });
-  });
-
-  // Sign-up form.
-  const status = document.getElementById("form-status");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const s = STATUS[lang];
-    if (!form.checkValidity()) { status.textContent = s.missing; return; }
-    if (!FORM_ENDPOINT) {
-      const d = new FormData(form);
-      const subject = `Website building offer: ${d.get("need")} from ${d.get("name")}`;
-      const body = `${d.get("message")}\n\n${d.get("name")}\n${d.get("email")}`;
-      location.href = `mailto:anja.gregoran1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.textContent = s.opened;
-      return;
-    }
-    status.textContent = s.sending;
-    try {
-      const data = new FormData(form);
-      // Every enquiry arrives with the same subject start, so Gmail can sort them.
-      data.append("_subject", `Website building offer: ${data.get("need")} from ${data.get("name")}`);
-      data.append("_replyto", data.get("email"));
-      data.append("_template", "table");
-      data.append("_captcha", "false");
-      data.append("language", lang === "hr" ? "Croatian" : "English");
-      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: data });
-      const reply = await res.json().catch(() => ({}));
-      if (!res.ok || String(reply.success) === "false") throw new Error(reply.message || res.status);
-      form.reset();
-      status.textContent = s.sent;
-    } catch (err) {
-      // If the form service fails, nothing is lost: offer the same message as a ready email.
-      const d = new FormData(form);
-      const subject = `Website building offer: ${d.get("need")} from ${d.get("name")}`;
-      const body = `${d.get("message")}\n\n${d.get("name")}\n${d.get("email")}`;
-      const href = `mailto:anja.gregoran1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.innerHTML = `${s.error} <a href="${href}">${s.mail}</a>`;
-    }
-  });
+  // Booking a call: Calendly when the link is set, otherwise an email asking for a call.
+  const callBtn = document.getElementById("call-btn");
+  const callNote = document.getElementById("call-note");
+  function setCallLink() {
+    if (CALL_URL) { callBtn.href = CALL_URL; callNote.hidden = false; return; }
+    const subject = lang === "hr" ? "Besplatan razgovor o web stranici" : "Free website call";
+    const body = lang === "hr"
+      ? "Pozdrav Anja,\n\nželim(o) dogovoriti besplatan razgovor o web stranici.\n\nNaziv posla:\nGdje se nalazimo:\nPostojeća stranica (ako je imamo):\nŠto nam treba:\nKada nam odgovara razgovor:\n"
+      : "Hi Anja,\n\nI would like to book a free website call.\n\nBusiness name:\nWhere we are:\nCurrent website (if any):\nWhat we need:\nWhen a call suits me:\n";
+    callBtn.href = `mailto:anja.gregoran1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    callBtn.removeAttribute("target");
+    callNote.hidden = true;
+  }
+  document.addEventListener("langchange", setCallLink);
+  setCallLink();
 
   // Buttons lean a little towards the pointer.
   if (finePointer && !reduce) {

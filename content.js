@@ -2,13 +2,16 @@
 // pressing Send opens the visitor's email app with the whole enquiry already filled in.
 const FORM_ENDPOINT = "";
 
+// CALL_URL: Anja's Calendly booking link. While it is empty, "Choose a time" opens an email asking for a call.
+const CALL_URL = "";
+
 // English lives in index.html. Croatian lives here, one line per piece of text.
 const HR = {
   "meta.title": "Anja Gregoran Jenul | Web dizajn za male poduzetnike",
 
   "nav.work": "Moji radovi",
   "nav.services": "Suradnja",
-  "nav.start": "Započnimo suradnju",
+  "nav.start": "Rezervirajte besplatan razgovor",
   "nav.menu": "Izbornik",
 
   "hero.label": "Web dizajn za male poduzetnike",
@@ -92,7 +95,7 @@ const HR = {
 
   "contact.label": "Započnimo suradnju",
   "contact.title": "Želite li profesionalnu web stranicu?",
-  "contact.p1": "Recite mi što vam treba, a ja ću vam odgovoriti s planom i cijenom.",
+  "contact.p1": "Rezervirajte besplatan razgovor od 30 minuta. Prije razgovora odgovorite na nekoliko kratkih pitanja, kako bih se pripremila i došla s idejama za vaš posao.",
 
   "form.need": "Što vam treba?",
   "form.n1": "Nova web stranica",
@@ -105,10 +108,18 @@ const HR = {
   "form.send": "Pošaljite",
 
   "contact.timeLabel": "Rok izrade",
-  "contact.direct": "Javite mi se izravno",
+  "contact.direct": "Kontakt",
+  "call.title": "Besplatan razgovor o web stranici",
+  "call.meta": "30 min · Google Meet · Besplatno",
+  "call.sub": "O čemu ćemo razgovarati",
+  "call.l1": "Vaš posao i što vam treba",
+  "call.l2": "Ideje za vašu stranicu",
+  "call.l3": "Rok izrade i jasna cijena",
+  "call.btn": "Odaberite termin",
+  "call.note": "Odaberete termin koji vam odgovara, a poveznicu za Google Meet dobivate e-poštom.",
   "contact.hr": "Hrvatska",
   "contact.us": "SAD",
-  "contact.time": "Rok izrade dogovaramo zajedno, a ako vam se žuri, stranica može biti gotova i <em>za tjedan dana</em>."
+  "contact.time": "Rok izrade dogovaramo <em>zajedno</em>, a ako vam se žuri, stranica može biti gotova i za tjedan dana."
 };
 
 const STATUS = {
