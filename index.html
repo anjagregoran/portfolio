@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=55">
+<link rel="stylesheet" href="styles.css?v=56">
 </head>
 <body>
 
@@ -174,10 +174,8 @@
       <h2 data-i18n="contact.title">Would you like a professional website?</h2>
       <p data-i18n="contact.p1">Book a free 30-minute call. Before it you answer a few short questions, so I come prepared with ideas for your business.</p>
       <div class="timing">
-        <p class="timing-label">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <span data-i18n="contact.timeLabel">Timing</span>
-        </p>
+        <svg class="timing-icon" viewBox="0 0 48 48" aria-hidden="true"><circle class="ring" cx="24" cy="24" r="17"/><path transform="rotate(0 24 24)" d="M24 9.5V12.5"/><path transform="rotate(30 24 24)" d="M24 10.5V12"/><path transform="rotate(60 24 24)" d="M24 10.5V12"/><path transform="rotate(90 24 24)" d="M24 9.5V12.5"/><path transform="rotate(120 24 24)" d="M24 10.5V12"/><path transform="rotate(150 24 24)" d="M24 10.5V12"/><path transform="rotate(180 24 24)" d="M24 9.5V12.5"/><path transform="rotate(210 24 24)" d="M24 10.5V12"/><path transform="rotate(240 24 24)" d="M24 10.5V12"/><path transform="rotate(270 24 24)" d="M24 9.5V12.5"/><path transform="rotate(300 24 24)" d="M24 10.5V12"/><path transform="rotate(330 24 24)" d="M24 10.5V12"/><path class="hand" d="M24 24L18.5 19"/><path class="hand" d="M24 24l7-9"/><circle class="pin" cx="24" cy="24" r="1.6"/></svg>
+        <p class="timing-label"><span data-i18n="contact.timeLabel">Timing</span></p>
         <p class="timing-text" data-i18n="contact.time">We agree on the timing <em>together</em>, and if you are in a hurry, your site can be ready within a week.</p>
       </div>
       <div class="reach">
@@ -196,9 +194,10 @@
       </div>
       <p class="call-sub" data-i18n="call.sub">What we will talk about</p>
       <ul class="call-list">
-        <li data-i18n="call.l1">Your business and what you need</li>
-        <li data-i18n="call.l2">Ideas for your website</li>
-        <li data-i18n="call.l3">Timing and a clear price</li>
+        <li data-i18n="call.l1">You tell me what you do and what you would like</li>
+        <li data-i18n="call.l2">I show you what would improve your website and marketing and bring you <em>more clients</em></li>
+        <li data-i18n="call.l3">At the end we go through the price, timing and next steps</li>
+        <li data-i18n="call.l4">You decide whether you would like to continue</li>
       </ul>
       <a class="btn call-btn" id="call-btn" href="#" target="_blank" rel="noopener" data-i18n="call.btn">Choose a time</a>
       <p class="call-note" id="call-note" data-i18n="call.note">Pick a time that suits you, and the Google Meet link arrives in your inbox.</p>
@@ -233,7 +232,7 @@
   </div>
 </footer>
 
-<script src="content.js?v=35"></script>
+<script src="content.js?v=36"></script>
 <script src="app.js?v=19"></script>
 <script src="demo.js?v=8"></script>
 </body>
