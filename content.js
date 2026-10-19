@@ -10,7 +10,7 @@ const HR = {
   "meta.title": "Anja Gregoran Jenul | Web dizajn za male poduzetnike",
 
   "nav.work": "Moji radovi",
-  "nav.services": "Suradnja",
+  "nav.services": "Kako radim",
   "nav.start": "Rezervirajte besplatan razgovor",
   "nav.menu": "Izbornik",
 
@@ -86,7 +86,7 @@ const HR = {
   "proof.1": "izrađenih web stranica",
   "proof.2": "jezika, hrvatski i engleski",
   "proof.3": "osoba, od prve ideje do objave",
-  "svc.label": "Suradnja",
+  "svc.label": "Kako radim",
   "svc.title": "Od prvog razgovora do objave i nakon nje",
   "foot.tag": "Web stranice koje male poduzetnike predstavljaju u najboljem svjetlu, na hrvatskom i engleskom.",
   "foot.nav": "Istražite",
