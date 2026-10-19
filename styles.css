@@ -842,3 +842,11 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 
 /* More air between the headline line and the hello text */
 .hero .hello { margin-top: 18px; }
+
+/* Timing, quieter: a small line icon beside the label and the sentence in body size */
+.timing { display: grid; gap: 6px; padding: 0; border: 0; max-width: 42ch; }
+.timing-label { display: flex; align-items: center; gap: 8px; margin: 0; font: 600 0.66rem var(--sans); letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); }
+.timing-label svg { width: 15px; height: 15px; fill: none; stroke: var(--green); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.timing-text { font-family: var(--sans); font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
+.timing-text em { font-family: var(--serif); font-size: 1.12em; font-style: italic; color: var(--green); }
+.timing { margin-top: 6px; }
