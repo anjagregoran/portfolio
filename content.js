@@ -2,8 +2,8 @@
 // pressing Send opens the visitor's email app with the whole enquiry already filled in.
 const FORM_ENDPOINT = "";
 
-// CALL_URL: Anja's Calendly booking link. While it is empty, "Choose a time" opens an email asking for a call.
-const CALL_URL = "";
+// CALL_URL: Anja's Cal.com booking link. While it is empty, "Choose a time" opens an email asking for a call.
+const CALL_URL = "https://cal.com/anjawebsitedesign/30min";
 
 // English lives in index.html. Croatian lives here, one line per piece of text.
 const HR = {

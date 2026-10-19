@@ -109,7 +109,7 @@
     compare.addEventListener("pointerleave", () => compare.classList.remove("hovering"));
   }
 
-  // Booking a call: Calendly when the link is set, otherwise an email asking for a call.
+  // Booking a call: Cal.com when the link is set, otherwise an email asking for a call.
   const callBtn = document.getElementById("call-btn");
   const callNote = document.getElementById("call-note");
   function setCallLink() {
