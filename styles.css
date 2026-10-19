@@ -875,12 +875,12 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 @media (min-width: 981px) { .hero { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); } }
 .hello { max-width: none; }
 
-/* Timing: a fine watch face beside the label and sentence */
+/* Timing: a thin ring that runs round to a serif 7 */
 .timing { grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; align-items: start; }
-.timing-icon { grid-row: span 2; width: 48px; height: 48px; padding: 2px; border-radius: 50%; background: var(--sage); box-shadow: inset 0 0 0 1px rgba(35, 64, 50, 0.18), 0 8px 20px -14px rgba(35, 64, 50, 0.55); fill: none; stroke: var(--green); stroke-linecap: round; }
-.timing-icon .ring { stroke-width: 1; }
-.timing-icon path { stroke-width: 1.1; }
-.timing-icon .hand { stroke-width: 1.6; }
-.timing-icon .pin { fill: var(--green); stroke: none; }
-.timing-label { margin-top: 4px; }
+.timing-icon { grid-row: span 2; width: 52px; height: 52px; fill: none; stroke-linecap: round; }
+.timing-icon .track { stroke: rgba(35, 64, 50, 0.18); stroke-width: 1.5; }
+.timing-icon .arc { stroke: var(--green); stroke-width: 1.5; }
+.timing-icon .dot { fill: var(--green); }
+.timing-icon text { fill: var(--green); font-family: var(--serif); font-style: italic; font-size: 23px; }
+.timing-label { margin-top: 6px; }
 .call-list li em { font-family: var(--serif); font-size: 1.1em; font-style: italic; color: var(--green); }
