@@ -900,3 +900,11 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 @media (max-width: 680px) { .hero-goal { margin-left: 0; } }
 body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .hero-goal p { text-wrap: pretty; }
+
+/* Hero: a short hello, the goal types itself in and the closing line slides out after it */
+.hero-goal .goal-main.typing::after { content: ""; display: inline-block; width: 1.5px; height: 0.95em; margin-left: 3px; background: var(--green); vertical-align: -0.1em; animation: caret 0.9s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+.hero-goal .goal-close { opacity: 0; transform: translateY(10px); transition: opacity 0.8s ease, transform 0.9s cubic-bezier(.2,.7,.2,1); }
+.hero-goal .goal-close.show { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .hero-goal .goal-close { opacity: 1; transform: none; } }
+.services-lead { max-width: 60ch; margin: 4px 0 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; }

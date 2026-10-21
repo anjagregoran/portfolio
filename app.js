@@ -203,6 +203,39 @@
     });
   }
 
+  // The goal types itself in a moment after the page opens, then the closing line slides out.
+  const goalMain = document.querySelector(".hero-goal .goal-main");
+  const goalClose = document.querySelector(".hero-goal .goal-close");
+  let goalTimer, goalSeen = false;
+  function typeGoal(delay) {
+    clearTimeout(goalTimer);
+    if (!goalMain || !goalClose) return;
+    goalClose.classList.remove("show");
+    goalMain.classList.remove("typing");
+    goalMain.style.minHeight = "";
+    if (reduce) { goalClose.classList.add("show"); return; }
+    goalMain.style.minHeight = goalMain.offsetHeight + "px";
+    const walker = document.createTreeWalker(goalMain, NodeFilter.SHOW_TEXT);
+    const parts = [];
+    while (walker.nextNode()) parts.push([walker.currentNode, walker.currentNode.textContent]);
+    parts.forEach(([n]) => { n.textContent = ""; });
+    let i = 0, j = 0;
+    const step = () => {
+      if (i >= parts.length) {
+        goalMain.classList.remove("typing");
+        goalMain.style.minHeight = "";
+        goalTimer = setTimeout(() => goalClose.classList.add("show"), 300);
+        return;
+      }
+      const [node, full] = parts[i];
+      node.textContent = full.slice(0, ++j);
+      if (j >= full.length) { i++; j = 0; }
+      goalTimer = setTimeout(step, 16 + Math.random() * 24);
+    };
+    goalTimer = setTimeout(() => { goalMain.classList.add("typing"); step(); }, delay);
+  }
+  document.addEventListener("langchange", () => { typeGoal(goalSeen ? 200 : 1300); goalSeen = true; });
+
   let saved = null;
   try { saved = localStorage.getItem("lang"); } catch (e) {}
   setLang(saved || ((navigator.language || "").toLowerCase().startsWith("hr") ? "hr" : "en"));
