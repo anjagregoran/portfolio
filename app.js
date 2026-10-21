@@ -203,38 +203,25 @@
     });
   }
 
-  // The goal types itself in a moment after the page opens, then the closing line slides out.
-  const goalMain = document.querySelector(".hero-goal .goal-main");
-  const goalClose = document.querySelector(".hero-goal .goal-close");
-  let goalTimer, goalSeen = false;
-  function typeGoal(delay) {
-    clearTimeout(goalTimer);
-    if (!goalMain || !goalClose) return;
-    goalClose.classList.remove("show");
-    goalMain.classList.remove("typing");
-    goalMain.style.minHeight = "";
-    if (reduce) { goalClose.classList.add("show"); return; }
-    goalMain.style.minHeight = goalMain.offsetHeight + "px";
-    const walker = document.createTreeWalker(goalMain, NodeFilter.SHOW_TEXT);
-    const parts = [];
-    while (walker.nextNode()) parts.push([walker.currentNode, walker.currentNode.textContent]);
-    parts.forEach(([n]) => { n.textContent = ""; });
-    let i = 0, j = 0;
+  // "Your business deserves..." types itself in, typewriter style, across the top of the hero.
+  const heroLine = document.querySelector(".hero-line-text");
+  let lineTimer, lineSeen = false;
+  function typeLine(delay) {
+    clearTimeout(lineTimer);
+    if (!heroLine) return;
+    const full = heroLine.textContent;
+    heroLine.parentElement.classList.remove("typing");
+    if (reduce) return;
+    heroLine.textContent = "";
+    let n = 0;
     const step = () => {
-      if (i >= parts.length) {
-        goalMain.classList.remove("typing");
-        goalMain.style.minHeight = "";
-        goalTimer = setTimeout(() => goalClose.classList.add("show"), 300);
-        return;
-      }
-      const [node, full] = parts[i];
-      node.textContent = full.slice(0, ++j);
-      if (j >= full.length) { i++; j = 0; }
-      goalTimer = setTimeout(step, 16 + Math.random() * 24);
+      heroLine.textContent = full.slice(0, ++n);
+      if (n < full.length) lineTimer = setTimeout(step, 34 + Math.random() * 46);
+      else lineTimer = setTimeout(() => heroLine.parentElement.classList.remove("typing"), 2400);
     };
-    goalTimer = setTimeout(() => { goalMain.classList.add("typing"); step(); }, delay);
+    lineTimer = setTimeout(() => { heroLine.parentElement.classList.add("typing"); step(); }, delay);
   }
-  document.addEventListener("langchange", () => { typeGoal(goalSeen ? 200 : 1300); goalSeen = true; });
+  document.addEventListener("langchange", () => { typeLine(lineSeen ? 200 : 700); lineSeen = true; });
 
   let saved = null;
   try { saved = localStorage.getItem("lang"); } catch (e) {}

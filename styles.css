@@ -901,10 +901,10 @@ h1 .mark::after { bottom: -0.12em; height: 1.5px; }
 body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .hero-goal p { text-wrap: pretty; }
 
-/* Hero: a short hello, the goal types itself in and the closing line slides out after it */
-.hero-goal .goal-main.typing::after { content: ""; display: inline-block; width: 1.5px; height: 0.95em; margin-left: 3px; background: var(--green); vertical-align: -0.1em; animation: caret 0.9s steps(1) infinite; }
+/* Hero: the key sentence types itself in across the top, in a typewriter face */
+.hero-line { grid-column: 1 / -1; justify-self: center; margin: 0 0 clamp(4px, 1vw, 14px); min-height: 1.4em; text-align: center; font-family: "Courier Prime", "Courier New", ui-monospace, monospace; font-size: clamp(1.05rem, 1.65vw, 1.6rem); line-height: 1.35; text-wrap: balance; color: var(--green); letter-spacing: 0.005em; }
+.hero-line.typing::after { content: ""; display: inline-block; width: 0.55em; height: 2px; margin-left: 2px; background: var(--green); vertical-align: -0.12em; animation: caret 0.9s steps(1) infinite; }
 @keyframes caret { 50% { opacity: 0; } }
-.hero-goal .goal-close { opacity: 0; transform: translateY(10px); transition: opacity 0.8s ease, transform 0.9s cubic-bezier(.2,.7,.2,1); }
-.hero-goal .goal-close.show { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .hero-goal .goal-close { opacity: 1; transform: none; } }
 .services-lead { max-width: 60ch; margin: 4px 0 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; }
+.hero { row-gap: clamp(18px, 2.6vw, 36px); }
+@media (min-width: 981px) { .hero-line { white-space: nowrap; } .hero { padding-top: clamp(22px, 2.6vw, 40px); } }
