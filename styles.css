@@ -1101,3 +1101,8 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
   .services-head > :not(.sketch) { grid-column: 1; }
   .services-head .sketch-light { position: static; grid-column: 2; grid-row: 1 / span 4; align-self: end; width: 110px; }
 }
+/* Timing: two overlapping rings for "together" */
+.timing-icon.together circle { fill: none; stroke: var(--green); stroke-width: 1.4; }
+.timing-icon.together circle:last-child { fill: rgba(35, 64, 50, 0.08); }
+/* Emphasis in the call card in the same font, just green */
+.call-list li em { font-family: inherit; font-style: normal; font-size: 1em; font-weight: 500; color: var(--green); }

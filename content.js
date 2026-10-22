@@ -140,7 +140,7 @@ const HR = {
   "call.note": "Odaberete termin koji vam odgovara, a poveznicu za Google Meet dobivate e-poštom.",
   "contact.hr": "Hrvatska",
   "contact.us": "SAD",
-  "contact.time": "Rok izrade dogovaramo <em>zajedno</em>, a ako vam se žuri, stranica može biti gotova i za tjedan dana."
+  "contact.time": "Rok izrade dogovaramo <em>zajedno</em>."
 };
 
 const STATUS = {
