@@ -93,7 +93,7 @@ const HR = {
   "svc.label": "Kako radim",
   "svc.title": "Od prvog razgovora do objave i nakon nje",
   "foot.tag": "Dizajn koji doživite, a ne samo vidite.",
-  "intro.langs": "Stranice izrađujem na hrvatskom, engleskom ili na oba jezika.",
+  "intro.langs": "Stranice izrađujem na hrvatskom, na engleskom ili na oba jezika. Za turiste radim stranice na engleskom koje čuvaju naš hrvatski duh, s domaćim nazivima jela i mjesta te izrazima koje gosti zapamte, kako bi vaš posao privukao goste iz cijelog svijeta.",
   "foot.nav": "Istražite",
   "foot.privacy": "Vaše podatke koristim isključivo kako bih vam odgovorila.",
   "foot.top": "Natrag na vrh",
