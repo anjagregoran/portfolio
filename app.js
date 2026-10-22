@@ -37,7 +37,6 @@
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
     document.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
-    try { localStorage.setItem("lang", lang); } catch (e) {}
   }
 
   document.querySelectorAll("[data-lang]").forEach((b) => {
@@ -235,6 +234,8 @@
   document.addEventListener("langchange", () => { if (lineSeen) typeLine(200); });
 
   setLang("hr");
+  // The site no longer remembers a language choice, so clear the old one
+  try { localStorage.removeItem("lang"); } catch (e) {}
 
   // Links within the page glide slowly, so visitors see the sections pass on the way down.
   const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);

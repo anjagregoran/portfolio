@@ -1,7 +1,7 @@
 // Dithered aurora behind the first section: soft flowing shapes drawn as tiny green dots,
 // brighter around the mouse and drifting after it.
 import { ShaderMount, ditheringFragmentShader, DitheringShapes, DitheringTypes }
-  from "https://cdn.jsdelivr.net/npm/@paper-design/shaders@0.0.72/+esm";
+  from "./vendor/paper-shaders-0.0.72.js";
 
 const el = document.querySelector(".dither-bg");
 const home = document.querySelector(".home");
