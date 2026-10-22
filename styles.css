@@ -1155,3 +1155,13 @@ body.loaded .home-hero > .scroll-cue { transform: none; }
           mask-composite: intersect;
   aspect-ratio: 4 / 5; opacity: 0.85;
 }
+
+/* About photo back to a modest size: wider crop, simple rounded rectangle, no fade */
+.about-sec .about { grid-template-columns: auto minmax(0, 1fr); gap: clamp(28px, 3.5vw, 52px); max-width: 1060px; align-items: center; }
+.portrait-soft {
+  width: clamp(170px, 15vw, 220px); aspect-ratio: 4 / 5; object-position: 50% 30%;
+  opacity: 1; mix-blend-mode: normal; border-radius: 10px;
+  -webkit-mask-image: none; mask-image: none;
+  box-shadow: 0 22px 44px -28px rgba(43, 33, 27, 0.6);
+}
+@media (max-width: 760px) { .portrait-soft { width: 190px; } }
