@@ -135,6 +135,7 @@ const HR = {
   "photo.label": "Dodatna usluga",
   "photo.title": "Fotografije vašeg <em>posla</em>",
   "photo.p": "Od ožujka 2027. ponovno sam u Hrvatskoj. Za poslove u Rijeci i do dva sata vožnje od nje mogu profesionalnim fotoaparatom fotografirati vaš prostor, jela, proizvode i ljude koji stoje iza njih, a zatim fotografije pažljivo urediti. Tako vaša stranica izgleda jednako dobro kao vaš posao uživo. Fotografiranje se dogovara i naplaćuje uz izradu stranice.",
+  "about.quote": "„Vaša web stranica je prozor u vaš svijet.”",
   "contact.wa": "WhatsApp",
   "contact.viber": "Viber",
   "call.note": "Odaberete termin koji vam odgovara, a poveznicu za Google Meet dobivate e-poštom.",
