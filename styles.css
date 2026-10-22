@@ -908,3 +908,37 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .services-lead { max-width: 60ch; margin: 4px 0 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; }
 .hero { row-gap: clamp(18px, 2.6vw, 36px); }
 @media (min-width: 981px) { .hero-line { white-space: nowrap; } .hero { padding-top: clamp(22px, 2.6vw, 40px); } }
+
+/* First section: only the headline and the buttons, over a dithered aurora that follows the mouse */
+:root { --dither: #3f6b4f; --dither-alpha: 0.5; }
+.home { position: relative; overflow: hidden; isolation: isolate; }
+.dither-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  --mx: 50%; --my: 40%;
+  -webkit-mask-image: radial-gradient(520px circle at var(--mx) var(--my), #000 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.22) 100%);
+          mask-image: radial-gradient(520px circle at var(--mx) var(--my), #000 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.22) 100%);
+}
+.dither-bg.static { background: radial-gradient(60% 50% at 20% 10%, rgba(35, 64, 50, 0.16), transparent 70%); }
+.home-hero {
+  position: relative; z-index: 1;
+  min-height: calc(100svh - 74px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+  text-align: center; padding-block: clamp(64px, 10vh, 120px);
+  background: radial-gradient(ellipse 46% 40% at 50% 50%, rgba(247, 240, 230, 0.82), rgba(247, 240, 230, 0) 72%);
+}
+.home-hero .label { margin: 0; }
+.home-hero h1 { margin: 0; max-width: 14ch; font-size: clamp(3rem, 7vw, 6.4rem); line-height: 0.98; }
+.home-hero .actions { justify-content: center; }
+.hero-line.waiting { visibility: hidden; }
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero > * { opacity: 0; transform: translateY(22px); }
+  body.loaded .home-hero > * { opacity: 1; transform: none; transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1); }
+  body.loaded .home-hero > :nth-child(2) { transition-delay: 0.12s; }
+  body.loaded .home-hero > :nth-child(3) { transition-delay: 0.3s; }
+}
+@media (max-width: 680px) { .home-hero { min-height: 82svh; gap: 22px; } .home-hero .actions { width: 100%; } }
+/* Header button stays on one line, and hides on tablets where the first section shows the same button */
+.top .btn-small { white-space: nowrap; }
+@media (max-width: 900px) { .top .btn-small { display: none; } }
+/* Soft fade where the aurora ends, so there is no hard edge */
+.home::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: clamp(90px, 16vh, 170px); z-index: 0; pointer-events: none; background: linear-gradient(to bottom, rgba(247, 240, 230, 0), var(--cream)); }

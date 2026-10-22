@@ -221,7 +221,18 @@
     };
     lineTimer = setTimeout(() => { heroLine.parentElement.classList.add("typing"); step(); }, delay);
   }
-  document.addEventListener("langchange", () => { typeLine(lineSeen ? 200 : 700); lineSeen = true; });
+  // It now sits below the first section, so it types when it scrolls into view
+  if (heroLine && !reduce && "IntersectionObserver" in window) {
+    heroLine.parentElement.classList.add("waiting");
+    const seen = new IntersectionObserver(([en]) => {
+      if (!en.isIntersecting) return;
+      seen.disconnect(); lineSeen = true;
+      heroLine.parentElement.classList.remove("waiting");
+      typeLine(150);
+    }, { rootMargin: "0px 0px -15% 0px" });
+    seen.observe(heroLine.parentElement);
+  }
+  document.addEventListener("langchange", () => { if (lineSeen) typeLine(200); });
 
   let saved = null;
   try { saved = localStorage.getItem("lang"); } catch (e) {}
