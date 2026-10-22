@@ -18,7 +18,7 @@
 <link rel="icon" href="favicon-64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=1">
-<link rel="stylesheet" href="styles.css?v=64">
+<link rel="stylesheet" href="styles.css?v=66">
 </head>
 <body>
 
@@ -50,8 +50,8 @@
       <p class="label" data-i18n="hero.label">Web dizajn za male poduzetnike</p>
       <h1 data-i18n="hero.title">Web stranice koje <span class="alt">male<br> poduzetnike</span> predstavljaju<br> u <em class="mark">najboljem svjetlu</em>.</h1>
       <div class="actions">
-        <a class="btn" href="#contact" data-i18n="nav.start">Rezervirajte besplatan razgovor</a>
-        <a class="btn btn-line" href="#work" data-i18n="hero.work">Pogledajte moje radove</a>
+        <a class="btn btn-frame" href="#contact"><span data-i18n="nav.start">Rezervirajte besplatan razgovor</span><i aria-hidden="true">&rarr;</i></a>
+        <a class="link-arrow" href="#work"><span data-i18n="hero.work">Pogledajte moje radove</span><i aria-hidden="true">&darr;</i></a>
       </div>
     </section>
   </div>
@@ -59,14 +59,13 @@
   <section class="hero">
     <p class="hero-line"><span class="hero-line-text" data-i18n="goal.close">Vaš posao zaslužuje izgledati jednako dobro na internetu kao i uživo.</span></p>
     <div class="intro">
-      <div class="hello">
-        <img class="portrait" src="img/anja.jpg?v=3" width="600" height="600" alt="Anja Gregoran Jenul">
-        <div class="hello-text" data-i18n="about.p1"><p>Pozdrav! Ja sam Anja, dolazim iz Kastva i obrazujem se u području poduzetništva na Ekonomskom fakultetu u Rijeci.</p></div>
+      <div class="about">
+        <img class="portrait-arch" src="img/anja.jpg?v=3" width="600" height="600" alt="Anja Gregoran Jenul">
+        <div class="about-text">
+          <p class="about-lead"><span data-i18n="about.p1">Pozdrav! Ja sam Anja, dolazim iz Kastva i obrazujem se u području poduzetništva na Ekonomskom fakultetu u Rijeci.</span> <span data-i18n="goal.main">Moj cilj je jednostavan: stvoriti web stranice koje ne samo da izgledaju odlično, već i vjerno predstavljaju vaš posao, privlače nove klijente i ostavljaju <em>snažan prvi dojam</em>.</span></p>
+          <p class="langs" data-i18n="intro.langs">Stranice izrađujem na hrvatskom, engleskom ili na oba jezika.</p>
+        </div>
       </div>
-      <div class="hero-goal">
-        <p class="goal-main" data-i18n="goal.main">Moj cilj je jednostavan: stvoriti web stranice koje ne samo da izgledaju odlično, već i vjerno predstavljaju vaš posao, privlače nove klijente i ostavljaju <em>snažan prvi dojam</em>.</p>
-      </div>
-      <p class="langs" data-i18n="intro.langs">Stranice izrađujem na hrvatskom, engleskom ili na oba jezika.</p>
     </div>
     <div class="demo" id="demo" aria-label="A demo website you can change"></div>
   </section>
@@ -237,7 +236,7 @@
   </div>
 </footer>
 
-<script src="content.js?v=39"></script>
+<script src="content.js?v=40"></script>
 <script src="app.js?v=26"></script>
 <script src="demo.js?v=9"></script>
 <script type="module" src="aurora.js?v=2"></script>
