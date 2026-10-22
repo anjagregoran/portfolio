@@ -1165,3 +1165,20 @@ body.loaded .home-hero > .scroll-cue { transform: none; }
   box-shadow: 0 22px 44px -28px rgba(43, 33, 27, 0.6);
 }
 @media (max-width: 760px) { .portrait-soft { width: 190px; } }
+
+/* Section 1 fades slowly into section 2, which has no aurora */
+.home::after { height: clamp(160px, 32vh, 320px); }
+.home-hero { padding-bottom: clamp(110px, 16vh, 180px); }
+
+/* Section 2: a faded dotted map of Croatia behind, towards the right, with Rijeka marked */
+.about-sec { position: relative; isolation: isolate; overflow: hidden; }
+.about-sec > :not(.hr-map) { position: relative; z-index: 1; }
+.hr-map { position: absolute; z-index: 0; right: max(-4vw, -60px); top: 50%; transform: translateY(-46%); width: min(56vw, 760px); height: auto; opacity: 0.32; pointer-events: none; user-select: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%); mask-image: linear-gradient(to right, transparent 0, #000 30%); }
+@media (max-width: 760px) { .hr-map { width: 120vw; right: -30vw; top: 38%; opacity: 0.18; } }
+.hr-map { width: min(48vw, 680px); right: max(-2vw, -30px); top: auto; bottom: 4%; transform: none; opacity: 0.26; }
+@media (max-width: 760px) {
+  .about-sec .about { grid-template-columns: 1fr; justify-items: center; text-align: left; }
+  .about-sec .about-text { justify-self: stretch; }
+  .portrait-soft { width: 190px; }
+}
