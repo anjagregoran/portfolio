@@ -1045,3 +1045,11 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .postcard svg { height: 120px; opacity: 0.75; }
 .postcard figcaption { margin: 0; padding-top: 12px; border-top: 1px dashed var(--line); }
 @media (max-width: 860px) { .postcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Postcards are now Crnčić's paintings of Kvarner */
+.postcard { padding: 12px 12px 14px; gap: 12px; background: #fbf6ee; }
+.postcard img { display: block; width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; border-radius: 2px; }
+.postcard figcaption { margin: 0; padding-top: 10px; font: 500 0.62rem "DM Sans", var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); text-align: center; }
+.local-note { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--ink-soft); }
+.services-lead.tools { margin-top: 0; }
+.postcard { margin: 0; }
