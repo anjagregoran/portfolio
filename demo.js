@@ -54,19 +54,19 @@
     },
     cafe: {
       url: "kavaikruh.hr", name: "Kava & Kruh", img: "cafe",
-      en: { tag: "Coffee and fresh bread", title: "Slow mornings start here.", links: ["Menu", "About", "Visit"], cta: "Reserve a table",
+      en: { tag: "Coffee and fresh bread in Rijeka", title: "Slow mornings start here.", links: ["Menu", "About", "Visit"], cta: "Reserve a table",
         fields: ["Date", "Time", "People"], go: "Reserve",
-        quote: "The best croissant I have had outside Paris.", who: "Guest from Rijeka", mapT: "Find us", mapD: "On the old town square" },
-      hr: { tag: "Kava i svježi kruh", title: "Ovdje počinju opuštena jutra.", links: ["Jelovnik", "O nama", "Posjetite nas"], cta: "Rezervirajte stol",
+        quote: "The best croissant I have had outside Paris.", who: "Guest from Opatija", mapT: "Find us", mapD: "On the Korzo, in the heart of Rijeka" },
+      hr: { tag: "Kava i svježi kruh u Rijeci", title: "Ovdje počinju opuštena jutra.", links: ["Jelovnik", "O nama", "Posjetite nas"], cta: "Rezervirajte stol",
         fields: ["Datum", "Vrijeme", "Osobe"], go: "Rezervirajte",
-        quote: "Najbolji kroasan koji sam jela izvan Pariza.", who: "Gošća iz Rijeke", mapT: "Kako do nas", mapD: "Na glavnom trgu starog grada" }
+        quote: "Najbolji kroasan koji sam jela izvan Pariza.", who: "Gošća iz Opatije", mapT: "Kako do nas", mapD: "Na Korzu, u srcu Rijeke" }
     },
     salon: {
-      url: "studiobloom.com", name: "studio bloom", img: "salon",
-      en: { tag: "Hair and beauty in Marcellus", title: "Feel like yourself again.", links: ["Services", "Prices", "Contact"], cta: "Book a visit",
+      url: "studiobloom.hr", name: "studio bloom", img: "salon",
+      en: { tag: "Hair and beauty in Kastav", title: "Feel like yourself again.", links: ["Services", "Prices", "Contact"], cta: "Book a visit",
         fields: ["Service", "Date", "Time"], go: "Find a time",
         quote: "Friendly, calm and always on time.", who: "Regular client", mapT: "Visit us", mapD: "Free parking at the door" },
-      hr: { tag: "Frizerski i kozmetički salon u Marcellusu", title: "Ponovno se osjećajte kao svoji.", links: ["Usluge", "Cijene", "Kontakt"], cta: "Rezervirajte termin",
+      hr: { tag: "Frizerski i kozmetički salon u Kastvu", title: "Ponovno se osjećajte kao svoji.", links: ["Usluge", "Cijene", "Kontakt"], cta: "Rezervirajte termin",
         fields: ["Usluga", "Datum", "Vrijeme"], go: "Pronađite termin",
         quote: "Ljubazno, opušteno i uvijek na vrijeme.", who: "Stalna klijentica", mapT: "Posjetite nas", mapD: "Besplatno parkiralište ispred ulaza" }
     }
@@ -102,8 +102,8 @@
       hr: { head: "Danas na pultu", items: [["cup", "Cappuccino", "2,50 €"], ["croissant", "Kroasan s maslacem", "1,80 €"], ["loaf", "Kruh s kiselim tijestom", "4,20 €"]], badge: "SVJEŽI KRUH SVAKO JUTRO · KAVA CIJELI DAN · " }
     },
     salon: {
-      en: { items: [["scissors", "Cut and style", "from $45"], ["drop", "Colour", "from $90"], ["wind", "Blow dry", "$35"]], b1: "Book now", b2: "Our services", offer: "New clients get 15% off their first visit" },
-      hr: { items: [["scissors", "Šišanje i styling", "od 45 $"], ["drop", "Bojanje", "od 90 $"], ["wind", "Feniranje", "35 $"]], b1: "Rezervirajte", b2: "Naše usluge", offer: "Novi klijenti imaju 15 % popusta na prvi posjet" }
+      en: { items: [["scissors", "Cut and style", "from 25 €"], ["drop", "Colour", "from 45 €"], ["wind", "Blow dry", "15 €"]], b1: "Book now", b2: "Our services", offer: "New clients get 15% off their first visit" },
+      hr: { items: [["scissors", "Šišanje i styling", "od 25 €"], ["drop", "Bojanje", "od 45 €"], ["wind", "Feniranje", "15 €"]], b1: "Rezervirajte", b2: "Naše usluge", offer: "Novi klijenti imaju 15 % popusta na prvi posjet" }
     }
   };
 

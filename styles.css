@@ -1030,3 +1030,18 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .about-text { gap: 12px; }
 @media (min-width: 981px) { .hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); } }
 @media (max-width: 680px) { .portrait-arch { width: 160px; } }
+
+/* The coffee line in the plain, readable body font */
+.call-coffee { font-family: var(--sans); font-style: normal; font-size: 1rem; line-height: 1.5; color: var(--ink); }
+
+/* Postcards from Kvarner: four fine-line drawings in a row */
+.local { padding-block: clamp(64px, 8vw, 110px) clamp(40px, 5vw, 70px); display: grid; gap: clamp(28px, 4vw, 48px); }
+.local-head { display: grid; gap: 14px; max-width: 62ch; }
+.local-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.1rem, 3.6vw, 3.2rem); line-height: 1.04; margin: 0; }
+.local-head h2 em { font-style: italic; color: var(--green); }
+.local-head p:last-child { margin: 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; }
+.postcards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); }
+.postcard { background: #fbf6ee; border: 1px solid var(--line); border-radius: 4px; padding: clamp(18px, 2.4vw, 30px) clamp(16px, 2vw, 26px) 18px; display: grid; gap: 14px; align-content: space-between; }
+.postcard svg { height: 120px; opacity: 0.75; }
+.postcard figcaption { margin: 0; padding-top: 12px; border-top: 1px dashed var(--line); }
+@media (max-width: 860px) { .postcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
