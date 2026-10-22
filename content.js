@@ -128,7 +128,7 @@ const HR = {
   "local.title": "Iz Kastva, za male poduzetnike <em>diljem Hrvatske</em>",
   "local.p": "Vjerujem da su mali obrti i tvrtke srce naših gradova i želim im pomoći da rastu i ostanu jaki, kako naše ulice ne bi preuzeli veliki lanci. Radim s konobama, salonima, apartmanima i obrtima od Kvarnera do Slavonije, a ako ste u blizini, rado dođem do vas.",
   "local.note": "Kvarner očima slikara Mencija Clementa Crnčića, prije više od sto godina.",
-  "svc.tools": "Pratim što danas najbolje funkcionira na internetu i radim s najnovijim alatima, uključujući alate umjetne inteligencije, kako bi vaša stranica bila moderna, brza i lako pronađena.",
+  "svc.tools": "Pratim što danas najbolje funkcionira na internetu i radim s najnovijim alatima, uključujući alate umjetne inteligencije, kako bi vaša stranica bila moderna i brza, a vas kupci lakše pronašli na Googleu.",
   "contact.wa": "WhatsApp",
   "contact.viber": "Viber",
   "call.note": "Odaberete termin koji vam odgovara, a poveznicu za Google Meet dobivate e-poštom.",
