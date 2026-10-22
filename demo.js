@@ -29,13 +29,15 @@
 
   const UI = {
     en: {
-      title: "Change it live", type: "Business", colour: "Colour", add: "Add",
+      type: "Business", colour: "Colour", add: "Add", photo: "Photo", font: "Font",
+      fonts: { own: "Original", classic: "Classic", modern: "Modern", soft: "Soft" },
       types: { apartments: "Apartments", cafe: "Café", salon: "Salon" },
       addons: { booking: "Booking", gallery: "Gallery", reviews: "Reviews", map: "Map" },
       note: "A demo site. Yours is built around your own business.", gallery: "Gallery", demo: "Demo"
     },
     hr: {
-      title: "Promijenite je uživo", type: "Djelatnost", colour: "Boja", add: "Dodajte",
+      type: "Djelatnost", colour: "Boja", add: "Dodajte", photo: "Fotografija", font: "Pismo",
+      fonts: { own: "Izvorno", classic: "Klasično", modern: "Moderno", soft: "Nježno" },
       types: { apartments: "Apartmani", cafe: "Kafić", salon: "Salon" },
       addons: { booking: "Rezervacije", gallery: "Galerija", reviews: "Recenzije", map: "Karta" },
       note: "Ovo je primjer stranice. Vaša se izrađuje po mjeri vašeg posla.", gallery: "Galerija", demo: "Primjer"
@@ -128,7 +130,7 @@
     return "";
   }
   let lang = document.documentElement.lang === "hr" ? "hr" : "en";
-  const state = { type: "apartments", palette: {}, addons: new Set() };
+  const state = { type: "apartments", palette: {}, addons: new Set(), photo: {}, font: "own" };
   Object.keys(PALETTES).forEach((t) => { state.palette[t] = Object.keys(PALETTES[t])[0]; });
 
   function render() {
@@ -139,10 +141,10 @@
     root.innerHTML = `
       <div class="demo-frame">
         <div class="demo-bar"><i></i><i></i><i></i><span>${site.url}</span><b>${ui.demo}</b></div>
-        <div class="demo-site" data-style="${state.type}">
+        <div class="demo-site" data-style="${state.type}" data-font="${state.font}">
           ${state.type === "salon" ? `<p class="m-announce">${EXTRA.salon[lang].offer}</p>` : ""}
           <div class="m-hero">
-            <img src="${photo(site, "hero")}" alt="" width="1400" height="875">
+            <img class="m-hero-img" src="${photo(site, state.photo[state.type] || "hero")}" alt="" width="1400" height="875">
             <div class="m-nav">
               <strong>${site.name}</strong>
               <nav>${c.links.map((l) => `<span>${l}</span>`).join("")}</nav>
@@ -177,11 +179,14 @@
         </div>
       </div>
       <div class="demo-controls">
-        <p class="demo-title">${ui.title}</p>
         <div class="demo-row"><span>${ui.type}</span><div>${Object.keys(SITES).map((k) =>
           `<button type="button" data-type="${k}" aria-pressed="${k === state.type}">${ui.types[k]}</button>`).join("")}</div></div>
         <div class="demo-row"><span>${ui.colour}</span><div>${Object.keys(pals).map((k) =>
           `<button type="button" class="swatch" data-palette="${k}" aria-pressed="${k === state.palette[state.type]}" aria-label="${k}" style="--sw:${pals[k].accent};--sw2:${pals[k].bg}"></button>`).join("")}</div></div>
+        <div class="demo-row"><span>${ui.photo}</span><div>${["hero", 1, 2, 3].map((n) =>
+          `<button type="button" class="thumb" data-photo="${n}" aria-pressed="${String(n) === String(state.photo[state.type] || "hero")}" aria-label="${ui.photo} ${n}"><img src="${photo(site, n)}" alt="" width="60" height="44" loading="lazy"></button>`).join("")}</div></div>
+        <div class="demo-row"><span>${ui.font}</span><div>${Object.keys(ui.fonts).map((k) =>
+          `<button type="button" class="fontbtn" data-font="${k}" data-f="${k}" aria-pressed="${k === state.font}">${ui.fonts[k]}</button>`).join("")}</div></div>
         <div class="demo-row"><span>${ui.add}</span><div>${Object.keys(ui.addons).map((k) =>
           `<button type="button" class="addon" data-addon="${k}" aria-pressed="${state.addons.has(k)}">${ui.addons[k]}</button>`).join("")}</div></div>
         <p class="demo-note">${ui.note}</p>
@@ -226,6 +231,19 @@
     applyPalette();
     root.querySelectorAll(".swatch").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.palette === k)));
   }
+  function setPhoto(n) {
+    state.photo[state.type] = n;
+    const img = root.querySelector(".m-hero-img");
+    img.classList.add("swap");
+    setTimeout(() => { img.src = photo(SITES[state.type], n); img.onload = () => img.classList.remove("swap"); }, reduce ? 0 : 200);
+    root.querySelectorAll(".thumb").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.photo === String(n))));
+  }
+
+  function setFont(k) {
+    state.font = k;
+    root.querySelector(".demo-site").dataset.font = k;
+    root.querySelectorAll(".fontbtn").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.font === k)));
+  }
   const paletteAt = (i) => Object.keys(PALETTES[state.type])[i];
 
   // A short tour shows what the buttons do, and stops as soon as the visitor clicks anything.
@@ -239,9 +257,11 @@
       [2600, () => setPalette(paletteAt(1))],
       [4000, () => setType("cafe")],
       [5400, () => toggleAddon("gallery", true)],
+      [6200, () => setPhoto(2)],
       [7000, () => setType("salon")],
       [8400, () => setPalette(paletteAt(3))],
-      [10000, () => { setPalette(paletteAt(0)); setType("apartments"); }]
+      [9200, () => setFont("soft")],
+      [10000, () => { setPalette(paletteAt(0)); setFont("own"); setType("apartments"); }]
     ];
     tour = steps.map(([ms, fn]) => setTimeout(fn, ms));
   }
@@ -253,6 +273,8 @@
     if (b.dataset.type) setType(b.dataset.type);
     else if (b.dataset.palette) setPalette(b.dataset.palette);
     else if (b.dataset.addon) toggleAddon(b.dataset.addon);
+    else if (b.dataset.photo) setPhoto(b.dataset.photo);
+    else if (b.dataset.font) setFont(b.dataset.font);
   });
   root.addEventListener("pointerdown", stopTour, { once: true });
 

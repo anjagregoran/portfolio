@@ -1082,3 +1082,22 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .photo-addon p:last-child { margin: 0; color: var(--ink-soft); line-height: 1.7; max-width: 64ch; }
 .photo-icon { width: 56px; height: 56px; fill: none; stroke: var(--green); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; margin-top: 4px; }
 @media (max-width: 600px) { .photo-addon { grid-template-columns: 1fr; } }
+
+/* Demo: photo and font choices */
+.demo-controls .thumb { padding: 0; width: 46px; height: 34px; border-radius: 6px; overflow: hidden; border: 2px solid transparent; background: none; cursor: pointer; }
+.demo-controls .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.demo-controls .thumb[aria-pressed="true"] { border-color: var(--green); }
+.demo-controls .fontbtn[data-f="classic"] { font-family: "Cormorant Garamond", serif; font-size: 1.02rem; }
+.demo-controls .fontbtn[data-f="modern"] { font-family: "DM Sans", sans-serif; }
+.demo-controls .fontbtn[data-f="soft"] { font-family: "Instrument Serif", serif; font-style: italic; font-size: 1.02rem; }
+.m-hero-img { transition: opacity 0.35s ease; }
+.m-hero-img.swap { opacity: 0; }
+.demo-site[data-font="classic"] .m-nav strong, .demo-site[data-font="classic"] .m-hero-text h3, .demo-site[data-font="classic"] .m-h { font-family: "Cormorant Garamond", serif !important; font-weight: 500 !important; font-style: normal !important; text-transform: none !important; letter-spacing: 0.01em !important; }
+.demo-site[data-font="modern"] .m-nav strong, .demo-site[data-font="modern"] .m-hero-text h3, .demo-site[data-font="modern"] .m-h { font-family: "DM Sans", sans-serif !important; font-weight: 500 !important; font-style: normal !important; text-transform: none !important; letter-spacing: -0.02em !important; }
+.demo-site[data-font="soft"] .m-nav strong, .demo-site[data-font="soft"] .m-hero-text h3, .demo-site[data-font="soft"] .m-h { font-family: "Instrument Serif", serif !important; font-weight: 400 !important; font-style: italic !important; text-transform: none !important; letter-spacing: 0 !important; }
+/* Molo longo sits right beside the How it works text */
+@media (min-width: 981px) {
+  .services-head { grid-template-columns: minmax(0, 64ch) auto; justify-content: start; column-gap: clamp(36px, 4vw, 64px); }
+  .services-head > :not(.sketch) { grid-column: 1; }
+  .services-head .sketch-light { position: static; grid-column: 2; grid-row: 1 / span 4; align-self: end; width: 110px; }
+}
