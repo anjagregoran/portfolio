@@ -1067,3 +1067,10 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .demo-sec h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.05; margin: 0; }
 .demo-sec h2 em { font-style: italic; color: var(--green); }
 .demo-lead { margin: 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; max-width: 40ch; }
+
+/* About text: one readable sans for both paragraphs, same size and colour, smaller photo */
+.about-sec .about-lead, .about-sec .about-more { font-family: "DM Sans", var(--sans); font-size: clamp(1.02rem, 1.12vw, 1.12rem); line-height: 1.75; color: var(--ink); letter-spacing: 0; }
+.about-sec .about-lead em { font-style: normal; font-weight: 500; color: var(--green); }
+.about-sec .about-text { gap: 14px; max-width: 68ch; }
+.about-sec .portrait-arch { width: clamp(118px, 10vw, 150px); }
+@media (max-width: 680px) { .about-sec .portrait-arch { width: 130px; } }
