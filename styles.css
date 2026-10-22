@@ -1182,3 +1182,12 @@ body.loaded .home-hero > .scroll-cue { transform: none; }
   .about-sec .about-text { justify-self: stretch; }
   .portrait-soft { width: 190px; }
 }
+
+/* Terrain map of Croatia behind the about section */
+.hr-map { width: min(46vw, 640px); right: max(-1vw, -20px); bottom: 2%; top: auto; transform: none; opacity: 0.55; }
+.hr-map img { display: block; width: 100%; height: auto; }
+.hr-pin { position: absolute; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 8px; }
+.hr-pin i { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(35, 64, 50, 0.14), 0 0 0 26px rgba(35, 64, 50, 0.06); }
+.hr-pin b { font: 500 0.62rem "DM Sans", var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+@media (max-width: 760px) { .hr-map { width: 115vw; right: -25vw; bottom: auto; top: 30%; opacity: 0.3; } }
+.hr-map { opacity: 0.5; bottom: -4%; -webkit-mask-image: none; mask-image: none; }
