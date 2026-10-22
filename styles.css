@@ -1191,3 +1191,10 @@ body.loaded .home-hero > .scroll-cue { transform: none; }
 .hr-pin b { font: 500 0.62rem "DM Sans", var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
 @media (max-width: 760px) { .hr-map { width: 115vw; right: -25vw; bottom: auto; top: 30%; opacity: 0.3; } }
 .hr-map { opacity: 0.5; bottom: -4%; -webkit-mask-image: none; mask-image: none; }
+/* Modern sage map: further right, softer, quietly under the text */
+.hr-map { width: min(50vw, 720px); right: min(-6vw, -40px); top: 50%; bottom: auto; transform: translateY(-44%); opacity: 0.42; }
+@media (max-width: 760px) { .hr-map { width: 125vw; right: -45vw; top: 40%; opacity: 0.25; } }
+/* Map sits quietly under the text: further right, softer, only a small dot for Rijeka */
+.hr-map { right: min(-11vw, -90px); opacity: 0.36; }
+.hr-pin b { display: none; }
+.hr-pin i { width: 7px; height: 7px; box-shadow: 0 0 0 4px rgba(35, 64, 50, 0.12), 0 0 0 20px rgba(35, 64, 50, 0.05); }
