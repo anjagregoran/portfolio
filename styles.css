@@ -991,3 +991,27 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .about-lead em { font-style: italic; color: var(--green); }
 @media (max-width: 680px) { .about { grid-template-columns: 1fr; justify-items: center; text-align: center; } .portrait-arch { width: 190px; } }
 .home-hero .actions .btn-frame { flex: none; }
+
+/* Coffee cup beside the call title: a fine line, no circle, with gently rising steam */
+.call-icon.cup { width: 52px; height: 52px; padding: 0; background: none; border-radius: 0; stroke-width: 1.3; }
+.call-icon.cup path:last-child { animation: steam 3.2s ease-in-out infinite; }
+@keyframes steam { 0%, 100% { transform: translateY(0); opacity: 0.9; } 50% { transform: translateY(-2px); opacity: 0.45; } }
+.call-coffee { margin: 2px 0 0; font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--green); }
+
+/* Fine-line Kvarner sketches, quiet and on the side */
+.sketch { margin: 0; pointer-events: none; color: var(--green); }
+.sketch svg { display: block; width: 100%; height: auto; fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; opacity: 0.6; }
+.sketch figcaption { margin-top: 8px; font: 500 0.6rem "DM Sans", var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); opacity: 0.75; text-align: center; }
+.sketch svg * { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.6s cubic-bezier(.45,.05,.25,1); }
+.sketch.drawn svg * { stroke-dashoffset: 0; }
+.sketch svg *:nth-child(3n+2) { transition-delay: 0.25s; }
+.sketch svg *:nth-child(3n) { transition-delay: 0.5s; }
+.services-head, .faq { position: relative; }
+.sketch-light { position: absolute; right: var(--gutter); bottom: 6px; width: 110px; }
+.sketch-pine { width: 150px; margin-top: 40px; }
+.sketch-camellia { width: 118px; margin-top: 28px; }
+.skyline-wrap { display: flex; justify-content: center; padding: 30px var(--gutter) 0; }
+.sketch-kastav { width: min(340px, 80vw); }
+@media (max-width: 980px) { .sketch-light, .sketch-pine { display: none; } }
+.sketch-pine figcaption { text-align: left; }
+@media (prefers-reduced-motion: reduce) { .sketch svg * { stroke-dasharray: none; transition: none; } }

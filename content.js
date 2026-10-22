@@ -100,7 +100,7 @@ const HR = {
 
   "contact.label": "Započnimo suradnju",
   "contact.title": "Želite li profesionalnu web stranicu?",
-  "contact.p1": "Rezervirajte besplatan razgovor od 30 minuta. Prije razgovora odgovorite na nekoliko kratkih pitanja, kako bih se pripremila i došla s idejama za vaš posao.",
+  "contact.p1": "Rezervirajte besplatan razgovor od 30 minuta.",
 
   "form.need": "Što vam treba?",
   "form.n1": "Nova web stranica",
@@ -122,6 +122,7 @@ const HR = {
   "call.l3": "Na kraju prođemo cijenu, rok i sljedeće korake",
   "call.l4": "Vi odlučite želite li nastaviti",
   "call.btn": "Odaberite termin",
+  "call.coffee": "Ako ste iz Rijeke ili okolice, možemo i na kavu.",
   "call.note": "Odaberete termin koji vam odgovara, a poveznicu za Google Meet dobivate e-poštom.",
   "contact.hr": "Hrvatska",
   "contact.us": "SAD",

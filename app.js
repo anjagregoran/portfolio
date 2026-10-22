@@ -237,6 +237,16 @@
   // The site no longer remembers a language choice, so clear the old one
   try { localStorage.removeItem("lang"); } catch (e) {}
 
+  // Fine-line drawings of Kvarner draw themselves when they scroll into view
+  const sketches = document.querySelectorAll(".sketch");
+  sketches.forEach((s) => s.querySelectorAll("path, ellipse, circle").forEach((el) => el.setAttribute("pathLength", "1")));
+  if (!reduce && "IntersectionObserver" in window) {
+    const so = new IntersectionObserver((list) => list.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.add("drawn"); so.unobserve(en.target); }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    sketches.forEach((s) => so.observe(s));
+  } else sketches.forEach((s) => s.classList.add("drawn"));
+
   // Links within the page glide slowly, so visitors see the sections pass on the way down.
   const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
   let glide = null;
