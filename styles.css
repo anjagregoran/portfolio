@@ -1053,3 +1053,17 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .local-note { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--ink-soft); }
 .services-lead.tools { margin-top: 0; }
 .postcard { margin: 0; }
+
+/* Section 2, about me: the typewriter line, the photo and the text, centred and calm */
+.about-sec { padding-block: clamp(64px, 8vw, 112px); display: grid; gap: clamp(36px, 4.5vw, 60px); justify-items: center; }
+.about-sec .hero-line { margin: 0; }
+.about-sec .about { width: 100%; max-width: 1060px; }
+.about-sec .portrait-arch { width: clamp(160px, 15vw, 220px); }
+.about-more { color: var(--ink-soft); }
+/* Section 3, the live demo on its own */
+@media (min-width: 981px) { .demo-sec { grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); } }
+.demo-sec { padding-top: clamp(40px, 5vw, 70px); }
+.demo-sec .intro { gap: 18px; }
+.demo-sec h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.05; margin: 0; }
+.demo-sec h2 em { font-style: italic; color: var(--green); }
+.demo-lead { margin: 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; max-width: 40ch; }
