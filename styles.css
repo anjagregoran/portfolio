@@ -1015,3 +1015,11 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 @media (max-width: 980px) { .sketch-light, .sketch-pine { display: none; } }
 .sketch-pine figcaption { text-align: left; }
 @media (prefers-reduced-motion: reduce) { .sketch svg * { stroke-dasharray: none; transition: none; } }
+/* Second hero button: the same framed shape, outlined instead of filled */
+.btn-frame-line { background: transparent; color: var(--green); border-color: var(--green); }
+.btn-frame-line:hover { background: var(--green); color: var(--cream); }
+.btn-frame-line:hover i { transform: translateY(4px); }
+@media (max-width: 680px) {
+  .home-hero .actions { width: 100%; max-width: 360px; gap: 22px; }
+  .home-hero .actions .btn-frame { width: 100%; justify-content: center; padding: 17px 18px; letter-spacing: 0.13em; font-size: 0.68rem; white-space: nowrap; }
+}
