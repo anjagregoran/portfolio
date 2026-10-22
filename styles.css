@@ -1122,3 +1122,10 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .btn-frame:hover { background: rgba(35, 64, 50, 0.92); }
 .btn-frame-line { background: rgba(255, 253, 248, 0.42); color: var(--green); border: 1px solid rgba(35, 64, 50, 0.22); box-shadow: 0 10px 30px -22px rgba(43, 33, 27, 0.5); }
 .btn-frame-line:hover { background: rgba(255, 253, 248, 0.7); color: var(--green); }
+
+/* First section: one centred button, and a quiet "see my work" cue at the bottom */
+.home-hero .actions { justify-content: center; }
+.scroll-cue { position: absolute; left: 50%; bottom: clamp(22px, 4vh, 40px); transform: translateX(-50%); z-index: 2; display: grid; justify-items: center; gap: 6px; text-decoration: none; color: var(--ink-soft); font: 500 0.66rem "DM Sans", var(--sans); letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.8; transition: opacity 0.3s, color 0.3s; }
+.scroll-cue:hover { opacity: 1; color: var(--green); }
+.scroll-cue svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 680px) { .home-hero .actions { max-width: 320px; } }
