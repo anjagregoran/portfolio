@@ -1106,3 +1106,19 @@ body.loaded .intro > :nth-child(5) { transition-delay: 0.54s; }
 .timing-icon.together circle:last-child { fill: rgba(35, 64, 50, 0.08); }
 /* Emphasis in the call card in the same font, just green */
 .call-list li em { font-family: inherit; font-style: normal; font-size: 1em; font-weight: 500; color: var(--green); }
+
+/* Buttons stay still: no lean, no sliding arrow, no growing frame */
+.btn, .btn:hover { transform: none !important; }
+.btn-frame i, .btn-frame:hover i, .btn-frame-line:hover i { transform: none !important; }
+
+/* Hero buttons: frosted glass over the aurora, no outer stroke */
+.btn-frame, .btn-frame:hover { outline: none; }
+.btn-frame {
+  background: rgba(35, 64, 50, 0.78); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 6px;
+  -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: 0 10px 30px -18px rgba(35, 64, 50, 0.7);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-frame:hover { background: rgba(35, 64, 50, 0.92); }
+.btn-frame-line { background: rgba(255, 253, 248, 0.42); color: var(--green); border: 1px solid rgba(35, 64, 50, 0.22); box-shadow: 0 10px 30px -22px rgba(43, 33, 27, 0.5); }
+.btn-frame-line:hover { background: rgba(255, 253, 248, 0.7); color: var(--green); }

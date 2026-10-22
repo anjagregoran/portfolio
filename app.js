@@ -124,19 +124,6 @@
   document.addEventListener("langchange", setCallLink);
   setCallLink();
 
-  // Buttons lean a little towards the pointer.
-  if (finePointer && !reduce) {
-    document.querySelectorAll(".btn").forEach((btn) => {
-      btn.addEventListener("pointermove", (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width / 2) * 0.22;
-        const y = (e.clientY - r.top - r.height / 2) * 0.35;
-        btn.style.transform = `translate(${x}px, ${y}px)`;
-      });
-      btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
-    });
-  }
-
   // A soft light follows the pointer across the panels.
   if (finePointer) {
     document.querySelectorAll(".work, .form, .service").forEach((el) => {
