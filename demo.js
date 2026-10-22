@@ -261,7 +261,8 @@
   Object.values(SITES).forEach((s) => ["hero", 1, 2, 3].forEach((n) => { new Image().src = photo(s, n); }));
   render();
   if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((en) => { if (en[0].isIntersecting) { playTour(); io.disconnect(); } });
+    // Let visitors look at it for a few seconds before the tour starts
+    const io = new IntersectionObserver((en) => { if (en[0].isIntersecting) { tour.push(setTimeout(playTour, 2600)); io.disconnect(); } }, { threshold: 0.5 });
     io.observe(root);
   }
 })();

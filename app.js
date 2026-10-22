@@ -234,9 +234,36 @@
   }
   document.addEventListener("langchange", () => { if (lineSeen) typeLine(200); });
 
-  let saved = null;
-  try { saved = localStorage.getItem("lang"); } catch (e) {}
-  setLang(saved || ((navigator.language || "").toLowerCase().startsWith("hr") ? "hr" : "en"));
+  setLang("hr");
+
+  // Links within the page glide slowly, so visitors see the sections pass on the way down.
+  const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  let glide = null;
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || reduce) return;
+    const id = a.getAttribute("href");
+    const target = id.length > 1 ? document.querySelector(id) : null;
+    if (id.length > 1 && !target) return;
+    e.preventDefault();
+    const offset = target ? parseFloat(getComputedStyle(target).scrollMarginTop) || 0 : 0;
+    const from = scrollY;
+    const to = target ? target.getBoundingClientRect().top + scrollY - offset : 0;
+    const dist = Math.abs(to - from);
+    const duration = Math.min(3600, 1000 + dist * 0.45);
+    const html = document.documentElement;
+    html.style.scrollBehavior = "auto";
+    cancelAnimationFrame(glide);
+    const t0 = performance.now();
+    const step = (now) => {
+      const k = Math.min(1, (now - t0) / duration);
+      scrollTo(0, from + (to - from) * ease(k));
+      if (k < 1) glide = requestAnimationFrame(step);
+      else html.style.scrollBehavior = "";
+    };
+    glide = requestAnimationFrame(step);
+    ["wheel", "touchstart", "keydown"].forEach((ev) => addEventListener(ev, () => { cancelAnimationFrame(glide); html.style.scrollBehavior = ""; }, { once: true, passive: true }));
+  });
 
   // Opening entrance.
   requestAnimationFrame(() => document.body.classList.add("loaded"));

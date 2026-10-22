@@ -15,7 +15,7 @@ const HR = {
   "nav.menu": "Izbornik",
 
   "hero.label": "Web dizajn za male poduzetnike",
-  "hero.title": "Web stranice koje <span class=\"alt\">male poduzetnike</span> predstavljaju u <em class=\"mark\">najboljem svjetlu</em>.",
+  "hero.title": "Web stranice koje <span class=\"alt\">male<br> poduzetnike</span> predstavljaju<br> u <em class=\"mark\">najboljem svjetlu</em>.",
   "hero.work": "Pogledajte moje radove",
   "work.label": "Moji radovi",
   "work.title": "Prije i poslije",
@@ -92,7 +92,8 @@ const HR = {
   "proof.3": "osoba, od prve ideje do objave",
   "svc.label": "Kako radim",
   "svc.title": "Od prvog razgovora do objave i nakon nje",
-  "foot.tag": "Web stranice koje male poduzetnike predstavljaju u najboljem svjetlu, na hrvatskom i engleskom.",
+  "foot.tag": "Dizajn koji doživite, a ne samo vidite.",
+  "intro.langs": "Stranice izrađujem na hrvatskom, engleskom ili na oba jezika.",
   "foot.nav": "Istražite",
   "foot.privacy": "Vaše podatke koristim isključivo kako bih vam odgovorila.",
   "foot.top": "Natrag na vrh",
